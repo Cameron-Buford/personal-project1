@@ -15,16 +15,18 @@ massive(CONNECTION_STRING).then(db => {
 const authCtrl = require('./controllers/authController')
 const drillCtrl = require('./controllers/drillController')
 const trainerCtrl = require('./controllers/trainersController')
+const myDrillCtrl = require('./controllers/myDrillsController')
+const myTrainerCtrl = require('./controllers/myTrainersController')
 
-const authUrl = require('/api/user')
 
-const trainerUrl = require('/api/trainer')
+
+
 
 
 
 //auth endpoints
 
-app.get(authUrl, authCtrl.getUser)
+app.get('/api/user', authCtrl.getUser)
 app.post('/auth/login', authCtrl.login)
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/logout', authCtrl.logout)
@@ -39,23 +41,23 @@ app.get('/api/drills', drillCtrl.getAllDrills)
 //trainer endpoints
 
 
-app.get(`${trainerUrl}`, trainerCtrl.getAllTrainers)
+app.get('/api/trainers', trainerCtrl.getAllTrainers)
 
 
 //mydrills endpoints
 
-app.get('/api/myDrills', drillCtrl.getMyDrills)
-app.post(`/api/create`, drillCtrl.createDrill)
-app.post('/api/post', drillCtrl.postDrill)
-app.put(`/api/edit/:id`, drillCtrl.editScore)
-app.delete(`/api/remove/:id`, drillCtrl.removeDrill)
+app.get('/api/myDrills', myDrillCtrl.getMyDrills)
+app.post(`/api/create`, myDrillCtrl.createDrill)
+app.post('/api/post', myDrillCtrl.postDrill)
+app.put(`/api/edit/:id`, myDrillCtrl.editScore)
+app.delete(`/api/remove/:id`, myDrillCtrl.removeDrill)
 
 
 //mytrainers endpoints
 
-app.get('/api/myTrainers', trainerCtrl.getMyTrainers)
-app.post(`/api/postTrainer`, trainerCtrl.addTrainer)
-app.delete(`/api/removeTrainer/:id`, trainerCtrl.removeTrainer)
+app.get('/api/myTrainers', myTrainerCtrl.getMyTrainers)
+app.post('/api/postTrainer', myTrainerCtrl.addTrainer)
+app.delete('/api/removeTrainer/:id', myTrainerCtrl.removeTrainer)
 
 
               

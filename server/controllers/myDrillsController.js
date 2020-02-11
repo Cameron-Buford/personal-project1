@@ -18,6 +18,12 @@ module.exports = {
     },
 
     postDrill:(req, res) => {
+        const db = req.app.get('db')
+        const {name, distance, shots, setup, partime, score, actions} = req.body;
+
+        db.post_drill(name, distance, shots, setup, partime, score, actions)
+        .then(() => res.sendStatus(200))
+
         
     },
 

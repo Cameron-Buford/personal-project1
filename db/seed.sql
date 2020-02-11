@@ -18,7 +18,7 @@ create table drills (
 create table trainers (
     trainer_id serial primary key,
     name varchar(200),
-    training-skills varchar(1000),
+    training_skills varchar(1000),
     biography text,
     credentials varchar(1000)
 );
