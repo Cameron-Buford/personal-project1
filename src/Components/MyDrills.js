@@ -7,6 +7,7 @@ class MyDrills extends Component{
     constructor(){
         super()
         this.state ={
+            myDrills: [],
             myDrillsUrl: '/api/myDrills'
 
         }
@@ -16,7 +17,8 @@ class MyDrills extends Component{
         const {myDrillsUrl} = this.state;
     
         axios.get(myDrillsUrl).then(results => {
-          this.setState({drills: results.data})
+            console.log(results)
+          this.setState({myDrills: results.data})
         }).catch(err => console.log(err))
         
     
@@ -24,7 +26,23 @@ class MyDrills extends Component{
 
     render(){
         return(
-            <div>mydrills
+            <div>
+                <div>
+                {this.state.myDrills.map(myDrill => {
+                    return (
+                        <div>
+                            <h1>{myDrill.name}</h1>
+                            <h1>{myDrill.distance}</h1>
+                            <h1>{myDrill.shots}</h1>
+                            <h1>{myDrill.setups}</h1>
+                            <h1>{myDrill.partime}</h1>
+                            <h1>{myDrill.score}</h1>
+                            <h1>{myDrill.actions}</h1>
+                            </div>
+                    )
+                })}
+                </div>
+                mydrills
                 <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
             </div>
         )

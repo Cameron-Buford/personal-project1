@@ -12,7 +12,8 @@ create table drills (
     setup varchar(1000),
     partime decimal,
     score decimal,
-    actions text
+    actions text,
+    -- need to add an admin option that is true and hardcodes the permanant drills
 );
 
 create table trainers (

@@ -1,1 +1,1 @@
-SELECT * FROM drills;
+select * from drills;

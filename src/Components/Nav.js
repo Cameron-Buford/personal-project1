@@ -13,7 +13,7 @@ class Nav extends Component{
 
     render(){
         return(
-            <div>
+            <div className= 'navbar'>
                 <button className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
                 <button className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
                 Title

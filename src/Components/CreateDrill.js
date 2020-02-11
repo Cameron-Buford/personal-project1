@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 
 class CreateDrill extends Component{
@@ -15,61 +16,77 @@ class CreateDrill extends Component{
         }
     }
 
+    newDrill = () => {
+        const {name, distance, shots, setup, partime, score, actions} = this.state;
+
+        axios.post('/api/create', {name, distance, shots, setup, partime, score, actions})
+        .then(() => {
+            this.props.history.push('/mydrills')
+        })
+    }
+
+    handleChange = ({name, value}) => this.setState({[name]: value})
+
     render(){
+        const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
             <div>create drill
                 <div>
                     <p>{'name'}</p>
                     <input  name='drill name'
-                    // value={title}
+                    // value={name}
                     placeholder='drill name'
-                    // onChange= {(e) => this.handleChange(e.target)}
-                    ></input> 
+                    onChange= {(e) => this.handleChange(e.target)}
+                    /> 
 
 
-                    <p>{'distance'}</p>
+                    <p>{'distance/yards'}</p>
                     <input  name='distance'
-                    // value={title}
+                    // value={distance}
                     placeholder='distance'
-                    // onChange= {(e) => this.handleChange(e.target)}
-                    ></input>
+                    onChange= {(e) => this.handleChange(e.target)}
+                    />
 
                     <p>{'shots'}</p>
                     <input  name='shots'
-                    // value={title}
+                    // value={shots}
                     placeholder='shots'
-                    // onChange= {(e) => this.handleChange(e.target)}
-                    ></input>
+                    onChange= {(e) => this.handleChange(e.target)}
+                    />
 
                     <p>{'setup'}</p>
                     <input  name='setup'
-                    // value={title}
+                    // value={setup}
                     placeholder='setup'
-                    // onChange= {(e) => this.handleChange(e.target)}
-                    ></input>
+                    onChange= {(e) => this.handleChange(e.target)}
+                    />
 
-                    <p>{'partime'}</p>
+                    <p>{'partime/seconds'}</p>
                     <input  name='partime'
-                    // value={title}
+                    // value={partime}
                     placeholder='partime'
-                    // onChange= {(e) => this.handleChange(e.target)}
+                    onChange= {(e) => this.handleChange(e.target)}
                     ></input>
 
                     <p>{'score'}</p>
                     <input  name='score'
-                    // value={title}
+                    // value={score}
                     placeholder='score'
-                    // onChange= {(e) => this.handleChange(e.target)}
-                    ></input>
+                    onChange= {(e) => this.handleChange(e.target)}
+                    />
 
                     <p>{'actions'}</p>
-                    <input  name='actions'
-                    // value={title}
+                    <textarea
+                      name='actions'
+                    // value={actions}
                     placeholder='actions'
-                    // onChange= {(e) => this.handleChange(e.target)}
-                    ></input>
+                    onChange= {(e) => this.handleChange(e.target)}
+                    />
 
-                    <button>create drill</button>
+                    <button onClick = {() => {
+                        this.newDrill({name, distance, shots, setup, partime, score, actions})
+                        }}>create drill
+                    </button>
 
                     <button>clear</button>
                 </div>

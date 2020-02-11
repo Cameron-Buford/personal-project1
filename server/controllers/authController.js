@@ -3,7 +3,7 @@ module.exports = {
         const {username, password} = req.body;
         const db = req.app.get('db')
 
-        let user = await db.login(username);
+        let user = await db.auth.login(username);
         if (user[0]) {
             return res.status(400).send('user already exists');
         }
@@ -20,7 +20,7 @@ module.exports = {
         const { username, password} = req.body;
         const db= req.app.get('db');
 
-        let user = await db.login(username);
+        let user = await db.auth.login(username);
         if (!user[0]){
             return res.status(400).send('username not found');
         }
