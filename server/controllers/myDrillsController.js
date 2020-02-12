@@ -1,8 +1,9 @@
 module.exports = {
     getMyDrills: (req, res) => {
         const db = req.app.get('db');
+        const {user_id}= req.session.user;
 
-        db.user_drills.get_my_drills()
+        db.user_drills.get_my_drills(user_id)
         .then((results) => 
         res.status(200).send(results))
 

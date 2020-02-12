@@ -28,10 +28,10 @@ class Trainers extends Component{
                     {this.state.trainers.map(trainers => {
                         return (
                             <div>
-                                <h1>{trainers.name}</h1>
-                                <h1>{trainers.training_skills}</h1>
-                                <h1>{trainers.biography}</h1>
-                                <h1>{trainers.credentials}</h1>
+                                NAME <h1>{trainers.name}</h1>
+                                TRAINING SKILLS <h1>{trainers.training_skills}</h1>
+                               BIO  <h1>{trainers.biography}</h1>
+                                CREDENTIALS <h1>{trainers.credentials}</h1>
                             
                                 <button>Add to My Trainers</button>
                             </div>

@@ -31,13 +31,13 @@ class Drills extends Component{
                 {this.state.drills.map(drill => {
                     return (
                         <div>
-                            <h1>{drill.name}</h1>
-                            <h1>{drill.distance}</h1>
-                            <h1>{drill.shots}</h1>
-                            <h1>{drill.setups}</h1>
-                            <h1>{drill.partime}</h1>
-                            <h1>{drill.score}</h1>
-                            <h1>{drill.actions}</h1>
+                            Drill Name <h1>{drill.name}</h1>
+                            DISTANCE <h1>{drill.distance}</h1>
+                            SHOTS <h1>{drill.shots}</h1>
+                            SETUPS <h1>{drill.setups}</h1>
+                            PARTIME <h1>{drill.partime}</h1>
+                            SCORE <h1>{drill.score}</h1>
+                            ACTIONS <h1>{drill.actions}</h1>
                              <button>add to my drills</button>
                         </div>
 

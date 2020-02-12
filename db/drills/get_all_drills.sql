@@ -1,1 +1,2 @@
-select * from drills;
+select * from drills
+where drill_admin = true;

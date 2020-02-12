@@ -13,6 +13,7 @@ create table drills (
     partime decimal,
     score decimal,
     actions text,
+    drill_admin boolean
     -- need to add an admin option that is true and hardcodes the permanant drills
 );
 
