@@ -9,6 +9,7 @@ class Drills extends Component{
         this.state ={
             drills: [],
             drillUrl: '/api/drills'
+            
 
         }
     }
@@ -24,10 +25,10 @@ class Drills extends Component{
     
       }
 
-      pushDrill = () => {
-          const {name, distance, shots, setup, partime, score, actions} = this.state;
+      pushDrill = (drill_id) => {
+          
 
-          axios.post('/api/post', {name, distance, shots, setup, partime, score, actions})
+          axios.post('/api/post', {drill_id})
           .then(() => {
               this.props.history.push('/mydrills')
             })
@@ -53,7 +54,7 @@ class Drills extends Component{
                             PARTIME <h1>{drill.partime}</h1>
                             SCORE <h1>{drill.score}</h1>
                             ACTIONS <h1>{drill.actions}</h1>
-                             <button onClick = {() => this.pushDrill({name, distance, shots, setup, partime, score, actions})}>add to my drills</button>
+                             <button onClick = {() => this.pushDrill(drill.drill_id)}>add to my drills</button>
                         </div>
 
 

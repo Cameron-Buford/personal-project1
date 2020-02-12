@@ -1,3 +1,3 @@
-delete from mytrainers 
-where id = $1;
-select * from mytrainers;
+DELETE FROM mytrainers 
+WHERE user_id = $1
+AND trainer_id = $2;

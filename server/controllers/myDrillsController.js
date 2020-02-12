@@ -22,13 +22,15 @@ module.exports = {
         
     },
 
-    postDrill:(req, res) => {
+    postDrill: async(req, res) => {
         const db = req.app.get('db')
-        const {user_id, drill_id} = req.body;
+        const {drill_id} = req.body;
+        const {user_id} = req.session.user;
 
-        db.user_drills.post_drill(user_id, drill_id)
-        .then(() => res.sendStatus(200))
+        
 
+        await db.user_drills.add_drill(user_id, drill_id)
+        res.sendStatus(200)
         
     },
 

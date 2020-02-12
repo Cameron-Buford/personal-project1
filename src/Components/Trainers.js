@@ -21,6 +21,20 @@ class Trainers extends Component{
         
     }
 
+
+
+    pushTrainer = (trainer_id) => {
+          
+
+        axios.post('/api/postTrainer', {trainer_id})
+        .then(() => {
+            this.props.history.push('/myTrainers')
+          })
+
+
+    }
+
+
     render(){
         return(
             <div className= 'trainersmain'>
@@ -33,7 +47,7 @@ class Trainers extends Component{
                                BIO  <h1>{trainers.biography}</h1>
                                 CREDENTIALS <h1>{trainers.credentials}</h1>
                             
-                                <button>Add to My Trainers</button>
+                                <button onClick = {() => this.pushTrainer(trainers.trainer_id)}>add to my Trainers</button>
                             </div>
                         )
                     })}
