@@ -18,7 +18,7 @@ class CreateDrill extends Component{
 
     newDrill = () => {
         const {name, distance, shots, setup, partime, score, actions} = this.state;
-
+            console.log(this.state)
         axios.post('/api/create', {name, distance, shots, setup, partime, score, actions})
         .then(() => {
             this.props.history.push('/mydrills')
@@ -30,10 +30,11 @@ class CreateDrill extends Component{
     render(){
         const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
-            <div>create drill
+            <div>
+                    
                 <div>
                     <p>{'name'}</p>
-                    <input  name='drill name'
+                    <input  name='name'
                     // value={name}
                     placeholder='drill name'
                     onChange= {(e) => this.handleChange(e.target)}
@@ -82,7 +83,6 @@ class CreateDrill extends Component{
                     placeholder='actions'
                     onChange= {(e) => this.handleChange(e.target)}
                     />
-
                     <button onClick = {() => {
                         this.newDrill({name, distance, shots, setup, partime, score, actions})
                         }}>create drill

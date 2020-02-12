@@ -24,7 +24,22 @@ class Drills extends Component{
     
       }
 
+      pushDrill = () => {
+          const {name, distance, shots, setup, partime, score, actions} = this.state;
+
+          axios.post('/api/post', {name, distance, shots, setup, partime, score, actions})
+          .then(() => {
+              this.props.history.push('/mydrills')
+            })
+
+
+      }
+
+
+
+
     render(){
+        const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
             <div className= 'drillmain'>
                 <div className= 'drilltable'>
@@ -34,11 +49,11 @@ class Drills extends Component{
                             Drill Name <h1>{drill.name}</h1>
                             DISTANCE <h1>{drill.distance}</h1>
                             SHOTS <h1>{drill.shots}</h1>
-                            SETUPS <h1>{drill.setups}</h1>
+                            SETUPS <h1>{drill.setup}</h1>
                             PARTIME <h1>{drill.partime}</h1>
                             SCORE <h1>{drill.score}</h1>
                             ACTIONS <h1>{drill.actions}</h1>
-                             <button>add to my drills</button>
+                             <button onClick = {() => this.pushDrill({name, distance, shots, setup, partime, score, actions})}>add to my drills</button>
                         </div>
 
 

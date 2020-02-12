@@ -9,20 +9,24 @@ module.exports = {
 
     },
 
-    createDrill: (req, res) => {
+    createDrill: async(req, res) => {
         const db = req.app.get('db')
         const {name, distance, shots, setup, partime, score, actions} = req.body;
-
-        db.user_drills.create_drill(name, distance, shots, setup, partime, score, actions)
-        .then(() => res.sendStatus(200))
+        const {user_id} = req.session.user;
+            console.log(req.body)
+        
+        const drill_id = await db.user_drills.create_drill(name, distance, shots, setup, partime, score, actions)
+        console.log(drill_id)
+        await db.user_drills.add_drill(user_id, drill_id[0].drill_id)
+        res.sendStatus(200)
         
     },
 
     postDrill:(req, res) => {
         const db = req.app.get('db')
-        const {name, distance, shots, setup, partime, score, actions} = req.body;
+        const {user_id, drill_id} = req.body;
 
-        db.user_drills.post_drill(name, distance, shots, setup, partime, score, actions)
+        db.user_drills.post_drill(user_id, drill_id)
         .then(() => res.sendStatus(200))
 
         

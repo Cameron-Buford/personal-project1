@@ -9,6 +9,7 @@ class MyDrills extends Component{
         this.state ={
             myDrills: [],
             myDrillsUrl: '/api/myDrills'
+            
 
         }
     }
@@ -27,6 +28,7 @@ class MyDrills extends Component{
     render(){
         return(
             <div>
+                <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
                 <div>
                 {this.state.myDrills.map(myDrill => {
                     return (
@@ -42,8 +44,8 @@ class MyDrills extends Component{
                     )
                 })}
                 </div>
-                mydrills
-                <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
+                
+                
             </div>
         )
     }
