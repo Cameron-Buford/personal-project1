@@ -9,6 +9,17 @@ module.exports = {
 
     },
 
+    getScores: (req, res) => {
+        const db = req.app.get('db')
+        const {mydrill_id} = req.params;
+
+        db.user_drills.get_scores(mydrill_id)
+        .then((results) => 
+        res.status(200).send(results))
+
+        
+    },
+
     createDrill: async(req, res) => {
         const db = req.app.get('db')
         const {name, distance, shots, setup, partime, score, actions} = req.body;
@@ -36,11 +47,11 @@ module.exports = {
 
     editScore:(req, res) => {
         const db = req.app.get('db')
-        const {mydrill_id} = req.params;
-        const {partime, score} = req.body;
-        const {user_id} = req.session.user;
+        const {mydrill_id, score_id} = req.params;
+        const {score} = req.body;
+        
 
-        db.user_drills.score(user_id, mydrill_id, partime, score)
+        db.user_drills.score(mydrill_id, score_id, score)
         .then(scores => {
             res.status(200).send(scores)
         }).catch(err => {
@@ -62,4 +73,6 @@ module.exports = {
         })
         
     }
+
+    
 }

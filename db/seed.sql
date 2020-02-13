@@ -41,8 +41,8 @@ create table mytrainers (
 
 create table scores (
     score_id serial primary key, 
-    user_id int references users(user_id),
-    mydrill_id int references mydrills(mydrill_id)
+    mydrill_id int references mydrills(mydrill_id),
+    score decimal
 );
 
     

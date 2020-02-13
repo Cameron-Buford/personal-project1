@@ -9,13 +9,20 @@ class MyDrills extends Component{
         this.state ={
             myDrills: [],
             myDrillsUrl: '/api/myDrills',
-            scores: []
+            scores: [],
+            scoresUrl: '/api/scores/:mydrill_id'
             
 
         }
     }
 
     componentDidMount(){
+        const {scoresUrl} = this.state
+
+        axios.get(scoresUrl).then(results => {
+            console.log(results)
+            this.setState({scores: results.data})
+        }).catch(err => console.log(err));
         
 
         this.rerenderDrills();
