@@ -14,12 +14,7 @@ class MyTraining extends Component{
     }
 
     componentDidMount(){
-        // const {myTrainersUrl} = this.state;
-            
-        // axios.get(myTrainersUrl).then(results => {
-        //     console.log(results)
-        //   this.setState({myTrainers: results.data})
-        // }).catch(err => console.log(err))
+        
         this.rerender()
         
     
@@ -43,6 +38,11 @@ class MyTraining extends Component{
             this.rerender()
           }).catch(err => console.log(err))
       }
+
+
+
+
+      
 
     render(){
         

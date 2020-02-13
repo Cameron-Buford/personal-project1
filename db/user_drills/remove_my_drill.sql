@@ -1,3 +1,3 @@
 delete from mydrills 
-where id = $1;
-select * from mydrills;
+where user_id = $1
+and drill_id = $2;

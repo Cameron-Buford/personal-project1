@@ -8,39 +8,100 @@ class MyDrills extends Component{
         super()
         this.state ={
             myDrills: [],
-            myDrillsUrl: '/api/myDrills'
+            myDrillsUrl: '/api/myDrills',
+            scores: []
             
 
         }
     }
 
     componentDidMount(){
-        const {myDrillsUrl} = this.state;
-    
-        axios.get(myDrillsUrl).then(results => {
-            console.log(results)
-          this.setState({myDrills: results.data})
-        }).catch(err => console.log(err))
+        
+
+        this.rerenderDrills();
         
     
       }
+
+
+
+      rerenderDrills= () => {
+          const {myDrillsUrl} = this.state;
+
+          axios.get(myDrillsUrl).then(results => {
+              this.setState({myDrills: results.data})
+          }).catch(err => console.log(err))
+
+      }
+
+
+      removeDrill = (drill_id) => {
+
+        axios.delete(`/api/remove/${drill_id}`)
+        .then(() => {
+            this.rerenderDrills()
+
+        }).catch(err => console.log(err))
+      }
+
+
+      updateScore = (mydrill_id) => {
+          axios.put(`/api/edit/${mydrill_id}`)
+          .then(results => {
+              this.setState({scores: results.data})
+          }).catch(err => console.log(err))
+      }
+
+      handleChange = ({name, value}) => this.setState({[name]: value})
+
+
+
+
 
     render(){
         return(
             <div>
                 <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
                 <div>
-                {this.state.myDrills.map(myDrill => {
+                {this.state.myDrills.map(myDrills => {
                     return (
                         <div>
-                            <h1>{myDrill.name}</h1>
-                            <h1>{myDrill.distance}</h1>
-                            <h1>{myDrill.shots}</h1>
-                            <h1>{myDrill.setups}</h1>
-                            <h1>{myDrill.partime}</h1>
-                            <h1>{myDrill.score}</h1>
-                            <h1>{myDrill.actions}</h1>
+                            <h1>{myDrills.name}</h1>
+                            <h1>{myDrills.distance}</h1>
+                            <h1>{myDrills.shots}</h1>
+                            <h1>{myDrills.setups}</h1>
+                            <h1>{myDrills.partime}</h1>
+                            <h1>{myDrills.score}</h1>
+                            <h1>{myDrills.actions}</h1>
+
+                            <div>
+                                {this.state.scores.map(scores => {
+                                    return(
+                                        <div>
+                                            <h1>{scores.name}</h1>
+                                            <h1>{scores.distance}</h1>
+                                            <h1>{scores.shots}</h1>
+                                            <h1>{scores.setups}</h1>
+                                            <h1>{scores.partime}</h1>
+                                            <h1>{scores.score}</h1>
+                                            <h1>{scores.actions}</h1>
+
+                                        </div>
+
+                                    )
+                                })}
                             </div>
+
+                                <button onClick= {() => this.updateScore(myDrills.mydrill_id)}>Update your Score</button>
+                                <input 
+                                    name= 'score'
+                                    placeholder= 'score/time'
+                                    onChange= {(e) => this.handleChange(e.target)}
+                            
+                                />
+
+                                <button onClick= {() => this.removeDrill(myDrills.drill_id)}>Remove From My Drills </button>
+                        </div>
                     )
                 })}
                 </div>

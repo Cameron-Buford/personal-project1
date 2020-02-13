@@ -55,10 +55,10 @@ app.get('/api/trainers', trainerCtrl.getAllTrainers)
 //mydrills endpoints
 
 app.get('/api/myDrills', myDrillCtrl.getMyDrills)
-app.post(`/api/create`, myDrillCtrl.createDrill)
+app.post('/api/create', myDrillCtrl.createDrill)
 app.post('/api/post', myDrillCtrl.postDrill)
-app.put(`/api/edit/:drill_id`, myDrillCtrl.editScore)
-app.delete(`/api/remove/:drill_id`, myDrillCtrl.removeDrill)
+app.put('/api/edit/:mydrill_id', myDrillCtrl.editScore)
+app.delete('/api/remove/:drill_id', myDrillCtrl.removeDrill)
 
 
 //mytrainers endpoints

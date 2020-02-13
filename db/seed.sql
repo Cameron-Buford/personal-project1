@@ -14,7 +14,7 @@ create table drills (
     score decimal,
     actions text,
     drill_admin boolean
-    -- need to add an admin option that is true and hardcodes the permanant drills
+    
 );
 
 create table trainers (
@@ -27,21 +27,28 @@ create table trainers (
 
 create table mydrills (
     mydrill_id serial primary key,
-    user_id int references users.user_id,
-    drill_id int references drills.drill_id
+    user_id int references users(user_id),
+    drill_id int references drills(drill_id)
 
 );
 
 create table mytrainers (
     mytrainer_id serial primary key, 
-    user_id int references users.user_id,
-    trainer_id int references trainers.trainer_id
+    user_id int references users(user_id),
+    trainer_id int references trainers(trainer_id)
 
 );
 
+create table scores (
+    score_id serial primary key, 
+    user_id int references users(user_id),
+    mydrill_id int references mydrills(mydrill_id)
+);
 
+    
 select * from users;
 select * from drills;
 select * from trainers;
 select * from mydrills;
 select * from mytrainers;
+select * from scores;

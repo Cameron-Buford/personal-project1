@@ -38,10 +38,11 @@ module.exports = {
         const db = req.app.get('db')
         const {mydrill_id} = req.params;
         const {partime, score} = req.body;
+        const {user_id} = req.session.user;
 
-        db.user_drills.edit_my_drill(mydrill_id, partime, score)
-        .then(mydrills => {
-            res.status(200).send(mydrills)
+        db.user_drills.score(user_id, mydrill_id, partime, score)
+        .then(scores => {
+            res.status(200).send(scores)
         }).catch(err => {
             res.status(500).send(err)
         })
@@ -50,13 +51,14 @@ module.exports = {
 
     removeDrill:(req, res) => {
         const db = req.app.get('db')
-        const {mydrill_id} = req.params;
+        const {drill_id} = req.params;
+        const {user_id} = req.session.user;
 
-        db.user_drills.remove_my_drill(mydrill_id)
+        db.user_drills.remove_my_drill(user_id, drill_id)
         .then(mydrills => {
-            res.status(200).send(mydrills).catch(err => {
-                res.status(500).send(err)
-            })
+            res.status(200).send(mydrills)
+        }).catch(err => {
+            res.status(500).send(err)
         })
         
     }
