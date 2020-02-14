@@ -9,7 +9,7 @@ class MyDrills extends Component{
         this.state ={
             myDrills: [],
             myDrillsUrl: '/api/myDrills',
-            scores: [],
+            score: '' ,
             scoresUrl: `/api/scores`
             
 
@@ -18,8 +18,6 @@ class MyDrills extends Component{
 
     componentDidMount(){
         
-        
-
         this.rerenderDrills();
         
     
@@ -50,18 +48,30 @@ class MyDrills extends Component{
 
 
 
-      updateScore = (mydrill_id) => {
-          console.log(mydrill_id)
-          axios.put(`/api/edit/${mydrill_id}`)
+      updateScore = (drill_id) => {
+          console.log(drill_id)
+          axios.put(`/api/edit/${drill_id}`, {score: this.state.score})
             
-          .then(results => {
-              this.setState({score: results.data})
+          .then(() => {
+              this.rerenderDrills()
+              
           }).catch(err => console.log(err))
       }
 
       handleChange = ({name, value}) => this.setState({[name]: value})
 
 
+      filterByScore = (drills) => {
+        for(let i = 0; i <drills.length; i++){
+          for(let j = drills.length-1; j > i; j--){
+            if(drills[i].drill_id === drills[j].drill_id){
+              drills.splice(drills[j], 1)
+            }
+          }
+        }
+        return drills
+      }
+      
 
 
 
@@ -70,7 +80,8 @@ class MyDrills extends Component{
             <div>
                 <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
                 <div>
-                {this.state.myDrills.map(myDrills => {
+                {this.filterByScore(this.state.myDrills).map(myDrills => {
+                    console.log(myDrills)
                     return (
                         <div>
                             <h1>{myDrills.name}</h1>
@@ -85,7 +96,7 @@ class MyDrills extends Component{
 
                            
 
-                                <button onClick= {() => this.updateScore(myDrills.mydrill_id)}>Update your Score</button>
+                                <button onClick= {() => this.updateScore(myDrills.drill_id)}>Update your Score</button>
                                 <input 
                                     name= 'score'
                                     placeholder= 'score/time'

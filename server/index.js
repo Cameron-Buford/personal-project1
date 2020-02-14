@@ -64,7 +64,7 @@ app.delete('/api/remove/:drill_id', myDrillCtrl.removeDrill)
 //myscores endpoints
 
 app.get('/api/scores', myDrillCtrl.getScores)
-app.put('/api/edit/:mydrill_id', myDrillCtrl.editScore)
+app.put('/api/edit/:drill_id', myDrillCtrl.editScore)
 
 
 

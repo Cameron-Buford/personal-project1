@@ -45,13 +45,18 @@ module.exports = {
         
     },
 
-    editScore:(req, res) => {
+    editScore:async(req, res) => {
         const db = req.app.get('db')
-        const {mydrill_id} = req.params;
+        const {drill_id} = req.params;
+        const {user_id} = req.session.user;
         const {score} = req.body;
-        
 
-        db.user_drills.score(mydrill_id, score)
+        console.log(req.params)
+        
+        const mydrill_id = await db.user_drills.get_mydrill_id(user_id, drill_id)
+            console.log(req.body)
+        db.user_drills.score(mydrill_id[0].mydrill_id, score)
+
         .then(score => {
             res.status(200).send(score)
         }).catch(err => {
