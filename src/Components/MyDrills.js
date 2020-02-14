@@ -10,7 +10,7 @@ class MyDrills extends Component{
             myDrills: [],
             myDrillsUrl: '/api/myDrills',
             scores: [],
-            scoresUrl: '/api/scores/:mydrill_id'
+            scoresUrl: `/api/scores`
             
 
         }
@@ -85,13 +85,9 @@ class MyDrills extends Component{
                                 {this.state.scores.map(scores => {
                                     return(
                                         <div>
-                                            <h1>{scores.name}</h1>
-                                            <h1>{scores.distance}</h1>
-                                            <h1>{scores.shots}</h1>
-                                            <h1>{scores.setups}</h1>
-                                            <h1>{scores.partime}</h1>
+                                            
                                             <h1>{scores.score}</h1>
-                                            <h1>{scores.actions}</h1>
+                                            
 
                                         </div>
 

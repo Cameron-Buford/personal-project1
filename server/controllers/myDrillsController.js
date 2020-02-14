@@ -11,9 +11,9 @@ module.exports = {
 
     getScores: (req, res) => {
         const db = req.app.get('db')
-        const {mydrill_id} = req.params;
-
-        db.user_drills.get_scores(mydrill_id)
+        const {user_id} = req.session.user;
+            console.log(req.params)
+        db.user_drills.get_scores(user_id)
         .then((results) => 
         res.status(200).send(results))
 
@@ -60,12 +60,14 @@ module.exports = {
         
     },
 
-    removeDrill:(req, res) => {
+    removeDrill: async(req, res) => {
         const db = req.app.get('db')
         const {drill_id} = req.params;
         const {user_id} = req.session.user;
 
-        db.user_drills.remove_my_drill(user_id, drill_id)
+        const mydrill_id = await db.user_drills.get_mydrill_id(user_id, drill_id)
+            console.log(mydrill_id)
+        db.user_drills.remove_my_drill(mydrill_id[0].mydrill_id)
         .then(mydrills => {
             res.status(200).send(mydrills)
         }).catch(err => {
