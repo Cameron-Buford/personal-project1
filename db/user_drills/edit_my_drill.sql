@@ -1,5 +1,5 @@
 UPDATE scores 
-SET (partime, score) = ($2, $3)
-WHERE score_id = $1;
+SET (score) = ($2)
+WHERE mydrill_id = $1;
 
 SELECT * FROM scores;

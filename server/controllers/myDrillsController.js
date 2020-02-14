@@ -47,13 +47,13 @@ module.exports = {
 
     editScore:(req, res) => {
         const db = req.app.get('db')
-        const {mydrill_id, score_id} = req.params;
+        const {mydrill_id} = req.params;
         const {score} = req.body;
         
 
-        db.user_drills.score(mydrill_id, score_id, score)
-        .then(scores => {
-            res.status(200).send(scores)
+        db.user_drills.score(mydrill_id, score)
+        .then(score => {
+            res.status(200).send(score)
         }).catch(err => {
             res.status(500).send(err)
         })

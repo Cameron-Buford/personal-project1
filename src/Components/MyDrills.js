@@ -17,12 +17,7 @@ class MyDrills extends Component{
     }
 
     componentDidMount(){
-        const {scoresUrl} = this.state
-
-        axios.get(scoresUrl).then(results => {
-            console.log(results)
-            this.setState({scores: results.data})
-        }).catch(err => console.log(err));
+        
         
 
         this.rerenderDrills();
@@ -36,6 +31,7 @@ class MyDrills extends Component{
           const {myDrillsUrl} = this.state;
 
           axios.get(myDrillsUrl).then(results => {
+              console.log(results)
               this.setState({myDrills: results.data})
           }).catch(err => console.log(err))
 
@@ -52,10 +48,14 @@ class MyDrills extends Component{
       }
 
 
+
+
       updateScore = (mydrill_id) => {
+          console.log(mydrill_id)
           axios.put(`/api/edit/${mydrill_id}`)
+            
           .then(results => {
-              this.setState({scores: results.data})
+              this.setState({score: results.data})
           }).catch(err => console.log(err))
       }
 
@@ -81,19 +81,9 @@ class MyDrills extends Component{
                             <h1>{myDrills.score}</h1>
                             <h1>{myDrills.actions}</h1>
 
-                            <div>
-                                {this.state.scores.map(scores => {
-                                    return(
-                                        <div>
-                                            
-                                            <h1>{scores.score}</h1>
-                                            
+                            <h1>{myDrills.score}</h1>
 
-                                        </div>
-
-                                    )
-                                })}
-                            </div>
+                           
 
                                 <button onClick= {() => this.updateScore(myDrills.mydrill_id)}>Update your Score</button>
                                 <input 
