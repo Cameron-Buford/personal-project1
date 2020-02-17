@@ -79,11 +79,11 @@ class MyDrills extends Component{
         return(
             <div>
                 <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
-                <div>
+                <div className= 'mydrillbody'>
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
                     return (
-                        <div>
+                        <div className= 'mydrills'>
                             <h1>{myDrills.name}</h1>
                             <h1>{myDrills.distance}</h1>
                             <h1>{myDrills.shots}</h1>

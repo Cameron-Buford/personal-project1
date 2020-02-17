@@ -1,10 +1,12 @@
 .navbar {
-  height: 100px;
+  height: 300px;
   width: 100%;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-image: url("https://lh3.googleusercontent.com/FO3PiSWeVRveyxocc9CAF8NpWVVh6TeetZd4cd-KlSOlqtyMvhuQQHlFpnG43LS2tcdWHT7Euv3Ro0OlmcIn6PRwyNa0maEHRTIR2-yfBqcQ-Sea95DtovAfcqecqPTrbn_LzRGNYvQcXliLsVolui3dQsq0_p8haWhIpEXR6FQOPMcnwFG0-35dCNS5s8pQzv5iZCUS7DOhpUPY29Zg8XUzqJGy5EXEJA_BGZAygMb1ymNGRW8H0MdVXt17rbU3IkFPNFuCu7svipx2Lpa7Pn5FHJvNYvhLk-BFIdK83kCZ0NIOu4NO8w-S2Iybf4Asn-fc3_aptyCPQbRTlSsue0h9dja9tQKjtirCDd7tjwXnEQe9tFCC9qbmYt3QgX2MAiCAaFFDJMQS70pu7Z_49zPQAo8F5W0zNvbXkhroJdvRzLyvnRe9PSUHS11srTTJPb2_X7A6PVqbtXiKQJotAEOL8tqmtxpODseGLe5YHVZURUNo2JZ0FyhUJQws4eW-Ej9CknaVwog6N2cH3s8MgDHMHYIuFs-i7wRupPMujIcfG1VJlzZKe6pzehppKMWtmsFg7m5KOuN3UCG-UYg7B1Mmx18dtnv7FPZ9QP__aZezhm3aBq-NIAqBZo6FDxYEpJvu404DhOOu4MwbU3OV4mFcNuB6_0ZYVyvEM3i6tY7-rRlxo-DQEhbZ=w1367-h462-no");
+  object-fit: cover;
 }
 
 .trainermain {
@@ -44,4 +46,17 @@
   flex-direction: column;
   width: 800px;
 
+}
+
+
+.mydrillbody {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mydrills {
+
+  
 }

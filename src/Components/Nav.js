@@ -18,6 +18,7 @@ class Nav extends Component{
          } else {
              return(
                     <div className= 'navbar'>
+                        
                         <button className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
                         <button className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
                         Title
@@ -25,7 +26,7 @@ class Nav extends Component{
                         <button className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
                         <button className='loginbutton' onClick={() => this.props.history.push('/auth')}>Login</button>
                         <button>logout</button>
-
+                        
                     </div>
                 )
             }
