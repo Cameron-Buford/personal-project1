@@ -2,8 +2,18 @@ require('dotenv').config()
 const express= require('express')
 const session= require('express-session')
 const massive = require('massive')
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING}= process.env
+const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, SERVER_EMAIL, SERVER_PASSWORD}= process.env
 const app = express()
+const nodemailer = require('nodemailer  ')
+
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: SERVER_EMAIL,
+        pass: SERVER_PASSWORD
+    }
+})
 
 app.use(express.json())
 
@@ -17,6 +27,8 @@ app.use(session({
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     console.log('db assaulting through objective')
+    app.set('transporter', transporter)
+    
     app.listen(SERVER_PORT, () => console.log(`server is raiding ports on ${SERVER_PORT}`))
 }).catch(err => console.log(err))
 
