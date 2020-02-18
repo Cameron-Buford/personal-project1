@@ -29,7 +29,7 @@
   
 }
 
-
+/* 
 .drillmain {
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@
   min-height: 100vh;  
   width: 100%;
 
-}
+} */
 
 .drilltable {
   background-color: lightcoral;
@@ -49,20 +49,21 @@
 
 }
 
-/* 
-.mydrillbody {
+
+/* .mydrillbody {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   max-width: 400px;
-}
+} */
 
 .mydrills {
 
   
-} */
+}
 
 .createdrillbutton {
   border-radius: 25px;
+  background-color: rgb(223, 206, 206);
 }

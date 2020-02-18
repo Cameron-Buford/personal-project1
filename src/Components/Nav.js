@@ -5,6 +5,13 @@ import axios from 'axios'
 import {getUser} from '../Duxx/reducer'
 
 
+//STYLING
+
+const title = {
+    fontSize: '55px',
+    fontWeight: 'bold'
+
+}
 
 class Nav extends Component{
     constructor(){
@@ -31,15 +38,17 @@ class Nav extends Component{
             return <></>;
          } else {
              return(
-                    <div className= 'navbar' >
+                    <div style = { title } className= 'navbar' >
                         
                         <button className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
-                        <button className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
-                        Title
+                        <button  className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
+                        TRAINING HQ
                         <button className='homebutton' onClick={() => this.props.history.push('/')}>Home</button>
                         <button className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
-                        <button className='loginbutton' onClick={() => this.props.history.push('/auth')}>Login</button>
-                        <button onClick= {() => this.logout()}>logout</button>
+                        <div>
+                            <button className='loginbutton' onClick={() => this.props.history.push('/auth')}>Login</button>
+                            <button onClick= {() => this.logout()}>logout</button>
+                        </div>
                         
                     </div>
                 )

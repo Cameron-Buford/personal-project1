@@ -2,16 +2,67 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
-const myDrillStyle = {
-    backgroundColor: 'grey', 
-    height: '100vh', 
-    maxWidth: '400px', 
+const drillBody = {
+    backgroundColor: '#333333', 
+    height: '100%', 
+    width: '100%',
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'column',
+    justifyContent: 'space-around'
+
+
+}
+
+const quoteBox = {
+    backgroundColor: 'rgb(223, 206, 206)',
+    width: '100%',
+    height: '100px',
+    display: 'flex',
+    alignItems: 'center',
     justifyContent: 'space-around',
-    alignItems: 'center'
+    fontSize: '25px'
+
+}
+
+const drilltable = {
+    backgroundColor: '#333333',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    // flexDirection: 'column',
+    width: '100%',
+    flexWrap: 'wrap'
   
   }
+
+  const drillbox = {
+      backgroundColor: 'rgb(223, 206, 206)',
+      width: '400px',
+      minHeight: '500px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-around',
+      flexDirection: 'column',
+      fontSize: '25px',
+      fontWeight: 'bold',
+      margin: '10px'
+      
+  }
+
+  const drillLabel = {
+      fontSize: '15px',
+      margin: '5px'
+  }
+
+  const foot = {
+    backgroundColor: 'rgb(133, 121, 121)',
+    height: '100px',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+}
 class MyDrills extends Component{
     constructor(){
         super()
@@ -86,22 +137,27 @@ class MyDrills extends Component{
 
     render(){
         return(
-            <div styles={myDrillStyle}>
+            <div style= { drillBody}>
+                <div style= {quoteBox}>
+                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+
+                </div>
+                <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
                 <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
-                <div styles={myDrillStyle}>
+                <div style= {drilltable}>
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
                     return (
-                        <div styles={myDrillStyle}>
-                            <h1 styles= {{backgroundColor: 'green'}}>{myDrills.name}</h1>
-                            <h1>{myDrills.distance}</h1>
-                            <h1>{myDrills.shots}</h1>
-                            <h1>{myDrills.setups}</h1>
-                            <h1>{myDrills.partime}</h1>
-                            <h1>{myDrills.score}</h1>
-                            <h1>{myDrills.actions}</h1>
+                        <div style= {drillbox}>
+                            <h1 style= {drillLabel}>{myDrills.name}</h1>
+                            <h1 style= {drillLabel}>{myDrills.distance}</h1>
+                            <h1 style= {drillLabel}>{myDrills.shots}</h1>
+                            <h1 style= {drillLabel}>{myDrills.setups}</h1>
+                            <h1 style= {drillLabel}>{myDrills.partime}</h1>
+                            <h1 style= {drillLabel}>{myDrills.score}</h1>
+                            <h1 style= {drillLabel}>{myDrills.actions}</h1>
 
-                            <h1>{myDrills.score}</h1>
+                            <h1 style= {drillLabel}>{myDrills.score}</h1>
 
                            
 
@@ -118,6 +174,8 @@ class MyDrills extends Component{
                     )
                 })}
                 </div>
+
+                <footer style= {foot} > STAY FROSTY </footer>
                 
                 
             </div>
