@@ -2,7 +2,10 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import {withRouter} from 'react-router-dom'
 
-
+const dashboardStyle = {
+    backgroundColor: '#333333', height: '100vh', width: '100%'
+  
+  }
 class MyTraining extends Component{
     constructor(){
         super()
@@ -48,7 +51,7 @@ class MyTraining extends Component{
         
         console.log(this.state.myTrainers)
         return(
-            <div>
+            <div styles={dashboardStyle}>
                 <div className= 'trainersTable'>
                     {this.state.myTrainers.map(myTrainers => {
                         return (

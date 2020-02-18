@@ -11,13 +11,10 @@ const mailOptions = {
 
 module.exports = {
     register: async(req, res) => {
-        const {username, password} = req.body;
+        const {username, password, email} = req.body;
         const db = req.app.get('db')
         const transporter = req.app.get('transporter')
-        const emailResults = await db.auth.get_user_by_username(email)
-        if(emailResults[0]){
-            return res.status(409).send('Email already exists for a user')
-        }
+        
 
         let user = await db.auth.login(username);
         if (user[0]) {
@@ -26,9 +23,9 @@ module.exports = {
 
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(password, salt);;
-        let newUser = await db.auth.register(username, hash);
-        // const customMailOptions = {...mailOptions, to: email}
-        transporter.sendMail(mailOptions, (err, data) => {
+        let newUser = await db.auth.register(username, hash, email);
+        const customMailOptions = {...mailOptions, to: email}
+        transporter.sendMail(customMailOptions, (err, data) => {
             if(err){
                 console.log(err)
 

@@ -4,6 +4,12 @@ import './App.css';
 import routes from './routes'
 import Nav from './Components/Nav'
 
+
+const dashboardStyle = {
+  backgroundColor: '#333333', height: '100vh', width: '100%'
+
+}
+
 class App extends Component{
   constructor(){
     super()
@@ -18,10 +24,11 @@ class App extends Component{
   render(){
     return(
       <div>
+        <div styles={dashboardStyle}>
         <Nav/>
         {routes}
        
-        
+        </div>
         </div>
     )
   }

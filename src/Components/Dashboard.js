@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
 
 
+
+const dashboardStyle = {
+    backgroundColor: '##a39b9b', height: '100vh', width: '100%'
+
+}
+
 class Dashboard extends Component{
     constructor(){
         super()
@@ -9,9 +15,11 @@ class Dashboard extends Component{
         }
     }
 
+
+
     render(){
         return(
-            <div>dashboard</div>
+            <div style= {dashboardStyle}>dashboard</div>
         )
     }
 }

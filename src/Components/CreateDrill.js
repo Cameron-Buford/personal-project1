@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
-
+const dashboardStyle = {
+    backgroundColor: '#333333', height: '100vh', width: '100%'
+  
+  }
 class CreateDrill extends Component{
     constructor(){
         super()
@@ -30,7 +33,7 @@ class CreateDrill extends Component{
     render(){
         const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
-            <div>
+            <div styles={dashboardStyle}>
                     
                 <div>
                     <p>{'name'}</p>

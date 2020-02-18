@@ -2,7 +2,10 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import {withRouter} from 'react-router-dom'
 
-
+const dashboardStyle = {
+    backgroundColor: '#333333', height: '100vh', width: '100%'
+  
+  }
 class Drills extends Component{
     constructor(){
         super()
@@ -42,7 +45,7 @@ class Drills extends Component{
     render(){
         const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
-            <div className= 'drillmain'>
+            <div className= 'drillmain' styles={dashboardStyle}>
                 <div className= 'drilltable'>
                 {this.state.drills.map(drill => {
                     return (

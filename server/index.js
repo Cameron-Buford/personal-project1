@@ -4,7 +4,7 @@ const session= require('express-session')
 const massive = require('massive')
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, SERVER_EMAIL, SERVER_PASSWORD}= process.env
 const app = express()
-const nodemailer = require('nodemailer  ')
+const nodemailer = require('nodemailer')
 
 
 const transporter = nodemailer.createTransport({

@@ -2,7 +2,16 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 
-
+const myDrillStyle = {
+    backgroundColor: 'grey', 
+    height: '100vh', 
+    maxWidth: '400px', 
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  
+  }
 class MyDrills extends Component{
     constructor(){
         super()
@@ -77,14 +86,14 @@ class MyDrills extends Component{
 
     render(){
         return(
-            <div>
+            <div styles={myDrillStyle}>
                 <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
-                <div className= 'mydrillbody'>
+                <div styles={myDrillStyle}>
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
                     return (
-                        <div className= 'mydrills'>
-                            <h1>{myDrills.name}</h1>
+                        <div styles={myDrillStyle}>
+                            <h1 styles= {{backgroundColor: 'green'}}>{myDrills.name}</h1>
                             <h1>{myDrills.distance}</h1>
                             <h1>{myDrills.shots}</h1>
                             <h1>{myDrills.setups}</h1>

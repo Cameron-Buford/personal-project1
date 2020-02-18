@@ -2,6 +2,14 @@ import React, {Component} from 'react'
 import axios from 'axios'
 
 
+const trainerMain = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh',  
+    width: '100%'
+  }
+
 class Trainers extends Component{
     constructor(){
         super()
@@ -37,7 +45,7 @@ class Trainers extends Component{
 
     render(){
         return(
-            <div className= 'trainersmain'>
+            <div className= 'trainermain'>
                 <div className= 'trainersTable'>
                     {this.state.trainers.map(trainers => {
                         return (

@@ -82,28 +82,37 @@
 
 import React, { useState } from "react"
 import axios from "axios"
+
+const dashboardStyle = {
+  backgroundColor: '#333333', height: '100vh', width: '100%'
+
+}
+
 const Auth = props => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("")
   
 
-  
+
   const register = () => {
-    axios.post("/auth/register", { username, password }).then(results => {
+    axios.post("/auth/register", { username, password, email }).then(results => {
       props.history.push("/")
     })
   }
 
 
   const login = () => {
-    axios.post("/auth/login", { username, password }).then(results => {
+    axios.post("/auth/login", { username, password, email }).then(results => {
       props.history.push("/")
     })
   }
 
+  
+
 
   return (
-    <div>
+    <div styles={dashboardStyle}>
         <div>
             <div>
                 <p>{'username'}</p>
@@ -122,6 +131,15 @@ const Auth = props => {
                         value={password}
                         placeholder="password"
                         onChange={e => setPassword(e.target.value)}
+                ></input>
+            </div>
+            <div>
+                <p>{'email'}</p>
+                <input
+                        name="email"
+                        value={email}
+                        placeholder="email"
+                        onChange={e => setEmail(e.target.value)}
                 ></input>
             </div>
             <button
