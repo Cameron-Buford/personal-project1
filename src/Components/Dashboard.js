@@ -221,7 +221,7 @@ class Dashboard extends Component{
                     </div>
                 </div>
 
-                <footer style= {foot} > STAY FROSTY </footer>
+                <div class='footer' style= {foot} > STAY FROSTY </div>
             
             </div>
         )

@@ -37,35 +37,16 @@ const quoteBox = {
 
 }
 
-const drilltable = {
-    backgroundColor: '#333333',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    // flexDirection: 'column',
+const buttonDiv = {
+    height: '100px',
     width: '100%',
-    flexWrap: 'wrap'
-  
-  }
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+}
 
-  const drillbox = {
-      backgroundColor: 'rgb(223, 206, 206)',
-      width: '400px',
-      minHeight: '500px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      flexDirection: 'column',
-      fontSize: '25px',
-      fontWeight: 'bold',
-      margin: '10px'
-      
-  }
 
-  const drillLabel = {
-      fontSize: '15px',
-      margin: '5px'
-  }
+
 
   const foot = {
     backgroundColor: 'rgb(133, 121, 121)',
@@ -93,17 +74,17 @@ class MyTraining extends Component{
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
+                <div style={buttonDiv}>
+                    <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
+                    <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
+                </div>
                 <div>
-                    <div>
-                        <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
-                        <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
-                    </div>
                     <div style= { drillBodyOne}>
 
                     </div>
                 </div>
 
-                {/* <div class='footer' style= {foot} > STAY FROSTY </div> */}
+                <div class='footer' style= {foot} > STAY FROSTY </div>
             </div>
         )
     }

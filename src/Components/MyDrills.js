@@ -25,6 +25,14 @@ const quoteBox = {
 
 }
 
+const buttonDiv = {
+    height: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+}
+
 const drilltable = {
     backgroundColor: '#333333',
     display: 'flex',
@@ -142,8 +150,12 @@ class MyDrills extends Component{
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
-                <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
-                <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
+
+                <div style= {buttonDiv}>
+                    <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
+                    <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
+                </div>
+
                 <div style= {drilltable}>
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
@@ -175,7 +187,7 @@ class MyDrills extends Component{
                 })}
                 </div>
 
-                <footer style= {foot} > STAY FROSTY </footer>
+                <div class='footer' style= {foot} > STAY FROSTY </div>
                 
                 
             </div>

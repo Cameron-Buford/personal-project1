@@ -63,6 +63,18 @@ const drilltable = {
     alignItems: 'center',
     justifyContent: 'space-around'
 }
+
+const drillBodyOne = {
+    backgroundColor: '#333333', 
+    height: '100vh', 
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+
+
+}
 class MyTraining extends Component{
     constructor(){
         super()
@@ -114,6 +126,7 @@ class MyTraining extends Component{
 
                 </div>
                 <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
+                <div style= { drillBodyOne}>
                 <div style= {drilltable}>
                     {this.state.myTrainers.map(myTrainers => {
                         return (
@@ -133,7 +146,9 @@ class MyTraining extends Component{
                     
                 </div>
 
-                <footer style= {foot} > STAY FROSTY </footer>
+                </div>
+
+                <div class='footer' style= {foot} > STAY FROSTY </div>
         </div>
     )
 }

@@ -83,10 +83,34 @@
 import React, { useState } from "react"
 import axios from "axios"
 
-const dashboardStyle = {
-  backgroundColor: '#333333', height: '100vh', width: '100%'
+const drillBody = {
+  backgroundColor: '#333333', 
+  height: '100vh', 
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  justifyContent: 'space-around'
+
 
 }
+
+
+const drillbox = {
+  backgroundColor: 'rgb(223, 206, 206)',
+  width: '400px',
+  minHeight: '500px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  flexDirection: 'column',
+  fontSize: '25px',
+  fontWeight: 'bold',
+  margin: '10px'
+  
+}
+
+
 
 const Auth = props => {
   const [username, setUsername] = useState("")
@@ -112,10 +136,10 @@ const Auth = props => {
 
 
   return (
-    <div styles={dashboardStyle}>
-        <div>
-            <div>
-                <p>{'username'}</p>
+    <div style= {drillBody}>
+        <div style= {drillbox}>
+            <div >
+                <p>{'USERNAME:'}</p>
                 <input
                         name="username"
                         value={username}
@@ -125,7 +149,7 @@ const Auth = props => {
             </div>
 
             <div>
-                <p>{'Password'}</p>
+                <p>{'PASSWORD:'}</p>
                 <input
                         name="password"
                         value={password}
@@ -134,7 +158,7 @@ const Auth = props => {
                 ></input>
             </div>
             <div>
-                <p>{'email'}</p>
+                <p>{'EMAIL:'}</p>
                 <input
                         name="email"
                         value={email}

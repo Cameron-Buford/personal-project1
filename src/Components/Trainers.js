@@ -120,7 +120,7 @@ class Trainers extends Component{
                     
                 </div>
 
-                <footer style= {foot} > STAY FROSTY </footer>
+                <div class='footer' style= {foot} > STAY FROSTY </div>
                 
             </div>
         )
