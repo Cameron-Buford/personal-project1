@@ -8,6 +8,7 @@ import MyTraining from "./Components/MyTraining";
 import MyDrills from "./Components/MyDrills";
 import MyTrainers from "./Components/MyTrainers";
 import CreateDrill from "./Components/CreateDrill";
+import Stats from './Components/Stats';
 
 
 export default (
@@ -20,5 +21,6 @@ export default (
         <Route path='/mydrills' component={MyDrills}/>
         <Route path='/mytrainers' component={MyTrainers}/>
         <Route path='/createdrill' component={CreateDrill}/>
+        <Route path= '/stats/:mydrill_id' component= {Stats}/>
     </Switch>
 );

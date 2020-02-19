@@ -20,6 +20,18 @@ module.exports = {
         
     },
 
+    getStats: (req, res) => {
+        const db = req.app.get('db')
+        // const {user_id} = req.session.user;
+        const {mydrill_id} = req.params;
+        const {scores} = req.body
+
+        db.stats.get_stats(mydrill_id, scores)
+        .then((results) => 
+        res.status(200).send(results))
+
+    },
+
     createDrill: async(req, res) => {
         const db = req.app.get('db')
         const {name, distance, shots, setup, partime, score, actions} = req.body;

@@ -171,6 +171,8 @@ class MyDrills extends Component{
 
                             <h1 style= {drillLabel}>{myDrills.score}</h1>
 
+                            <button onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>MY STATS </button>
+
                            
 
                                 <button onClick= {() => this.updateScore(myDrills.drill_id)}>Update your Score</button>
