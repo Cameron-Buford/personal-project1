@@ -144,7 +144,7 @@ const civTextBox = {
 
 
 const foot = {
-    backgroundColor: '#333333',
+    backgroundColor: 'rgb(133, 121, 121)',
     height: '100px',
     width: '100%',
     display: 'flex',

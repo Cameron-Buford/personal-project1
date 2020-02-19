@@ -110,11 +110,14 @@ class CreateDrill extends Component{
     render(){
         const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
+
             <div style= { drillBody}>
+
                 <div style= {quoteBox}>
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
+                <button  onClick={() => this.props.history.push('/mydrills')}>Return To My Drills</button>
 
                 <div style= { drillBodyOne}>
                     

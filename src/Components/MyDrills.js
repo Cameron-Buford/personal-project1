@@ -130,6 +130,7 @@ class MyDrills extends Component{
 
 
       filterByScore = (drills) => {
+          console.log(drills)
         for(let i = 0; i <drills.length; i++){
           for(let j = drills.length-1; j > i; j--){
             if(drills[i].drill_id === drills[j].drill_id){
@@ -137,6 +138,7 @@ class MyDrills extends Component{
             }
           }
         }
+        console.log(drills)
         return drills
       }
       

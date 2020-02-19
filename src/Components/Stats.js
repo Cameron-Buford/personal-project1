@@ -33,6 +33,7 @@ export default class LineGraph extends Component {
     render() {
         return (
             <div >
+                <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
                 <canvas
                     id="myChart"
                     ref={this.chartRef}
