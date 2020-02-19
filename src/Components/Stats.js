@@ -1,81 +1,43 @@
-import React, {Component} from 'react'
-import {Line} from 'react-chartjs-2'
+import React, { Component } from 'react'
+import Chart from "chart.js";
+
 import axios from 'axios'
-import {withRouter} from 'react-router-dom'
 
-
-
-const stats = {
-    labels: [
-
-    ],
-    datasets: [
-
-        {
-            label: 'Score Stats',
-            fill: false,
-            lineTension: 0.5,
-            backgroundColor: 'white',
-            borderColor: 'black',
-            borderWidth: 2,
-            data:[ 
-
-            ]
-        }
-    ]
-}
-
-
-class Stats extends Component{
-    constructor(){
-        super()
-        this.state = {
-            stats: []
-
-        }
-    }
-
-    componentDidMount = () => {
-
+export default class LineGraph extends Component {
+    chartRef = React.createRef();
+    
+    componentDidMount() {
+        const myChartRef = this.chartRef.current.getContext("2d");
         axios.get(`/api/stats/${this.props.match.params.mydrill_id}`).then(results => {
             console.log(results)
-            stats.datasets.data= results.data
-            this.setState({stats: results.data})
+            
+            const data = results.data.map(element => element.score)
+            new Chart(myChartRef, {
+                type: "line",
+                data: {
+                    //Bring in data
+                    labels: data,
+                    datasets: [
+                        {
+                            label: "Scores",
+                            data: data,
+                        }
+                    ]
+                },
+                options: {
+                    //Customize chart options
+                }
+            });
         }).catch(err => console.log(err))
     }
-
-
-
-
-    render(){
+    render() {
         return (
-            <div>Stats
-                <div>
-                    {this.state.stats.map(stats => {
-                        return (
-                            <div>
-                                <h1>{stats.score}</h1>
-                            </div>
-                        )
-                    })}
-                </div>
-                <Line 
-                data= {stats}
-                options= {{
-                    title: {
-                        display: true,
-                        text: 'scores',
-                        fontSize: 20
-                    },
-                    legend: {
-                        display: true,
-                        position: 'right'
-                    }
-                }}
+            <div >
+                <canvas
+                    id="myChart"
+                    ref={this.chartRef}
                 />
             </div>
         )
     }
 }
-
-export default (withRouter(Stats)) 
