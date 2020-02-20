@@ -104,7 +104,7 @@ class Trainers extends Component{
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
-                <div style= {drilltable}>
+                <div style= {drilltable} className= 'trainerTable'>
                     {this.state.trainers.map(trainers => {
                         return (
                             <div style= {drillbox}>

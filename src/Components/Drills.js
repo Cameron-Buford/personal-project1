@@ -110,7 +110,7 @@ class Drills extends Component{
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
-                <div style= {drilltable}>
+                <div style= {drilltable} className= 'drillTable'>
                 {this.state.drills.map(drill => {
                     return (
                         

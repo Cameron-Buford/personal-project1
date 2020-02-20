@@ -149,7 +149,7 @@ class MyDrills extends Component{
         return(
             <div style= { drillBody}>
                 <div style= {quoteBox}>
-                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+                    "Good luck is for novices, bad luck is for everyone.  Bank on skill, you control it." Mike Pannone
 
                 </div>
 

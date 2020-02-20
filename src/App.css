@@ -1,7 +1,6 @@
 .navbar {
   height: 300px;
   width: 100%;
-  /* background-color: lightgreen; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -14,58 +13,67 @@
   /* font-style:  ; */
 }
 
-.trainermain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;  
-  width: 100%;
+@media(max-width: 800px){
+  .navbar{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+  }
 }
 
-.trainersTable {
-  background-color: #a39b9b;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 500px;
-  
-  
-}
+@media(max-width: 800px){
+  .quoteBox{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-/* 
-.drillmain {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;  
-  width: 100%;
-
-} */
-
-.drilltable {
-  background-color: lightcoral;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  max-width: 400px;
-
+  }
 }
 
 
-/* .mydrillbody {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  max-width: 400px;
-} */
 
-.mydrills {
 
-  
+
+
+@media(max-width: 900px){
+  .categoryContainer{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: space-around;
+    margin: 50px; */
+  }
+}
+
+
+@media(max-width: 900px){
+  .drillTable{
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+  }
+}
+
+@media(max-width: 900px){
+  .trainerTable{
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+  }
 }
 
 .createdrillbutton {
