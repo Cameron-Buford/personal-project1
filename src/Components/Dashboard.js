@@ -252,7 +252,7 @@ class Dashboard extends Component{
                 <div style= { spacerOne }></div>
 
 
-                <div style= {dashboardStyle}>
+                <div style= {dashboardStyle} className= 'dashboardStyle'>
 
                
 

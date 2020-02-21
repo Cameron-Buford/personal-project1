@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 
 const drillBody = {
-    backgroundColor: '#333333', 
+    // backgroundColor: '#333333', 
     height: '100%', 
     width: '100%',
     display: 'flex',
@@ -33,7 +33,9 @@ const buttonDiv = {
 }
 
 const drilltable = {
-    backgroundColor: '#333333',
+    
+    backgroundColor: 'transparent',
+    // backgroundColor: '#333333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -44,21 +46,28 @@ const drilltable = {
   }
 
   const drillbox = {
-      backgroundColor: 'rgb(223, 206, 206)',
-      width: '400px',
-      minHeight: '500px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      flexDirection: 'column',
-      fontSize: '25px',
-      fontWeight: 'bold',
-      margin: '10px'
+    backgroundColor: 'transparent',
+    width: '400px',
+    minHeight: '500px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexDirection: 'column',
+    fontSize: '25px',
+    fontWeight: 'bold',
+    margin: '10px',
+    backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    borderRadius: '15px',
       
   }
 
   const drillBodyOne = {
-    backgroundColor: '#333333', 
+    // backgroundColor: '#333333', 
+    backgroundImage: 'url(https://lh3.googleusercontent.com/aYzAoEP0mupEIR0VxculjWf8K0hjoMSRo4cVUQdvJ1yS2WtwyZAqHOhVRlnZRLiWpp0z3MgEGl-JldyvxhXjrK8B7TZQw2gyLvPNpneuh7chPfBneWg_aiD_W9ZsUsFvxh065edjfrBqFYFgjEc1CnnoVA60ByT_1qPos3F-RKuPrjCf7Wl5vNT2fUPjNKDmWANuSBNwKYFOX-4ojAoOuvUAXfwEAKM5XgBunhJ0NwdcTzJXa4xrTp9igr7taFGkIn7IK7v1AtfOtoZuivAU73k0g9FXA5Hmaicgjewx1ZFMpzmEfT5eTe5RQ3UVX4pv-MwR52yzOIioD8KeZ8affWeFWLNGQgJP5RJGcMT_GnT-sg1HxnpKQX3xxAuGG2vWXpRDfYuh1QgDuHW5jP7wacBoNYbn5jsCwsj_G12xYaEuwwV9l1Z1JA_WqiSn2ZMefhYL5-yhiU6aasz_WEKayA6_7umFNdjpD3zeSfd2oQU_p4ZMW6O1MxtJcwjXPf2qKVbvp0Q--Rb2dV0xMXs9cFB2Ujdx_uCYtf-brIgmJMoyJX75wGPr0QO4QQJDvE47j8D6nnHU5Ej7XxsvXcH1MsgT_sPN8nclxsKKAAN-vskHUlflsE1i129i6CuORnBkpuUQvZaZam9M9SXJEQMZHHBiyn15tb2CyVxcBa1afm5Ih1Ubtznt0wd4=w828-h544-no)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
     height: '100%', 
     width: '100%',
     display: 'flex',

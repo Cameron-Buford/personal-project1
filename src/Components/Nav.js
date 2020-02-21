@@ -25,7 +25,13 @@ const titleContainer = {
 }
 
 const buttonLine = {
-    backgroundColor: 'rgba(117, 111, 111, 0.5)'
+    backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    borderRadius: '15px',
+    width: '800px',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    textDecoration: 'underline'
 }
 
 const buttons = {
@@ -35,11 +41,28 @@ const buttons = {
     fontSize: '30px'
 }
 
+
+const registrationDiv = {
+    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    height: '100px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+
+}
+
 const loginButtons = {
     backgroundColor: 'transparent',
     border: 'none',
     fontWeight: 'bold',
     fontSize: '15px'
+}
+
+const shooterInStack = {
+    color: 'black',
+    fontWeight: 'bold'
+
 }
 
 class Nav extends Component{
@@ -62,11 +85,14 @@ class Nav extends Component{
     }
 
     render(){
+        console.log(this.props)
+
+       
 
         if (this.props.location.pathname === '/auth') {
             return <></>;
          } else {
-             return(
+             return( 
              <div className= 'navbar'>
 
                     <div style= {titleContainer}>
@@ -85,8 +111,17 @@ class Nav extends Component{
                         <button style= {buttons} className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
                     </div>
 
-                    <div>
-                        <button style= {loginButtons} className='loginbutton' onClick={() => this.props.history.push('/auth')}>Login/Register</button>
+                    
+
+                    <div style= {registrationDiv}>
+                        {this.props.user.user_id ? 
+                        <div style= {shooterInStack}> Shooter in Stack </div>:
+                        <button 
+                            style= {loginButtons} 
+                            className='loginbutton' 
+                            onClick={() => this.props.history.push('/auth')}
+                            
+                            >Login/Register</button>}
                         <button style= {loginButtons} onClick= {() => this.logout()}>logout</button>
                     </div>
                         

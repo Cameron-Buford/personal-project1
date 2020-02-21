@@ -34,7 +34,13 @@ const buttonDiv = {
 }
 
 const drilltable = {
-    backgroundColor: '#333333',
+    backgroundImage: 'url(https://lh3.googleusercontent.com/43Ja1_yrILlTSGp28sukJPbWwuAVbrN9ul-qjei5IzLow14_jqS4BVrzH6ngxfZkhR95eI7ENvRbANKhwPRFoaOKpeinmEsW3h2Xt6I9-kHn3pIabgkONTnGinXWvKqdVWzEIa7iGfTnuxTUR_2EEYQ6rpKnQZzBMlvX6PV50-IBH97hjBbiZ2BMqDWkJoY7DOWyaf69oR-_41lQ6pWnEDDhELfZi5QJcLh2ymefav9uHoS06JG2oqOXw6THf0elyHQRFvSx7krB7bxsSXxuVl5S4W19-RQIgZDnJkLj5MEoGn1ArjLNNQd7YRf8jyVKFuaA42B55d78xtI49oKh3s0CPwaAg3A0f0hOveI10ZckiTeGl6JE8DVt18cNpUBBdLzQ7t6ppY7dI8o0zxsnnNEqeNKKIvFwDlfPhoeo2iHGWxn6HuXBeyorxLEQE26TWflGw5VWssq360kYmw_mVRZRNDZB7w5B3OpxJmABGhBbfNYddoYMttIO8P1-Vs70jW6kmaYBoHtBBu5nsPb-f6OKtK4wpF4ifl6jW_LWw1bbFSHgjl4UlqkBspdLfK55-9DyWYii-6Vyk1lz0hKOnFl2DIcg0kLy0XtoaJo0VEd4pRP3gHsEWfId7aXQwX3rGLZHMOks_kXgcgur95X_ELaVrpPSdKk4JZuhuf8Qc_86q-mt8mkhDoM=w1136-h640-no)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    backgroundColor: 'transparent',
+    // backgroundColor: '#333333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -45,16 +51,18 @@ const drilltable = {
   }
 
   const drillbox = {
-      backgroundColor: 'rgb(223, 206, 206)',
-      width: '400px',
-      minHeight: '500px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      flexDirection: 'column',
-      fontSize: '25px',
-      fontWeight: 'bold',
-      margin: '10px'
+    backgroundColor: 'transparent',
+    width: '400px',
+    minHeight: '500px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexDirection: 'column',
+    fontSize: '25px',
+    fontWeight: 'bold',
+    margin: '10px',
+    backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    borderRadius: '15px',
       
   }
 

@@ -42,7 +42,7 @@ const drilltable = {
   }
 
   const drillbox = {
-      backgroundColor: 'rgb(223, 206, 206)',
+    //   backgroundColor: 'rgb(223, 206, 206)',
       width: '400px',
       minHeight: '500px',
       display: 'flex',

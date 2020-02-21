@@ -86,13 +86,11 @@ class MyTraining extends Component{
                 </div>
                 <div style = {trainingBody}>
                     <div style={buttonDiv}>
-                    <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
-                    <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
+                        <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
+                        <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
                     </div>
                     <div>
-                    <div style= { drillBodyOne}>
-
-                    </div>
+                        <div style= { drillBodyOne}></div>
                     </div>
                 </div>
 
