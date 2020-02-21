@@ -108,7 +108,7 @@ class Trainers extends Component{
         return(
             <div style= { drillBody}>
                 <div style= {quoteBox}>
-                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+                “As all born teachers, he was primarily a student.”― Steven Pressfield, Gates of Fire
 
                 </div>
                 <div style= {drilltable} className= 'trainerTable'>

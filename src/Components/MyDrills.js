@@ -13,9 +13,22 @@ const drillBody = {
 
 
 }
-
+const space = {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '5px'
+}
 const quoteBox = {
-    backgroundColor: 'rgb(223, 206, 206)',
+    // backgroundColor: 'rgb(223, 206, 206)',
+    // width: '100%',
+    // height: '100px',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-around',
+    // fontSize: '25px'
+
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -156,6 +169,8 @@ class MyDrills extends Component{
     render(){
         return(
             <div style= { drillBody}>
+                <div style= {space}></div>
+                <div style= {drilltable}>
                 <div style= {quoteBox}>
                     "Good luck is for novices, bad luck is for everyone.  Bank on skill, you control it." Mike Pannone
 
@@ -166,7 +181,6 @@ class MyDrills extends Component{
                     <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
                 </div>
 
-                <div style= {drilltable}>
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
                     return (

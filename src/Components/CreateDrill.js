@@ -123,7 +123,9 @@ class CreateDrill extends Component{
             <div style= { drillBody}>
 
                 <div style= {quoteBox}>
-                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+                “Never walk away from home ahead of your axe and sword. You can't feel a battle in your bones or foresee a fight.” ― the Havamal 
+
+
 
                 </div>
                 <button  onClick={() => this.props.history.push('/mydrills')}>Return To My Drills</button>

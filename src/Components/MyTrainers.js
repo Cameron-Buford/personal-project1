@@ -130,7 +130,7 @@ class MyTraining extends Component{
         return(
             <div style= { drillBody}>
                  <div style= {quoteBox}>
-                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+                 “With every triumph I am empowered, with every failure I am resolute—I will never quit!” ― Dale Comstock, former Army JSOC Operator
 
                 </div>
                 <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>

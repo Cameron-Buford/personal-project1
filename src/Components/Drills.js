@@ -15,8 +15,15 @@ const drillBody = {
 
 }
 
+const space = {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '5px'
+}
+
 const quoteBox = {
-    backgroundColor: 'rgb(223, 206, 206)',
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    // backgroundColor: 'rgb(223, 206, 206)',
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -43,6 +50,16 @@ const drilltable = {
     width: '100%',
     flexWrap: 'wrap'
   
+  }
+
+  const tableTwo = {
+      backgroundColor:'transparent',
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-around',
+      flexWrap: 'wrap'
+      
   }
 
   const drillbox = {
@@ -119,12 +136,14 @@ class Drills extends Component{
         const {name, distance, shots, setup, partime, score, actions} = this.state
         return(
             <div style= { drillBody} >
+                <div style= {space}></div>
+                <div style= {drilltable} className= 'drillTable'>
                   <div style= {quoteBox}>
-                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+                  “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
 
                 </div>
-                <div className = 'bodyBackground'>
-                    <div style= {drilltable} className= 'drillTable'>
+                <div style= {tableTwo} className = 'bodyBackground'>
+                    
                         {this.state.drills.map(drill => {
                             return (
                         

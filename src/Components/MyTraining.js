@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
+import React, {useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-import axios from 'axios'
+
+import {getUser} from '../Duxx/reducer'
+import {connect} from 'react-redux'
 
 const drillBody = {
     backgroundColor: '#333333', 
@@ -66,28 +68,27 @@ const buttonDiv = {
     alignItems: 'center',
     justifyContent: 'space-around'
 }
-class MyTraining extends Component{
-    constructor(){
-        super()
-        this.state ={
-            
+const MyTraining = ({history, user}) => {
+ 
 
+
+    useEffect(() => {
+
+        if(!user.user_id ){
+            history.push('/auth')
         }
-    }
 
-
-
-    render(){
+    }, [])
         return(
             <div style= { drillBody} >
                 <div style= {quoteBox}>
-                    "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
+                “You have never tasted freedom... or you would know it is purchased not with gold, but steel.” Dienekes― Steven Pressfield, Gates of Fire
 
                 </div>
                 <div style = {trainingBody}>
                     <div style={buttonDiv}>
-                        <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
-                        <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
+                        <button  onClick={() => history.push('/mydrills')}>my drills</button>
+                        <button  onClick={() => history.push('/mytrainers')}>my trainers</button>
                     </div>
                     <div>
                         <div style= { drillBodyOne}></div>
@@ -97,7 +98,12 @@ class MyTraining extends Component{
                 <div class='footer' style= {foot} > STAY FROSTY </div>
             </div>
         )
-    }
+    
 }
 
-export default (withRouter(MyTraining))
+function mapStateToProps(state) {
+    return {user: state.reducer.user};
+    
+}
+
+export default connect(mapStateToProps)(withRouter(MyTraining))

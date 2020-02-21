@@ -98,7 +98,7 @@ export default class LineGraph extends Component {
                             borderWidth: 4,
                             data: data,
                             lineTension: 0.5,
-                            
+
                         }
                     ]
                 },
@@ -130,7 +130,7 @@ export default class LineGraph extends Component {
         return (
             <div style= { drillBody}>
                 <div style= {quoteBox}>
-                    "Good luck is for novices, bad luck is for everyone.  Bank on skill, you control it." Mike Pannone
+                    “There is no “secret sauce,” but there is a lot of hard work, dedication, and drive.” Mark Owen, former NSWDG Operator
 
                 </div>
 
