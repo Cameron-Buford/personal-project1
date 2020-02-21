@@ -4,12 +4,22 @@ import React, {Component} from 'react'
 //container styling
 
 
-const dashboardStyle = {
+const backbody= {
     backgroundImage: 'url(https://lh3.googleusercontent.com/b6OP4BGfmLvt7ZZ93baSyE_m4d8-tdEsQc8wXl0RD-w02H77AbJS-XRDoA423JuJt4USXHeLKIpqvytUlUFMNxAc-Lmgnx1MyQFE6u7NfrqzoLjVWsVLDw5M3pUZdlLiP9170c2W2agkpexVUPDEI0BlhNSq2lbMJQQI1yrzEVii3icdRSCmeX3kixEAClioOheMsI0cHe-Q9f26tbsOr-quIEKm1xZ-f7jzN7A8ndU39x6fRbjvrT8zGFaDasIiCOGPG3zE701Pj_Mq32zVa1nNWPuMyniCxrHqMRAyF1NvlDsMjF-q7jeBEgJFlmYaBH3k0ffJR9w9p6fwmQ9i-pJB6SceX8sTv6W0olC6GRrJnsmJsc6eVtUxPRc6NH_2cxqtTSmjeUFnHXV_Ic0GD4e8F7wEZ4vX6_usZiRotTr7iIaJHsdifP10Z59KiM4lWDVxP0A_9nPMNz3QJYiDHHoeQgYNDa2zeM2nIaC0sJDcTOJWd-4QFrPx2KDleC5Y9EuOMDROik1evrE-5DGHg-V60z6LRl3H3KNKzqpk6OAssJGURAK1MDNjuTv3Ib-5H9Zg8SJr7zLIhtjjm9k4atXKWyx_crQ7elXief5sdt7pOqguHFr8a8GOd_uXnjXTtCrDzrg5nijU0RzYF870ILEq9uTRRgkDG83eNCFFDtQl-vI0rji4NPwd=w986-h657-no)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
     backgroundPosition: 'center',
-    // backgroundColor: '#333333', 
+    backgroundAttachment: 'fixed'
+
+}
+
+
+const dashboardStyle = {
+    // backgroundImage: 'url(https://lh3.googleusercontent.com/b6OP4BGfmLvt7ZZ93baSyE_m4d8-tdEsQc8wXl0RD-w02H77AbJS-XRDoA423JuJt4USXHeLKIpqvytUlUFMNxAc-Lmgnx1MyQFE6u7NfrqzoLjVWsVLDw5M3pUZdlLiP9170c2W2agkpexVUPDEI0BlhNSq2lbMJQQI1yrzEVii3icdRSCmeX3kixEAClioOheMsI0cHe-Q9f26tbsOr-quIEKm1xZ-f7jzN7A8ndU39x6fRbjvrT8zGFaDasIiCOGPG3zE701Pj_Mq32zVa1nNWPuMyniCxrHqMRAyF1NvlDsMjF-q7jeBEgJFlmYaBH3k0ffJR9w9p6fwmQ9i-pJB6SceX8sTv6W0olC6GRrJnsmJsc6eVtUxPRc6NH_2cxqtTSmjeUFnHXV_Ic0GD4e8F7wEZ4vX6_usZiRotTr7iIaJHsdifP10Z59KiM4lWDVxP0A_9nPMNz3QJYiDHHoeQgYNDa2zeM2nIaC0sJDcTOJWd-4QFrPx2KDleC5Y9EuOMDROik1evrE-5DGHg-V60z6LRl3H3KNKzqpk6OAssJGURAK1MDNjuTv3Ib-5H9Zg8SJr7zLIhtjjm9k4atXKWyx_crQ7elXief5sdt7pOqguHFr8a8GOd_uXnjXTtCrDzrg5nijU0RzYF870ILEq9uTRRgkDG83eNCFFDtQl-vI0rji4NPwd=w986-h657-no)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundColor: 'transparent', 
     height: '100%', 
     width: '100%',
     display: 'flex',
@@ -35,41 +45,22 @@ const quoteBox = {
 
 
 const aboutTitle = {
-    // backgroundColor: 'rgb(133, 121, 121',
-    // width: '100%',
-    // height: '50px',
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'space-around',
-    // backgroundColor: 'rgb(223, 206, 206)',
-    // height: ''
-    // justifyContent: 'space-around',
 
 
     fontSize: '25px',
-
+    textDecoration: 'underline',
     backgroundColor: 'transparent',
     color: '#f2f2f2',
     fontWeight: 'bold',
     width: '500px',
     display: 'flex',
     alignItems: 'center',
-    padding: '10px'
+    padding: '10px',
+    justifyContent: 'center'
 }
 
 const aboutBox = {
-    // backgroundColor: 'rgb(133, 121, 121)',
-    // width: '100%',
-    // height: '200px',
-    // display: 'flex',
-    // alignItems: 'center',
-    // flexWrap: 'wrap',
-    // justifyContent: 'space-around' 
-     // height: ''
-    // backgroundColor: 'rgb(223, 206, 206)',
-
-
-    backgroundColor: 'transparent',
+   
     color: '#f2f2f2',
     fontWeight: 'bold',
     width: '500px',
@@ -77,32 +68,32 @@ const aboutBox = {
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '10px',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: 'rgba(117, 111, 111, 0.5)'
+    
 
 }
 
 const joinTitle= {
-    // height: ''
-    // backgroundColor: 'rgb(223, 206, 206)',
+   
 
 
 
     fontSize: '25px',
-
+    textDecoration: 'underline',
     backgroundColor: 'transparent',
     color: '#f2f2f2',
     fontWeight: 'bold',
     width: '500px',
     display: 'flex',
     alignItems: 'center',
-    padding: '10px'
+    padding: '10px',
+    justifyContent: 'center'
 
 }
 
 const joinText= {
-    // height: ''
-    // backgroundColor: 'rgb(223, 206, 206)',
-
+    
 
     backgroundColor: 'transparent',
     color: '#f2f2f2',
@@ -112,23 +103,37 @@ const joinText= {
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '10px',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: 'rgba(117, 111, 111, 0.5)'
 
 }
 
 const spacerOne = {
-    backgroundColor: '#333333',
+    backgroundColor: 'transparent',
     width: '100%',
     minHeight: '100px'
 }
 
+const spacerTwo = {
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    width: '100%',
+    minHeight: '50px',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    fontSize: '30px',
+    fontWeight: 'bold',
+    textDecoration: 'underline' 
+}
+
 const categoryContainer = {
-    backgroundColor: '#333333',
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
     width: '100%',
     height: '1000px',
     display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'baseline'    
+    alignItems: 'baseline'
+       
 
 }
 
@@ -242,6 +247,8 @@ class Dashboard extends Component{
 
                 </div>
 
+                <div style= {backbody}>
+
                 <div style= { spacerOne }></div>
 
 
@@ -252,9 +259,9 @@ class Dashboard extends Component{
 
                 
 
-                        <div style= { aboutBox}>
+                        <div style= { aboutBox} >
                     <div style= { aboutTitle }>ABOUT THE TRAINING HQ </div>
-                             Welcome to the Training HQ. The industry is oversaturated with "tactical     trainers" and those who profess to teach tactical gunsmanship and gunfighting skills for LEO and Civilian gunhandlers.  Much of the training that is easiliy found by many in the private sector, your agency or local department is anywhere from subpar all the way to dangerous. We believe every LEO and Civilian who carries the means of deadly force have the duty to seek the correct training and work to be the best and most responsible asset that they can be. Here at the HQ, we work to provide you with resources to to fulfill your search for the most compentent and experienced trainers in the industry. The days of searching the web for trainers to be caught by marketing schemes of subpar, inexperienced or downright negligent trainers are over.  Feel free to browse our library of trainers to find what will suite your training needs best.  Furthermore, we work to provide a library of industry and Top Tier unit drills and score standards for you to train on and work toward. For every true student, the search for knowledge, skill and wisdom is an endless persuit and we, at the Training HQ, share that drive. We hope that we can come together to train as guardians and assets to those we love and the nation we love and learn from the best to become the best we can be with what we have.  Upwards and onwards.  Stay Frosty. 
+                             Welcome to the Training HQ. The industry is oversaturated with "tactical  trainers" and those who profess to teach tactical gunsmanship and gunfighting skills for LEO and Civilian gunhandlers.  Much of the training that is easiliy found by many in the private sector, your agency or local department is anywhere from subpar all the way to dangerous. We believe every LEO and Civilian who carries the means of deadly force have the duty to seek the correct training and work to be the best and most responsible asset that they can be. Here at the HQ, we work to provide you with resources to to fulfill your search for the most compentent and experienced trainers in the industry. The days of searching the web for trainers to be caught by marketing schemes of subpar, inexperienced or downright negligent trainers are over.  Feel free to browse our library of trainers to find what will suite your training needs best.  Furthermore, we work to provide a library of industry and Top Tier unit drills and score standards for you to train on and work toward. For every true student, the search for knowledge, skill and wisdom is an endless persuit and we, at the Training HQ, share that drive. We hope that we can come together to train as guardians and assets to those we love and the nation we love and learn from the best to become the best we can be with what we have.  Upwards and onwards.  Stay Frosty. 
                         </div>
 
                         <div style= {joinText}> 
@@ -263,6 +270,7 @@ class Dashboard extends Component{
                     </div>
                     
                     <div style= { spacerOne }></div>
+                    <div style= { spacerTwo }> GUARDIANS </div>
                     <div style= {categoryContainer} className= 'categoryContainer'>
 
                         <div style= {leoBox}>
@@ -296,6 +304,8 @@ class Dashboard extends Component{
                         </div>
 
                     </div>
+                </div>
+
                 </div>
 
                 

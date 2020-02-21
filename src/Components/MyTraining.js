@@ -14,8 +14,18 @@ const drillBody = {
 
 }
 
+const trainingBody = {
+    backgroundImage: 'url(https://lh3.googleusercontent.com/RW6wJngp9BiX_JCm7OHu57yoA1GtaUvRwLHqQeP134_z_9oAYIdxmyelg1LoqEaqB6yRLS2TQY28xkRfdduBlgUgjtG1Cr8-Xn_RwXB7rVz07ljRMXuNDlo1LHhgelz0Jbq8hiZfXEYIWZ4-Vwa8fra_5tyrs-p7yFcgegzhdqL-7sZ9wURhhvLePqK8sf_g5HUB86QdKxj1f2kdDpm7LlQt6wqV2RB71b8WoE8B-B6niL0JWrBV3a5PVEQhvECknw5D4Y77OS7pspYWWV1VIW3xY_JeYXEcVfgZgzr31oBe20CGum92xWvVow1skB7CvpDY3Qs0SYv8l1KnfIfSNjmeMdqzvKEMd7VrwezptLPhyubFtnsBZJWmFV4OaJtjYpR2X8DOuENtT0kL-pd45saGmE4ouf1b-3e60KoIwu2JDz6xIOWrBuYSMTH6N2cMi7HhYoTvy76r1ymvR_gQYIi_q8eeHw1GEUe4wfkSFjZfAUkM2KkEMSeFHVXDixycNKTimHveGfiHpGznpfNGNHRbzl7_cank-atCzYJbJL52B26UM2B6GSo_JnCPbCzIW_kP5aJwqhSeUCsODJRL2wX53JOLUeFZ_gvWV_9O5ZkBM4VKw9R4VOGLPbCYhGrgIG_tg8c1CtmSDmfEtPFa3AV3DxRiDLVFmx9Utkw9NeN6rzxppb2w0IVC=w986-h657-no)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    width: '100%',
+    height: '100%'
+}
+
 const drillBodyOne = {
-    backgroundColor: '#333333', 
+    backgroundColor: 'transparent', 
     height: '100vh', 
     width: '100%',
     display: 'flex',
@@ -74,13 +84,15 @@ class MyTraining extends Component{
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
-                <div style={buttonDiv}>
+                <div style = {trainingBody}>
+                    <div style={buttonDiv}>
                     <button  onClick={() => this.props.history.push('/mydrills')}>my drills</button>
                     <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
-                </div>
-                <div>
+                    </div>
+                    <div>
                     <div style= { drillBodyOne}>
 
+                    </div>
                     </div>
                 </div>
 
