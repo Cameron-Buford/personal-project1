@@ -185,13 +185,21 @@ class MyDrills extends Component{
                     console.log(myDrills)
                     return (
                         <div style= {drillbox}>
-                            <h1 style= {drillLabel}>{myDrills.name}</h1>
+                            {/* <h1 style= {drillLabel}>{myDrills.name}</h1>
                             <h1 style= {drillLabel}>{myDrills.distance}</h1>
                             <h1 style= {drillLabel}>{myDrills.shots}</h1>
                             <h1 style= {drillLabel}>{myDrills.setups}</h1>
                             <h1 style= {drillLabel}>{myDrills.partime}</h1>
                             <h1 style= {drillLabel}>{myDrills.score}</h1>
-                            <h1 style= {drillLabel}>{myDrills.actions}</h1>
+                            <h1 style= {drillLabel}>{myDrills.actions}</h1> */}
+
+                                    DRILL NAME: <div style= {drillLabel}> {myDrills.name}</div>
+                                    DISTANCE:<div style= {drillLabel}> {myDrills.distance}</div>
+                                    SHOTS:<div style= {drillLabel}> {myDrills.shots}</div>
+                                    SETUPS: <div style= {drillLabel}> {myDrills.setup}</div>
+                                    PARTIME: <div style= {drillLabel}> {myDrills.partime}</div>
+                                    SCORE: <div style= {drillLabel}> {myDrills.score}</div>
+                                    ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div>
 
                             <h1 style= {drillLabel}>{myDrills.score}</h1>
 
