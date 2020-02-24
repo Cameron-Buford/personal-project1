@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Footer from './Footer'
 
 
 //container styling
@@ -12,7 +13,6 @@ const backbody= {
     backgroundAttachment: 'fixed'
 
 }
-
 
 const dashboardStyle = {
     // backgroundImage: 'url(https://lh3.googleusercontent.com/b6OP4BGfmLvt7ZZ93baSyE_m4d8-tdEsQc8wXl0RD-w02H77AbJS-XRDoA423JuJt4USXHeLKIpqvytUlUFMNxAc-Lmgnx1MyQFE6u7NfrqzoLjVWsVLDw5M3pUZdlLiP9170c2W2agkpexVUPDEI0BlhNSq2lbMJQQI1yrzEVii3icdRSCmeX3kixEAClioOheMsI0cHe-Q9f26tbsOr-quIEKm1xZ-f7jzN7A8ndU39x6fRbjvrT8zGFaDasIiCOGPG3zE701Pj_Mq32zVa1nNWPuMyniCxrHqMRAyF1NvlDsMjF-q7jeBEgJFlmYaBH3k0ffJR9w9p6fwmQ9i-pJB6SceX8sTv6W0olC6GRrJnsmJsc6eVtUxPRc6NH_2cxqtTSmjeUFnHXV_Ic0GD4e8F7wEZ4vX6_usZiRotTr7iIaJHsdifP10Z59KiM4lWDVxP0A_9nPMNz3QJYiDHHoeQgYNDa2zeM2nIaC0sJDcTOJWd-4QFrPx2KDleC5Y9EuOMDROik1evrE-5DGHg-V60z6LRl3H3KNKzqpk6OAssJGURAK1MDNjuTv3Ib-5H9Zg8SJr7zLIhtjjm9k4atXKWyx_crQ7elXief5sdt7pOqguHFr8a8GOd_uXnjXTtCrDzrg5nijU0RzYF870ILEq9uTRRgkDG83eNCFFDtQl-vI0rji4NPwd=w986-h657-no)',
@@ -30,10 +30,17 @@ const dashboardStyle = {
 
 }
 
+const space = {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '5px'
 
+  
+}
 
 const quoteBox = {
-    backgroundColor: 'rgb(223, 206, 206)',
+    backgroundColor: 'rgba(117, 111, 111, 0.95)',
+    // backgroundColor: 'rgb(223, 206, 206)',
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -42,7 +49,6 @@ const quoteBox = {
     fontSize: '25px'
 
 }
-
 
 const aboutTitle = {
 
@@ -69,7 +75,7 @@ const aboutBox = {
     justifyContent: 'space-around',
     padding: '10px',
     flexDirection: 'column',
-    backgroundColor: 'rgba(117, 111, 111, 0.5)'
+    backgroundColor: 'rgba(117, 111, 111, 0.8)'
     
 
 }
@@ -104,7 +110,7 @@ const joinText= {
     justifyContent: 'space-around',
     padding: '10px',
     flexDirection: 'column',
-    backgroundColor: 'rgba(117, 111, 111, 0.5)'
+    backgroundColor: 'rgba(117, 111, 111, 0.8)'
 
 }
 
@@ -123,7 +129,7 @@ const spacerTwo = {
     alignItems: 'center',
     fontSize: '30px',
     fontWeight: 'bold',
-    textDecoration: 'underline' 
+    textDecoration: 'underline overline' 
 }
 
 const categoryContainer = {
@@ -136,8 +142,6 @@ const categoryContainer = {
        
 
 }
-
-
 
 const leoTitle = {
     fontSize:'25px',
@@ -163,10 +167,6 @@ const leoOuterBox = {
     alignItems: 'center'
 }
 
-
-
-
-
 const leoTextBox = {
     backgroundColor: 'rgb(223, 206, 206)',
     width: '350px',
@@ -175,7 +175,6 @@ const leoTextBox = {
     alignItems: 'center',
     justifyContent: 'space-around'
 }
-
 
 const civTitle = {
     fontSize:'25px',
@@ -201,10 +200,6 @@ const civOuterBox = {
     alignItems: 'center'
 }
 
-
-
-
-
 const civTextBox = {
     backgroundColor: 'rgb(223, 206, 206)',
     width: '350px',
@@ -213,17 +208,6 @@ const civTextBox = {
     alignItems: 'center',
     justifyContent: 'space-around'
 }
-
-
-const foot = {
-    backgroundColor: 'rgb(133, 121, 121)',
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around'
-}
-
 
 
 
@@ -242,12 +226,13 @@ class Dashboard extends Component{
     render(){
         return(
             <div>
+                    <div style= {backbody}>
+                        <div style= {space}></div>
                 <div style= {quoteBox}>
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 
                 </div>
 
-                <div style= {backbody}>
 
                 <div style= { spacerOne }></div>
 
@@ -306,12 +291,12 @@ class Dashboard extends Component{
                     </div>
                 </div>
 
+
+                
+                
+
+                <Footer/>
                 </div>
-
-                
-                
-
-                <div class='footer' style= {foot} > STAY FROSTY </div>
             
             </div>
         )

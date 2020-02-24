@@ -1,7 +1,13 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import Footer from './Footer'
 
 const drillBody = {
+    backgroundImage: 'url(https://lh3.googleusercontent.com/aYzAoEP0mupEIR0VxculjWf8K0hjoMSRo4cVUQdvJ1yS2WtwyZAqHOhVRlnZRLiWpp0z3MgEGl-JldyvxhXjrK8B7TZQw2gyLvPNpneuh7chPfBneWg_aiD_W9ZsUsFvxh065edjfrBqFYFgjEc1CnnoVA60ByT_1qPos3F-RKuPrjCf7Wl5vNT2fUPjNKDmWANuSBNwKYFOX-4ojAoOuvUAXfwEAKM5XgBunhJ0NwdcTzJXa4xrTp9igr7taFGkIn7IK7v1AtfOtoZuivAU73k0g9FXA5Hmaicgjewx1ZFMpzmEfT5eTe5RQ3UVX4pv-MwR52yzOIioD8KeZ8affWeFWLNGQgJP5RJGcMT_GnT-sg1HxnpKQX3xxAuGG2vWXpRDfYuh1QgDuHW5jP7wacBoNYbn5jsCwsj_G12xYaEuwwV9l1Z1JA_WqiSn2ZMefhYL5-yhiU6aasz_WEKayA6_7umFNdjpD3zeSfd2oQU_p4ZMW6O1MxtJcwjXPf2qKVbvp0Q--Rb2dV0xMXs9cFB2Ujdx_uCYtf-brIgmJMoyJX75wGPr0QO4QQJDvE47j8D6nnHU5Ej7XxsvXcH1MsgT_sPN8nclxsKKAAN-vskHUlflsE1i129i6CuORnBkpuUQvZaZam9M9SXJEQMZHHBiyn15tb2CyVxcBa1afm5Ih1Ubtznt0wd4=w828-h544-no)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
     // backgroundColor: '#333333', 
     height: '100%', 
     width: '100%',
@@ -13,8 +19,15 @@ const drillBody = {
 
 }
 
+const space = {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '5px'
+}
+
 const quoteBox = {
-    backgroundColor: 'rgb(223, 206, 206)',
+    // backgroundColor: 'rgb(223, 206, 206)',
+    backgroundColor: 'rgba(117, 111, 111, 0.95)',
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -23,27 +36,6 @@ const quoteBox = {
     fontSize: '25px'
 
 }
-
-const buttonDiv = {
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-}
-
-const drilltable = {
-    
-    backgroundColor: 'transparent',
-    // backgroundColor: '#333333',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    // flexDirection: 'column',
-    width: '100%',
-    flexWrap: 'wrap'
-  
-  }
 
   const drillbox = {
     backgroundColor: 'transparent',
@@ -63,11 +55,11 @@ const drilltable = {
 
   const drillBodyOne = {
     // backgroundColor: '#333333', 
-    backgroundImage: 'url(https://lh3.googleusercontent.com/aYzAoEP0mupEIR0VxculjWf8K0hjoMSRo4cVUQdvJ1yS2WtwyZAqHOhVRlnZRLiWpp0z3MgEGl-JldyvxhXjrK8B7TZQw2gyLvPNpneuh7chPfBneWg_aiD_W9ZsUsFvxh065edjfrBqFYFgjEc1CnnoVA60ByT_1qPos3F-RKuPrjCf7Wl5vNT2fUPjNKDmWANuSBNwKYFOX-4ojAoOuvUAXfwEAKM5XgBunhJ0NwdcTzJXa4xrTp9igr7taFGkIn7IK7v1AtfOtoZuivAU73k0g9FXA5Hmaicgjewx1ZFMpzmEfT5eTe5RQ3UVX4pv-MwR52yzOIioD8KeZ8affWeFWLNGQgJP5RJGcMT_GnT-sg1HxnpKQX3xxAuGG2vWXpRDfYuh1QgDuHW5jP7wacBoNYbn5jsCwsj_G12xYaEuwwV9l1Z1JA_WqiSn2ZMefhYL5-yhiU6aasz_WEKayA6_7umFNdjpD3zeSfd2oQU_p4ZMW6O1MxtJcwjXPf2qKVbvp0Q--Rb2dV0xMXs9cFB2Ujdx_uCYtf-brIgmJMoyJX75wGPr0QO4QQJDvE47j8D6nnHU5Ej7XxsvXcH1MsgT_sPN8nclxsKKAAN-vskHUlflsE1i129i6CuORnBkpuUQvZaZam9M9SXJEQMZHHBiyn15tb2CyVxcBa1afm5Ih1Ubtznt0wd4=w828-h544-no)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
+    // backgroundImage: 'url(https://lh3.googleusercontent.com/aYzAoEP0mupEIR0VxculjWf8K0hjoMSRo4cVUQdvJ1yS2WtwyZAqHOhVRlnZRLiWpp0z3MgEGl-JldyvxhXjrK8B7TZQw2gyLvPNpneuh7chPfBneWg_aiD_W9ZsUsFvxh065edjfrBqFYFgjEc1CnnoVA60ByT_1qPos3F-RKuPrjCf7Wl5vNT2fUPjNKDmWANuSBNwKYFOX-4ojAoOuvUAXfwEAKM5XgBunhJ0NwdcTzJXa4xrTp9igr7taFGkIn7IK7v1AtfOtoZuivAU73k0g9FXA5Hmaicgjewx1ZFMpzmEfT5eTe5RQ3UVX4pv-MwR52yzOIioD8KeZ8affWeFWLNGQgJP5RJGcMT_GnT-sg1HxnpKQX3xxAuGG2vWXpRDfYuh1QgDuHW5jP7wacBoNYbn5jsCwsj_G12xYaEuwwV9l1Z1JA_WqiSn2ZMefhYL5-yhiU6aasz_WEKayA6_7umFNdjpD3zeSfd2oQU_p4ZMW6O1MxtJcwjXPf2qKVbvp0Q--Rb2dV0xMXs9cFB2Ujdx_uCYtf-brIgmJMoyJX75wGPr0QO4QQJDvE47j8D6nnHU5Ej7XxsvXcH1MsgT_sPN8nclxsKKAAN-vskHUlflsE1i129i6CuORnBkpuUQvZaZam9M9SXJEQMZHHBiyn15tb2CyVxcBa1afm5Ih1Ubtznt0wd4=w828-h544-no)',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: '100%',
+    // backgroundPosition: 'center',
+    // backgroundAttachment: 'fixed',
     height: '100%', 
     width: '100%',
     display: 'flex',
@@ -78,19 +70,17 @@ const drilltable = {
 
 }
 
-  const drillLabel = {
-      fontSize: '15px',
-      margin: '5px'
-  }
-
-  const foot = {
-    backgroundColor: 'rgb(133, 121, 121)',
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+const buttonStyle = {
+    backgroundColor: '#222222',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '12px',
+    fontWeight: 'bold',
+    width: '100px',
+    height: '50px'
 }
+
+
 class CreateDrill extends Component{
     constructor(){
         super()
@@ -121,6 +111,7 @@ class CreateDrill extends Component{
         return(
 
             <div style= { drillBody}>
+                 <div style= {space}></div>
 
                 <div style= {quoteBox}>
                 “Never walk away from home ahead of your axe and sword. You can't feel a battle in your bones or foresee a fight.” ― the Havamal 
@@ -128,7 +119,7 @@ class CreateDrill extends Component{
 
 
                 </div>
-                <button  onClick={() => this.props.history.push('/mydrills')}>Return To My Drills</button>
+                <button style= {buttonStyle} onClick={() => this.props.history.push('/mydrills')}>Return To My Drills</button>
 
                 <div style= { drillBodyOne}>
                     
@@ -193,7 +184,7 @@ class CreateDrill extends Component{
 
                 </div>
 
-                <div class='footer' style= {foot} > STAY FROSTY </div>
+                <Footer/>
 
             </div>
         )

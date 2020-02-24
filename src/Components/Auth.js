@@ -103,7 +103,6 @@ const drillBody = {
 
 }
 
-
 const loginbox = {
   backgroundColor: 'rgba(117, 111, 111, 0.9)',
   
@@ -121,9 +120,9 @@ const loginbox = {
 }
 
 const authBox = {
-  backgroundColor: 'transparent',
-  // backgroundColor: 'rgba(117, 111, 111, 0.5)',
-  width: '380px',
+  // backgroundColor: 'transparent',
+  backgroundColor: 'rgba(179, 157, 37, 0.3)',
+  width: '390px',
   height: '100px',
   display: 'flex',
   justifyContent: 'space-around',
@@ -146,19 +145,25 @@ const infoBox = {
 }
 
 const registerButton = {
-  backgroundColor: 'green',
+  backgroundColor: '#CD2027',
+  color: '#FFFFFF',
+  width: '150px',
   borderRadius: '12px',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  border: 'none',
 }
 
 const loginButton = {
-  backgroundColor: 'green',
+  backgroundColor: '#CD2027',
+  color: '#FFFFFF',
+  width: '150px',
   borderRadius: '12px',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  border: 'none',
 }
 
 const backhomeButton = {
-  backgroundColor: 'grey',
+  backgroundColor: 'transparent',
   borderRadius: '12px',
   fontWeight: 'bold',
   border: 'none'

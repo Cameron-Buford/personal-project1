@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {withRouter} from 'react-router-dom'
+import Footer from './Footer'
 
 
 const drillBody = {
@@ -22,7 +23,7 @@ const space = {
 }
 
 const quoteBox = {
-    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    backgroundColor: 'rgba(117, 111, 111, 0.95)',
     // backgroundColor: 'rgb(223, 206, 206)',
     width: '100%',
     height: '100px',
@@ -32,8 +33,6 @@ const quoteBox = {
     fontSize: '25px'
 
 }
-
-
 
 const drilltable = {
     backgroundImage: 'url(https://lh3.googleusercontent.com/VBFu9g-AK_BrV2oEY_j7QEoXRmKkw3nVF-CYP4FFsblO-BBrPRiHIyylhvLZdfM9EkFQ5BiiqHDWdbrm9KYjqr7PLty3b2hfCuVOERKBpIciEhX_oS6kPbLjgqSKHUa8TAUZCKyzQjVWxaU_cb6a1FfMTQBiqH4SyWEBF02SQKNs6YPCgDt9_ojWJUMyDsTDvLXuDQ5Hdk0b26hsKfj5_1oNfq6Xp8fnzqYtjjWk8BgG2DmoI082cZBk3JSnckukG36dF7v1x6hVSKWw98QmBBu0gA7CBem4pjX5g42WsbM0oAm1Uvm99kyx8kBz-Nz99_ERgOkD6pUEB1rliURXCHtwMeK230akVtE3m0GxItssAoxLDk9tK6RI6BA1c1WlALFRQw2C7trxeG_qQr3_RFmu5ZfQd8XrXnOeQukc46fv6nNqDeP9Og9-q5xHDr-olpSV3DrXhvParm_R40iYznYQc5oUeXMoNma0k0zMqhnVeb8G-5F0wk-OHxipba0afEFABa3qp9HFtLiNRys2y9t5G7MNU-TuClOs-hF6mLzj5wAyhXBxDQ-KyDiOGhiqkeSeJ16fTfM5syQft09RqtoqhlbwTZysgdU9AFxb7qcU3CJvTqAjKFQuPn0VAjH69I-72oKBl1Iptw8gHBHXCfFi1OsOVO6WWV-0aUBIQhbuLPsh0KUu6L0t=s640-no)',
@@ -74,7 +73,7 @@ const drilltable = {
       fontSize: '25px',
       fontWeight: 'bold',
       margin: '10px',
-      backgroundColor: 'rgba(117, 111, 111, 0.5)',
+      backgroundColor: 'rgba(172, 154, 123, 0.7)',
       borderRadius: '15px',
     //   textDecoration: 'underline'
       
@@ -86,13 +85,12 @@ const drilltable = {
       
   }
 
-  const foot = {
-    backgroundColor: 'rgb(133, 121, 121)',
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+const buttonStyle = {
+    backgroundColor: '#FF5A5F',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '5px',
+    fontWeight: 'bold'
 }
 
 
@@ -149,13 +147,13 @@ class Drills extends Component{
                         
                                 <div style= {drillbox}>
                                     DRILL NAME: <div style= {drillLabel}> {drill.name}</div>
-                                    DISTANCE:<div style= {drillLabel}> {drill.distance}</div>
+                                    DISTANCE:<div style= {drillLabel}> {drill.distance} Yards</div>
                                     SHOTS:<div style= {drillLabel}> {drill.shots}</div>
                                     SETUPS: <div style= {drillLabel}> {drill.setup}</div>
-                                    PARTIME: <div style= {drillLabel}> {drill.partime}</div>
-                                    SCORE: <div style= {drillLabel}> {drill.score}</div>
+                                    PARTIME: <div style= {drillLabel}> {drill.partime} Seconds</div>
+                                    SCORE: <div style= {drillLabel}> {drill.score} Seconds/Points</div>
                                     ACTIONS:<div style= {drillLabel}> {drill.actions}</div>
-                                    <button onClick = {() => this.pushDrill(drill.drill_id)}>add to my drills</button>
+                                    <button style= {buttonStyle} onClick = {() => this.pushDrill(drill.drill_id)}>add to MY DRILLS</button>
                                 </div>
 
 
@@ -165,10 +163,10 @@ class Drills extends Component{
 
                     </div>
 
+
+                <Footer/>
+
                 </div>
-
-                <div class='footer' style= {foot} > STAY FROSTY </div>
-
 
             </div>
         )

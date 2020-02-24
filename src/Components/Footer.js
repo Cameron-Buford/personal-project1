@@ -5,64 +5,41 @@ import axios from 'axios'
 import {getUser} from '../Duxx/reducer'
 
 
-//STYLING
 
-const title = {
-    
-    fontSize: '55px',
-    fontWeight: 'bold',
-    display: 'flex',
-    alignItems: 'baseline',
-    textDecoration: 'underline overline'
-    
 
-}
 
-const titleContainer = {
+
+const footerContainer = {
+    backgroundColor: 'transparent',
+    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    width: '100%',
     height: '100px',
     display: 'flex',
-    alignItems: 'baseline'
+    justifyContent: 'flex-end',
+    alignItems: 'center'
 }
 
-const buttonLine = {
-    backgroundColor: 'rgba(117, 111, 111, 0.5)',
+const buttonLineFoot = {
+    backgroundColor: 'transparent',
+    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
     borderRadius: '15px',
-    width: '800px',
+    width: '400px',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    textDecoration: 'underline'
+    textDecoration: 'underline overline'
 }
 
 const buttons = {
     backgroundColor: 'transparent',
     border: 'none',
     fontWeight: 'bold',
-    fontSize: '30px'
+    fontSize: '20px',
+    color: 'black'
 }
 
-const registrationDiv = {
-    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
-    height: '100px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center'
 
-}
 
-const loginButtons = {
-    backgroundColor: 'transparent',
-    border: 'none',
-    fontWeight: 'bold',
-    fontSize: '15px'
-}
-
-const shooterInStack = {
-    color: 'black',
-    fontWeight: 'bold'
-
-}
 
 class Nav extends Component{
     constructor(){
@@ -92,14 +69,11 @@ class Nav extends Component{
             return <></>;
          } else {
              return( 
-             <div className= 'navbar'>
+             <div style= {footerContainer}>
 
-                    <div style= {titleContainer}>
+                    
 
-                        <div style = { title }  > TRAINING HQ </div>
-                    </div>
-
-                    <div style= {buttonLine}>
+                    <div style= {buttonLineFoot}>
 
                         <button style= {buttons} className='homebutton' onClick={() => this.props.history.push('/')}>Home</button>
                         
@@ -112,7 +86,7 @@ class Nav extends Component{
 
                     
 
-                    <div style= {registrationDiv}>
+                    {/* <div style= {registrationDiv}>
                         {this.props.user.user_id ? 
                         <div style= {shooterInStack}> Shooter in Stack </div>:
                         <button 
@@ -122,7 +96,7 @@ class Nav extends Component{
                             
                             >Login/Register</button>}
                         <button style= {loginButtons} onClick= {() => this.logout()}>logout</button>
-                    </div>
+                    </div> */}
                         
                     
             </div>

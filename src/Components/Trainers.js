@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import Footer from './Footer'
 
 
 const drillBody = {
@@ -14,8 +15,15 @@ const drillBody = {
 
 }
 
+const space = {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '5px'
+}
+
 const quoteBox = {
-    backgroundColor: 'rgb(223, 206, 206)',
+    backgroundColor: 'rgba(117, 111, 111, 0.95)',
+    // backgroundColor: 'rgb(223, 206, 206)',
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -52,7 +60,7 @@ const drilltable = {
       fontSize: '25px',
       fontWeight: 'bold',
       margin: '10px',
-      backgroundColor: 'rgba(117, 111, 111, 0.5)',
+      backgroundColor: 'rgba(172, 154, 123, 0.9)',
       borderRadius: '15px'
       
   }
@@ -62,14 +70,15 @@ const drilltable = {
       margin: '5px'
   }
 
-  const foot = {
-    backgroundColor: 'rgb(133, 121, 121)',
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+const buttonStyle = {
+    backgroundColor: '#FF5A5F',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '5px',
+    fontWeight: 'bold'
 }
+
+
 
 class Trainers extends Component{
     constructor(){
@@ -107,11 +116,12 @@ class Trainers extends Component{
     render(){
         return(
             <div style= { drillBody}>
+                <div style= {space}></div>
+                <div style= {drilltable} className= 'trainerTable'>
                 <div style= {quoteBox}>
                 “As all born teachers, he was primarily a student.”― Steven Pressfield, Gates of Fire
 
                 </div>
-                <div style= {drilltable} className= 'trainerTable'>
                     {this.state.trainers.map(trainers => {
                         return (
                             <div style= {drillbox}>
@@ -120,15 +130,15 @@ class Trainers extends Component{
                                 BIO:  <h1 style= {drillLabel}>{trainers.biography}</h1>
                                 CREDENTIALS: <h1 style= {drillLabel}>{trainers.credentials}</h1>
                             
-                                <button onClick = {() => this.pushTrainer(trainers.trainer_id)}>add to my Trainers</button>
+                                <button style= {buttonStyle} onClick = {() => this.pushTrainer(trainers.trainer_id)}>add to my Trainers</button>
                             </div>
                         )
                     })}
                     
-                </div>
 
-                <div class='footer' style= {foot} > STAY FROSTY </div>
+                <Footer/>
                 
+                </div>
             </div>
         )
     }

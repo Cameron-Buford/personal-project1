@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
+import Footer from './Footer'
 
 const drillBody = {
     backgroundColor: '#333333', 
@@ -18,6 +19,7 @@ const space = {
     width: '100%',
     height: '5px'
 }
+
 const quoteBox = {
     // backgroundColor: 'rgb(223, 206, 206)',
     // width: '100%',
@@ -27,7 +29,7 @@ const quoteBox = {
     // justifyContent: 'space-around',
     // fontSize: '25px'
 
-    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    backgroundColor: 'rgba(117, 111, 111, 0.95)',
     
     width: '100%',
     height: '100px',
@@ -74,7 +76,7 @@ const drilltable = {
     fontSize: '25px',
     fontWeight: 'bold',
     margin: '10px',
-    backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    backgroundColor: 'rgba(172, 154, 123, 0.8)',
     borderRadius: '15px',
       
   }
@@ -84,14 +86,46 @@ const drilltable = {
       margin: '5px'
   }
 
-  const foot = {
-    backgroundColor: 'rgb(133, 121, 121)',
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+const buttonStyle = {
+    backgroundColor: '#222222',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '12px',
+    fontWeight: 'bold',
+    width: '100px',
+    height: '50px'
 }
+
+const myStatsButton = {
+    backgroundColor: 'rgb(179, 157, 37)',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '5px',
+    fontWeight: 'bold',
+}
+
+const updateScoreButton = {
+    backgroundColor: 'rgb(27, 131, 13)',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '5px',
+    fontWeight: 'bold',
+    
+}
+
+const RemoveDrillButton = {
+    backgroundColor: 'rgb(189, 113, 99)',
+    border: 'none',
+    borderRadius: '5px',
+    fontWeight: 'bold'
+
+}
+
+
+
+
+
+
 class MyDrills extends Component{
     constructor(){
         super()
@@ -177,8 +211,8 @@ class MyDrills extends Component{
                 </div>
 
                 <div style= {buttonDiv}>
-                    <button  onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
-                    <button className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
+                    <button style= {buttonStyle} onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
+                    <button style= {buttonStyle} className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
                 </div>
 
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
@@ -194,20 +228,20 @@ class MyDrills extends Component{
                             <h1 style= {drillLabel}>{myDrills.actions}</h1> */}
 
                                     DRILL NAME: <div style= {drillLabel}> {myDrills.name}</div>
-                                    DISTANCE:<div style= {drillLabel}> {myDrills.distance}</div>
+                                    DISTANCE:<div style= {drillLabel}> {myDrills.distance} Yards</div>
                                     SHOTS:<div style= {drillLabel}> {myDrills.shots}</div>
                                     SETUPS: <div style= {drillLabel}> {myDrills.setup}</div>
-                                    PARTIME: <div style= {drillLabel}> {myDrills.partime}</div>
-                                    SCORE: <div style= {drillLabel}> {myDrills.score}</div>
+                                    PARTIME: <div style= {drillLabel}> {myDrills.partime} Seconds</div>
+                                    SCORE: <div style= {drillLabel}> {myDrills.score} Seconds/Points</div>
                                     ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div>
 
                             <h1 style= {drillLabel}>{myDrills.score}</h1>
 
-                            <button onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>MY STATS </button>
+                            <button style= {myStatsButton} onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>MY STATS </button>
 
                            
 
-                                <button onClick= {() => this.updateScore(myDrills.drill_id)}>Update your Score</button>
+                                <button style= {updateScoreButton} onClick= {() => this.updateScore(myDrills.drill_id)}>Update your Score</button>
                                 <input 
                                     name= 'score'
                                     placeholder= 'score/time'
@@ -215,14 +249,14 @@ class MyDrills extends Component{
                             
                                 />
 
-                                <button onClick= {() => this.removeDrill(myDrills.drill_id)}>Remove From My Drills </button>
+                                <button style= {RemoveDrillButton } onClick= {() => this.removeDrill(myDrills.drill_id)}>Remove From My Drills </button>
                         </div>
                     )
                 })}
-                </div>
 
-                <div class='footer' style= {foot} > STAY FROSTY </div>
+                <Footer/>
                 
+                </div>
                 
             </div>
         )

@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 import routes from './routes'
 import Nav from './Components/Nav'
+import Footer from './Components/Footer'
 
 
 const dashboardStyle = {
@@ -27,7 +28,7 @@ class App extends Component{
         <div styles={dashboardStyle}>
         <Nav/>
         {routes}
-       
+       {/* <Footer/> */}
         </div>
         </div>
     )

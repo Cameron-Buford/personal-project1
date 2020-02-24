@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-
+import Footer from './Footer'
 import {getUser} from '../Duxx/reducer'
 import {connect} from 'react-redux'
 
@@ -14,6 +14,12 @@ const drillBody = {
     justifyContent: 'space-around'
 
 
+}
+
+const space = {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '5px'
 }
 
 const trainingBody = {
@@ -39,7 +45,8 @@ const drillBodyOne = {
 }
 
 const quoteBox = {
-    backgroundColor: 'rgb(223, 206, 206)',
+    backgroundColor: 'rgba(117, 111, 111, 0.95)',
+    // backgroundColor: 'rgb(223, 206, 206)',
     width: '100%',
     height: '100px',
     display: 'flex',
@@ -57,17 +64,18 @@ const buttonDiv = {
     alignItems: 'center'
 }
 
-
-
-
-  const foot = {
-    backgroundColor: 'rgb(133, 121, 121)',
-    height: '100px',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+const buttonStyle = {
+    backgroundColor: '#222222',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '12px',
+    fontWeight: 'bold',
+    width: '100px',
+    height: '50px'
 }
+
+
+
 const MyTraining = ({history, user}) => {
  
 
@@ -81,21 +89,23 @@ const MyTraining = ({history, user}) => {
     }, [])
         return(
             <div style= { drillBody} >
+                <div style= {space}></div>
+                <div style = {trainingBody}>
+
                 <div style= {quoteBox}>
                 “You have never tasted freedom... or you would know it is purchased not with gold, but steel.” Dienekes― Steven Pressfield, Gates of Fire
 
                 </div>
-                <div style = {trainingBody}>
                     <div style={buttonDiv}>
-                        <button  onClick={() => history.push('/mydrills')}>my drills</button>
-                        <button  onClick={() => history.push('/mytrainers')}>my trainers</button>
+                        <button style= {buttonStyle}  onClick={() => history.push('/mydrills')}>my drills</button>
+                        <button style= {buttonStyle} onClick={() => history.push('/mytrainers')}>my trainers</button>
                     </div>
                     <div>
                         <div style= { drillBodyOne}></div>
                     </div>
-                </div>
 
-                <div class='footer' style= {foot} > STAY FROSTY </div>
+                <Footer/>
+                </div>
             </div>
         )
     
