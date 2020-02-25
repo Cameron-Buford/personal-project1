@@ -215,6 +215,7 @@ const Auth = ({history, getUser}) => {
             <div style= {infoBox}>
                 <p>{'PASSWORD:'}</p>
                 <input
+                        type= "password"
                         name="password"
                         value={password}
                         placeholder="password"

@@ -185,13 +185,14 @@ class MyTraining extends Component{
                                 TRAINING SKILLS: <h1 style= {drillLabel}>{myTrainers.training_skills}</h1>
                                 BIO:  <h1 style= {drillLabel}>{myTrainers.biography}</h1>
                                 CREDENTIALS: <h1 style= {drillLabel}>{myTrainers.credentials}</h1>
-                                LINKS: <h1 style= {drillLabel}>{myTrainers.links}</h1>
+                                LINKS: <a style= {drillLabel} href={myTrainers.links} target= '_blank'>{myTrainers.links}</a>
                                 OFFERED TRAINING: <h1 style= {drillLabel}>{myTrainers.offeredtraining}</h1>
                                 MEDIA: <h1 style= {drillLabel}>{myTrainers.media}</h1>
-                                FACEBOOK: <h1 style= {drillLabel}>{myTrainers.facebook}</h1>
-                                INSTAGRAM: <h1 style= {drillLabel}>{myTrainers.instagram}</h1>
+                                FACEBOOK: <a style= {drillLabel} href={myTrainers.facebook} target= '_blank'>{myTrainers.facebook}</a>
+                                INSTAGRAM: <a style= {drillLabel} href={myTrainers.instagram} target= '_blank'>{myTrainers.instagram}</a>
                                 PODCAST: <h1 style= {drillLabel}>{myTrainers.podcast}</h1>
-                                YOUTUBE: <h1 style= {drillLabel}>{myTrainers.youtube}</h1>
+                                YOUTUBE: <a style= {drillLabel} href={myTrainers.youtube} target= '_blank'> {myTrainers.youtube}
+                                    </a>
 
                                 <button style= {RemoveTrainersButton} onClick= {() => this.removeTrainer(myTrainers.trainer_id)}>Remove from My Trainers</button>
                             
