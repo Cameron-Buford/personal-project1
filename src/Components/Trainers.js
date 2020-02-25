@@ -51,7 +51,7 @@ const drilltable = {
 
   const drillbox = {
     //   backgroundColor: 'rgb(223, 206, 206)',
-      width: '400px',
+      width: '500px',
       minHeight: '500px',
       display: 'flex',
       alignItems: 'center',
@@ -61,13 +61,16 @@ const drilltable = {
       fontWeight: 'bold',
       margin: '10px',
       backgroundColor: 'rgba(172, 154, 123, 0.9)',
-      borderRadius: '15px'
+      borderRadius: '15px',
+      flexWrap: 'wrap'
       
   }
 
   const drillLabel = {
       fontSize: '15px',
-      margin: '5px'
+      margin: '5px',
+      display: 'flex',
+      flexWrap: 'wrap'
   }
 
 const buttonStyle = {
@@ -129,6 +132,14 @@ class Trainers extends Component{
                                 TRAINING SKILLS: <h1 style= {drillLabel}>{trainers.training_skills}</h1>
                                 BIO:  <h1 style= {drillLabel}>{trainers.biography}</h1>
                                 CREDENTIALS: <h1 style= {drillLabel}>{trainers.credentials}</h1>
+                                LINKS: <a style= {drillLabel} href={trainers.links} target= '_blank'>{trainers.links}</a>
+                                OFFERED TRAINING: <h1 style= {drillLabel}>{trainers.offeredtraining}</h1>
+                                MEDIA: <h1 style= {drillLabel}>{trainers.media}</h1>
+                                FACEBOOK: <a style= {drillLabel} href={trainers.facebook} target= '_blank'>{trainers.facebook}</a>
+                                INSTAGRAM: <a style= {drillLabel} href={trainers.instagram} target= '_blank'>{trainers.instagram}</a>
+                                PODCAST: <h1 style= {drillLabel}>{trainers.podcast}</h1>
+                                YOUTUBE: <a style= {drillLabel} href={trainers.youtube} target= '_blank'> {trainers.youtube}
+                                    </a>
                             
                                 <button style= {buttonStyle} onClick = {() => this.pushTrainer(trainers.trainer_id)}>add to my Trainers</button>
                             </div>

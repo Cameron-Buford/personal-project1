@@ -155,7 +155,8 @@ const leoBox = {
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderRadius: '12px'
 
 
 }
@@ -164,7 +165,8 @@ const leoOuterBox = {
     // backgroundColor:'green',
     display: 'flex', 
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
+    
 }
 
 const leoTextBox = {
@@ -173,7 +175,8 @@ const leoTextBox = {
     // height: ''
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    
 }
 
 const civTitle = {
@@ -188,7 +191,8 @@ const civBox = {
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderRadius: '12px'
     
 
 }
