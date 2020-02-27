@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import Footer from './Footer'
+import useAxios from '../hooks/useAxios'
 
 
 const drillBody = {
@@ -82,41 +83,25 @@ const buttonStyle = {
 }
 
 
-
-class Trainers extends Component{
-    constructor(){
-        super()
-        this.state ={
-            trainers: [],
-            trainerUrl: '/api/trainers',
-
-        }
-    }
-
-    componentDidMount(){
-        
-        axios.get('/api/trainers').then(results => {
-            console.log(results)
-            this.setState({trainers: results.data})
-        }).catch(err => console.log(err));
-        
-    }
+const Trainers = ({history}) => {
+    const [trainers] = useAxios('/api/trainers')
 
 
 
-    pushTrainer = (trainer_id) => {
+
+    const pushTrainer = (trainer_id) => {
           
 
         axios.post('/api/postTrainer', {trainer_id})
         .then(() => {
-            this.props.history.push('/myTrainers')
+            history.push('/myTrainers')
           })
 
 
     }
 
 
-    render(){
+    
         return(
             <div style= { drillBody}>
                 <div style= {space}></div>
@@ -125,7 +110,7 @@ class Trainers extends Component{
                 “As all born teachers, he was primarily a student.”― Steven Pressfield, Gates of Fire
 
                 </div>
-                    {this.state.trainers.map(trainers => {
+                    {trainers.map(trainers => {
                         return (
                             <div style= {drillbox}>
                                 NAME: <h1 style= {drillLabel}>{trainers.name}</h1>
@@ -141,7 +126,7 @@ class Trainers extends Component{
                                 YOUTUBE: <a style= {drillLabel} href={trainers.youtube} target= '_blank'> {trainers.youtube}
                                     </a>
                             
-                                <button style= {buttonStyle} onClick = {() => this.pushTrainer(trainers.trainer_id)}>add to my Trainers</button>
+                                <button style= {buttonStyle} onClick = {() => pushTrainer(trainers.trainer_id)}>add to my Trainers</button>
                             </div>
                         )
                     })}
@@ -153,6 +138,6 @@ class Trainers extends Component{
             </div>
         )
     }
-}
+
 
 export default Trainers

@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
 import axios from 'axios'
-import {withRouter} from 'react-router-dom'
 import Footer from './Footer'
+import useAxios from '../hooks/useAxios'
+import React, {Component} from 'react'
 
 
 const drillBody = {
@@ -94,34 +94,18 @@ const buttonStyle = {
 }
 
 
-class Drills extends Component{
-    constructor(){
-        super()
-        this.state ={
-            drills: [],
-            drillUrl: '/api/drills'
-            
+const Drills = ({history}) => {
+    const [drills] = useAxios("/api/drills")
 
-        }
-    }
 
-    componentDidMount(){
-        const {drillUrl} = this.state;
-    
-        axios.get(drillUrl).then(results => {
-            console.log(results)
-          this.setState({drills: results.data})
-        }).catch(err => console.log(err))
-        
-    
-      }
 
-      pushDrill = (drill_id) => {
+
+      const pushDrill = (drill_id) => {
           
 
           axios.post('/api/post', {drill_id})
           .then(() => {
-              this.props.history.push('/mydrills')
+              history.push('/mydrills')
             })
 
 
@@ -130,8 +114,8 @@ class Drills extends Component{
 
 
 
-    render(){
-        const {name, distance, shots, setup, partime, score, actions} = this.state
+    
+        
         return(
             <div style= { drillBody} >
                 <div style= {space}></div>
@@ -142,7 +126,9 @@ class Drills extends Component{
                 </div>
                 <div style= {tableTwo} className = 'bodyBackground'>
                     
-                        {this.state.drills.map(drill => {
+                        {
+                        
+                        drills.map(drill => {
                             return (
                         
                                 <div style= {drillbox}>
@@ -153,7 +139,9 @@ class Drills extends Component{
                                     PARTIME: <div style= {drillLabel}> {drill.partime} Seconds</div>
                                     SCORE: <div style= {drillLabel}> {drill.score} Seconds/Points</div>
                                     ACTIONS:<div style= {drillLabel}> {drill.actions}</div>
-                                    <button style= {buttonStyle} onClick = {() => this.pushDrill(drill.drill_id)}>add to MY DRILLS</button>
+                                    <button style= {buttonStyle} onClick = {() => 
+                                        
+                                        pushDrill(drill.drill_id)}>add to MY DRILLS</button>
                                 </div>
 
 
@@ -170,7 +158,7 @@ class Drills extends Component{
 
             </div>
         )
-    }
+    
 }
 
 export default Drills
