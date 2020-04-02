@@ -101,12 +101,17 @@ const Drills = ({history}) => {
 
 
       const pushDrill = (drill_id) => {
+
+        axios.get('/api/singledrill', {drill_id})
+        .then(() => {
+            history.push('/singledrill')
+        })
           
 
-          axios.post('/api/post', {drill_id})
-          .then(() => {
-              history.push('/mydrills')
-            })
+        //   axios.post('/api/post', {drill_id})
+        //   .then(() => {
+        //       history.push('/mydrills')
+        //     })
 
 
       }
@@ -124,7 +129,23 @@ const Drills = ({history}) => {
                   “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
 
                 </div>
-                <div style= {tableTwo} className = 'bodyBackground'>
+
+
+                <div>
+                    {
+                    drills.map(drill => {
+                        return (
+                            <ul> 
+                            <button onClick = {() => pushDrill(drill.drill_id)}>
+                                {drill.name}</button>
+                            </ul>
+                        )
+                    })}
+                </div>
+
+-
+
+                {/* <div style= {tableTwo} className = 'bodyBackground'>
                     
                         {
                         
@@ -149,7 +170,7 @@ const Drills = ({history}) => {
                         })}
 
 
-                    </div>
+                    </div> */}
 
 
                 <Footer/>

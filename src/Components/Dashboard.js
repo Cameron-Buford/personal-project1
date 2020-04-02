@@ -39,7 +39,9 @@ const space = {
 }
 
 const quoteBox = {
-    backgroundColor: 'rgba(117, 111, 111, 0.95)',
+    // backgroundColor: 'rgba(117, 111, 111, 0.95)',
+    backgroundColor: '#E3E3E3',
+    // backgroundColor: 'rgba(117, 111, 111, 0.8)',
     // backgroundColor: 'rgb(223, 206, 206)',
     width: '100%',
     height: '100px',
@@ -231,7 +233,7 @@ class Dashboard extends Component{
         return(
             <div>
                     <div style= {backbody}>
-                        <div style= {space}></div>
+                        {/* <div style= {space}></div> */}
                 <div style= {quoteBox}>
                     "Think like men of action.  Act like men of thought. Live life with intensity, and a passion for excellence." General Mattis
 

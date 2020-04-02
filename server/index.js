@@ -55,6 +55,7 @@ app.post('/auth/logout', authCtrl.logout)
 //drills endpoints
 
 app.get('/api/drills', drillCtrl.getAllDrills)
+app.get('/api/singledrill', drillCtrl.getSingleDrill)
 
 
 
