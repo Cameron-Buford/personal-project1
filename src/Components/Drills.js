@@ -100,7 +100,7 @@ const Drills = ({history}) => {
 
 
 
-      const pushDrill = (drill_id) => {
+      const goToDrill = (drill_id) => {
 
         axios.get('/api/singledrill', {drill_id})
         .then(() => {
@@ -136,8 +136,9 @@ const Drills = ({history}) => {
                     drills.map(drill => {
                         return (
                             <ul> 
-                            <button onClick = {() => pushDrill(drill.drill_id)}>
-                                {drill.name}</button>
+                                <button onClick = {() => goToDrill(drill.drill_id)}>
+                                    {drill.name}
+                                </button>
                             </ul>
                         )
                     })}
