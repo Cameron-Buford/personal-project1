@@ -9,7 +9,7 @@ import MyDrills from "./Components/MyDrills";
 import MyTrainers from "./Components/MyTrainers";
 import CreateDrill from "./Components/CreateDrill";
 import Stats from './Components/Stats';
-import IndividualDrill from './Components/IndividualDrill';
+import SingleDrill from './Components/SingleDrill';
 
 
 export default (
@@ -23,6 +23,6 @@ export default (
         <Route path='/mytrainers' component={MyTrainers}/>
         <Route path='/createdrill' component={CreateDrill}/>
         <Route path= '/stats/:mydrill_id' component= {Stats}/>
-        <Route path= '/singledrill/:drill_id' component= {IndividualDrill}/>
+        <Route path= '/singledrill/:drill_id' component= {SingleDrill}/>
     </Switch>
 );

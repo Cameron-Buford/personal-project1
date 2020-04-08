@@ -104,7 +104,7 @@ const Drills = ({history}) => {
 
         axios.get('/api/singledrill', {drill_id})
         .then(() => {
-            history.push('/singledrill')
+            history.push('/singledrill/:drill_id')
         })
           
 

@@ -4,7 +4,7 @@ import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
 
 
-const IndividualDrill = ({history}) => {
+const SingleDrill = ({history}) => {
 
     const [drills] = useAxios('/api/singledrill')
 
@@ -46,4 +46,4 @@ const IndividualDrill = ({history}) => {
 
 }
 
-export default IndividualDrill
+export default SingleDrill
