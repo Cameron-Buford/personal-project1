@@ -55,7 +55,16 @@ app.post('/auth/logout', authCtrl.logout)
 //drills endpoints
 
 app.get('/api/drills', drillCtrl.getAllDrills)
-app.get('/api/singledrill/:drill_id', drillCtrl.getSingleDrill)
+app.get('/api/drill/:drill_id', drillCtrl.getSingleDrill)
+// app.get('/api/singledrill/:drill_id', drillCtrl.getSingleDrill)
+
+// to use the useAxios hook, the endpoints need to look like these below.  the hook creates the urls for them
+
+// app.get("/api/posts", postCtrl.getPosts)
+// app.get('/api/post/:id', postCtrl.getPost)
+// app.post("/api/post", postCtrl.createPost)
+// app.put("/api/post/:id", postCtrl.editPost)
+// app.delete("/api/post/:id", postCtrl.delete
 
 
 

@@ -23,6 +23,6 @@ export default (
         <Route path='/mytrainers' component={MyTrainers}/>
         <Route path='/createdrill' component={CreateDrill}/>
         <Route path= '/stats/:mydrill_id' component= {Stats}/>
-        <Route path= '/singledrill/:drill_id' component= {SingleDrill}/>
+        <Route path= '/drill/:drill_id' component= {SingleDrill}/>
     </Switch>
 );

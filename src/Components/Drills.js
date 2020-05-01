@@ -95,28 +95,16 @@ const buttonStyle = {
 
 
 const Drills = ({history}) => {
-    const [drills] = useAxios("/api/drills")
+    const {drills} = useAxios("drill")
 
-
-
-
+    console.log(drills)
       const goToDrill = (drill_id) => {
-
-        axios.get('/api/singledrill', {drill_id})
+        axios.get(`/api/drill/${drill_id}`)
         .then(() => {
-            history.push('/singledrill/:drill_id')
+            history.push(`/drill/${drill_id}`)
         })
-          
 
-        //   axios.post('/api/post', {drill_id})
-        //   .then(() => {
-        //       history.push('/mydrills')
-        //     })
-
-
-      }
-
-
+    }
 
 
     
@@ -146,32 +134,7 @@ const Drills = ({history}) => {
 
 -
 
-                {/* <div style= {tableTwo} className = 'bodyBackground'>
-                    
-                        {
-                        
-                        drills.map(drill => {
-                            return (
-                        
-                                <div style= {drillbox}>
-                                    DRILL NAME: <div style= {drillLabel}> {drill.name}</div>
-                                    DISTANCE:<div style= {drillLabel}> {drill.distance} Yards</div>
-                                    SHOTS:<div style= {drillLabel}> {drill.shots}</div>
-                                    SETUPS: <div style= {drillLabel}> {drill.setup}</div>
-                                    PARTIME: <div style= {drillLabel}> {drill.partime} Seconds</div>
-                                    SCORE: <div style= {drillLabel}> {drill.score} Seconds/Points</div>
-                                    ACTIONS:<div style= {drillLabel}> {drill.actions}</div>
-                                    <button style= {buttonStyle} onClick = {() => 
-                                        
-                                        pushDrill(drill.drill_id)}>add to MY DRILLS</button>
-                                </div>
-
-
-                                    )
-                        })}
-
-
-                    </div> */}
+               
 
 
                 <Footer/>

@@ -4,11 +4,10 @@ import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
 
 
-const SingleDrill = ({history}) => {
-
-    const [drills] = useAxios('/api/singledrill')
-
-
+const SingleDrill = ({history, match}) => {
+    const {drill} = useAxios('drill', match.drill_id)
+    console.log(drill)
+    
     const pushDrill = (drill_id) => {
       axios.post('/api/post', {drill_id})
           .then(() => {
@@ -16,33 +15,48 @@ const SingleDrill = ({history}) => {
             })
     }
 
-    return(
-        <div>
-            <div>
-            {
+    return (
+                                    <div>
+                                        DRILL NAME: <div > {drill.name}</div>
+                                        DISTANCE:<div > {drill.distance} Yards</div>
+                                        SHOTS:<div > {drill.shots}</div>
+                                        SETUPS: <div > {drill.setup}</div>
+                                        PARTIME: <div > {drill.partime} Seconds</div>
+                                        SCORE: <div > {drill.score} Seconds/Points</div>
+                                        ACTIONS:<div > {drill.actions}</div>
+                                        <button onClick = {() => 
+                                            pushDrill(drill.drill_id)}>add to MY DRILLS</button>
+                                    </div>
+                                        )
+
+
+    // return(
+    //     <div>
+    //         <div>
+    //         {
                         
-                        drills.map(drill => {
-                            return (
+    //                     drill.map(drill => {
+    //                         return (
                         
-                                <div>
-                                    DRILL NAME: <div > {drill.name}</div>
-                                    DISTANCE:<div > {drill.distance} Yards</div>
-                                    SHOTS:<div > {drill.shots}</div>
-                                    SETUPS: <div > {drill.setup}</div>
-                                    PARTIME: <div > {drill.partime} Seconds</div>
-                                    SCORE: <div > {drill.score} Seconds/Points</div>
-                                    ACTIONS:<div > {drill.actions}</div>
-                                    <button onClick = {() => 
+    //                             <div>
+    //                                 DRILL NAME: <div > {drill.name}</div>
+    //                                 DISTANCE:<div > {drill.distance} Yards</div>
+    //                                 SHOTS:<div > {drill.shots}</div>
+    //                                 SETUPS: <div > {drill.setup}</div>
+    //                                 PARTIME: <div > {drill.partime} Seconds</div>
+    //                                 SCORE: <div > {drill.score} Seconds/Points</div>
+    //                                 ACTIONS:<div > {drill.actions}</div>
+    //                                 <button onClick = {() => 
                                         
-                                        pushDrill(drill.drill_id)}>add to MY DRILLS</button>
-                                </div>
+    //                                     pushDrill(drill.drill_id)}>add to MY DRILLS</button>
+    //                             </div>
 
 
-                                    )
-                        })}
-            </div>
-        </div>
-    )
+    //                                 )
+    //                     })}
+    //         </div>
+    //     </div>
+    // )
 
 }
 
