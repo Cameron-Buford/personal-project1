@@ -25,7 +25,8 @@ const titleContainer = {
 }
 
 const buttonLine = {
-    backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    backgroundColor: 'transparent',
     borderRadius: '15px',
     width: '800px',
     display: 'flex',
@@ -36,13 +37,15 @@ const buttonLine = {
 
 const buttons = {
     backgroundColor: 'transparent',
+    color: 'white',
     border: 'none',
-    fontWeight: 'bold',
+    fontWeight: '200',
     fontSize: '30px'
 }
 
 const registrationDiv = {
     // backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    color: 'white',
     height: '100px',
     display: 'flex',
     flexDirection: 'column',
@@ -52,6 +55,7 @@ const registrationDiv = {
 }
 
 const loginButtons = {
+    color: 'white',
     backgroundColor: 'transparent',
     border: 'none',
     fontWeight: 'bold',
@@ -59,7 +63,7 @@ const loginButtons = {
 }
 
 const shooterInStack = {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold'
 
 }

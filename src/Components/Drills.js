@@ -5,8 +5,8 @@ import React, {Component} from 'react'
 
 
 const drillBody = {
-    // backgroundColor: '#333333', 
-    height: '100%', 
+    backgroundColor: 'green', 
+    height: '100vh', 
     width: '100%',
     display: 'flex',
     alignItems: 'center',
@@ -17,7 +17,7 @@ const drillBody = {
 }
 
 const space = {
-    backgroundColor: 'black',
+    backgroundColor: 'transparent',
     width: '100%',
     height: '5px'
 }
@@ -35,54 +35,19 @@ const quoteBox = {
 }
 
 const drilltable = {
-    backgroundImage: 'url(https://lh3.googleusercontent.com/VBFu9g-AK_BrV2oEY_j7QEoXRmKkw3nVF-CYP4FFsblO-BBrPRiHIyylhvLZdfM9EkFQ5BiiqHDWdbrm9KYjqr7PLty3b2hfCuVOERKBpIciEhX_oS6kPbLjgqSKHUa8TAUZCKyzQjVWxaU_cb6a1FfMTQBiqH4SyWEBF02SQKNs6YPCgDt9_ojWJUMyDsTDvLXuDQ5Hdk0b26hsKfj5_1oNfq6Xp8fnzqYtjjWk8BgG2DmoI082cZBk3JSnckukG36dF7v1x6hVSKWw98QmBBu0gA7CBem4pjX5g42WsbM0oAm1Uvm99kyx8kBz-Nz99_ERgOkD6pUEB1rliURXCHtwMeK230akVtE3m0GxItssAoxLDk9tK6RI6BA1c1WlALFRQw2C7trxeG_qQr3_RFmu5ZfQd8XrXnOeQukc46fv6nNqDeP9Og9-q5xHDr-olpSV3DrXhvParm_R40iYznYQc5oUeXMoNma0k0zMqhnVeb8G-5F0wk-OHxipba0afEFABa3qp9HFtLiNRys2y9t5G7MNU-TuClOs-hF6mLzj5wAyhXBxDQ-KyDiOGhiqkeSeJ16fTfM5syQft09RqtoqhlbwTZysgdU9AFxb7qcU3CJvTqAjKFQuPn0VAjH69I-72oKBl1Iptw8gHBHXCfFi1OsOVO6WWV-0aUBIQhbuLPsh0KUu6L0t=s640-no)',
+    // backgroundImage: 'url(https://lh3.googleusercontent.com/VBFu9g-AK_BrV2oEY_j7QEoXRmKkw3nVF-CYP4FFsblO-BBrPRiHIyylhvLZdfM9EkFQ5BiiqHDWdbrm9KYjqr7PLty3b2hfCuVOERKBpIciEhX_oS6kPbLjgqSKHUa8TAUZCKyzQjVWxaU_cb6a1FfMTQBiqH4SyWEBF02SQKNs6YPCgDt9_ojWJUMyDsTDvLXuDQ5Hdk0b26hsKfj5_1oNfq6Xp8fnzqYtjjWk8BgG2DmoI082cZBk3JSnckukG36dF7v1x6hVSKWw98QmBBu0gA7CBem4pjX5g42WsbM0oAm1Uvm99kyx8kBz-Nz99_ERgOkD6pUEB1rliURXCHtwMeK230akVtE3m0GxItssAoxLDk9tK6RI6BA1c1WlALFRQw2C7trxeG_qQr3_RFmu5ZfQd8XrXnOeQukc46fv6nNqDeP9Og9-q5xHDr-olpSV3DrXhvParm_R40iYznYQc5oUeXMoNma0k0zMqhnVeb8G-5F0wk-OHxipba0afEFABa3qp9HFtLiNRys2y9t5G7MNU-TuClOs-hF6mLzj5wAyhXBxDQ-KyDiOGhiqkeSeJ16fTfM5syQft09RqtoqhlbwTZysgdU9AFxb7qcU3CJvTqAjKFQuPn0VAjH69I-72oKBl1Iptw8gHBHXCfFi1OsOVO6WWV-0aUBIQhbuLPsh0KUu6L0t=s640-no)',
+    // backgroundColor: '#333333',
+    height: '100%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
     backgroundColor: 'transparent',
-    // backgroundColor: '#333333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    // flexDirection: 'column',
     width: '100%',
     flexWrap: 'wrap'
-  
-  }
-
-  const tableTwo = {
-      backgroundColor:'transparent',
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      flexWrap: 'wrap'
-      
-  }
-
-  const drillbox = {
-    //   backgroundColor: 'rgb(223, 206, 206)',
-      backgroundColor: 'transparent',
-      width: '400px',
-      minHeight: '500px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      flexDirection: 'column',
-      fontSize: '25px',
-      fontWeight: 'bold',
-      margin: '10px',
-      backgroundColor: 'rgba(172, 154, 123, 0.7)',
-      borderRadius: '15px',
-    //   textDecoration: 'underline'
-      
-  }
-
-  const drillLabel = {
-      fontSize: '15px',
-      margin: '5px',
-      
   }
 
 const buttonStyle = {
@@ -96,29 +61,20 @@ const buttonStyle = {
 
 const Drills = ({history}) => {
     const {drills} = useAxios("drill")
-
     console.log(drills)
       const goToDrill = (drill_id) => {
         axios.get(`/api/drill/${drill_id}`)
         .then(() => {
             history.push(`/drill/${drill_id}`)
         })
-
-    }
-
-
-    
-        
+    }  
         return(
             <div style= { drillBody} >
                 <div style= {space}></div>
                 <div style= {drilltable} className= 'drillTable'>
                   <div style= {quoteBox}>
                   “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
-
                 </div>
-
-
                 <div>
                     {
                     drills.map(drill => {
@@ -131,19 +87,9 @@ const Drills = ({history}) => {
                         )
                     })}
                 </div>
-
--
-
-               
-
-
                 <Footer/>
-
                 </div>
-
             </div>
         )
-    
 }
-
 export default Drills
