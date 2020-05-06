@@ -8,7 +8,8 @@ import Footer from './Footer'
 const backbody= {
     // backgroundImage: 'url(https://lh3.googleusercontent.com/b6OP4BGfmLvt7ZZ93baSyE_m4d8-tdEsQc8wXl0RD-w02H77AbJS-XRDoA423JuJt4USXHeLKIpqvytUlUFMNxAc-Lmgnx1MyQFE6u7NfrqzoLjVWsVLDw5M3pUZdlLiP9170c2W2agkpexVUPDEI0BlhNSq2lbMJQQI1yrzEVii3icdRSCmeX3kixEAClioOheMsI0cHe-Q9f26tbsOr-quIEKm1xZ-f7jzN7A8ndU39x6fRbjvrT8zGFaDasIiCOGPG3zE701Pj_Mq32zVa1nNWPuMyniCxrHqMRAyF1NvlDsMjF-q7jeBEgJFlmYaBH3k0ffJR9w9p6fwmQ9i-pJB6SceX8sTv6W0olC6GRrJnsmJsc6eVtUxPRc6NH_2cxqtTSmjeUFnHXV_Ic0GD4e8F7wEZ4vX6_usZiRotTr7iIaJHsdifP10Z59KiM4lWDVxP0A_9nPMNz3QJYiDHHoeQgYNDa2zeM2nIaC0sJDcTOJWd-4QFrPx2KDleC5Y9EuOMDROik1evrE-5DGHg-V60z6LRl3H3KNKzqpk6OAssJGURAK1MDNjuTv3Ib-5H9Zg8SJr7zLIhtjjm9k4atXKWyx_crQ7elXief5sdt7pOqguHFr8a8GOd_uXnjXTtCrDzrg5nijU0RzYF870ILEq9uTRRgkDG83eNCFFDtQl-vI0rji4NPwd=w986-h657-no)',
     // backgroundRepeat: 'no-repeat',
-    backgroundColor: '#E3E3E3',
+    // backgroundColor: '#E3E3E3',
+    backgroundColor: 'rgb(31, 59, 31)',
     backgroundSize: '100%',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
@@ -20,7 +21,6 @@ const backbody= {
 }
 
 const dashboardStyle = {
-    // backgroundImage: 'url(https://lh3.googleusercontent.com/b6OP4BGfmLvt7ZZ93baSyE_m4d8-tdEsQc8wXl0RD-w02H77AbJS-XRDoA423JuJt4USXHeLKIpqvytUlUFMNxAc-Lmgnx1MyQFE6u7NfrqzoLjVWsVLDw5M3pUZdlLiP9170c2W2agkpexVUPDEI0BlhNSq2lbMJQQI1yrzEVii3icdRSCmeX3kixEAClioOheMsI0cHe-Q9f26tbsOr-quIEKm1xZ-f7jzN7A8ndU39x6fRbjvrT8zGFaDasIiCOGPG3zE701Pj_Mq32zVa1nNWPuMyniCxrHqMRAyF1NvlDsMjF-q7jeBEgJFlmYaBH3k0ffJR9w9p6fwmQ9i-pJB6SceX8sTv6W0olC6GRrJnsmJsc6eVtUxPRc6NH_2cxqtTSmjeUFnHXV_Ic0GD4e8F7wEZ4vX6_usZiRotTr7iIaJHsdifP10Z59KiM4lWDVxP0A_9nPMNz3QJYiDHHoeQgYNDa2zeM2nIaC0sJDcTOJWd-4QFrPx2KDleC5Y9EuOMDROik1evrE-5DGHg-V60z6LRl3H3KNKzqpk6OAssJGURAK1MDNjuTv3Ib-5H9Zg8SJr7zLIhtjjm9k4atXKWyx_crQ7elXief5sdt7pOqguHFr8a8GOd_uXnjXTtCrDzrg5nijU0RzYF870ILEq9uTRRgkDG83eNCFFDtQl-vI0rji4NPwd=w986-h657-no)',
     backgroundImage: 'url(https://lh3.googleusercontent.com/b6OP4BGfmLvt7ZZ93baSyE_m4d8-tdEsQc8wXl0RD-w02H77AbJS-XRDoA423JuJt4USXHeLKIpqvytUlUFMNxAc-Lmgnx1MyQFE6u7NfrqzoLjVWsVLDw5M3pUZdlLiP9170c2W2agkpexVUPDEI0BlhNSq2lbMJQQI1yrzEVii3icdRSCmeX3kixEAClioOheMsI0cHe-Q9f26tbsOr-quIEKm1xZ-f7jzN7A8ndU39x6fRbjvrT8zGFaDasIiCOGPG3zE701Pj_Mq32zVa1nNWPuMyniCxrHqMRAyF1NvlDsMjF-q7jeBEgJFlmYaBH3k0ffJR9w9p6fwmQ9i-pJB6SceX8sTv6W0olC6GRrJnsmJsc6eVtUxPRc6NH_2cxqtTSmjeUFnHXV_Ic0GD4e8F7wEZ4vX6_usZiRotTr7iIaJHsdifP10Z59KiM4lWDVxP0A_9nPMNz3QJYiDHHoeQgYNDa2zeM2nIaC0sJDcTOJWd-4QFrPx2KDleC5Y9EuOMDROik1evrE-5DGHg-V60z6LRl3H3KNKzqpk6OAssJGURAK1MDNjuTv3Ib-5H9Zg8SJr7zLIhtjjm9k4atXKWyx_crQ7elXief5sdt7pOqguHFr8a8GOd_uXnjXTtCrDzrg5nijU0RzYF870ILEq9uTRRgkDG83eNCFFDtQl-vI0rji4NPwd=w986-h657-no)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
@@ -29,7 +29,7 @@ const dashboardStyle = {
     height: '1000px', 
     width: '1200px',
     display: 'flex',
-    flexDirection: 'column',
+    // flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center'
 
@@ -56,6 +56,11 @@ const quoteBox = {
     justifyContent: 'space-around',
     fontSize: '25px'
 
+}
+
+const empty= {
+    height: '100px',
+    width: '600px'
 }
 
 const aboutTitle = {
@@ -88,6 +93,21 @@ const aboutBox = {
 
 }
 
+const joinBox = {
+    backgroundColor: 'transparent',
+    height: '500px', 
+    width: '1200px',
+    backgroundImage: 'url(https://lh3.googleusercontent.com/43Ja1_yrILlTSGp28sukJPbWwuAVbrN9ul-qjei5IzLow14_jqS4BVrzH6ngxfZkhR95eI7ENvRbANKhwPRFoaOKpeinmEsW3h2Xt6I9-kHn3pIabgkONTnGinXWvKqdVWzEIa7iGfTnuxTUR_2EEYQ6rpKnQZzBMlvX6PV50-IBH97hjBbiZ2BMqDWkJoY7DOWyaf69oR-_41lQ6pWnEDDhELfZi5QJcLh2ymefav9uHoS06JG2oqOXw6THf0elyHQRFvSx7krB7bxsSXxuVl5S4W19-RQIgZDnJkLj5MEoGn1ArjLNNQd7YRf8jyVKFuaA42B55d78xtI49oKh3s0CPwaAg3A0f0hOveI10ZckiTeGl6JE8DVt18cNpUBBdLzQ7t6ppY7dI8o0zxsnnNEqeNKKIvFwDlfPhoeo2iHGWxn6HuXBeyorxLEQE26TWflGw5VWssq360kYmw_mVRZRNDZB7w5B3OpxJmABGhBbfNYddoYMttIO8P1-Vs70jW6kmaYBoHtBBu5nsPb-f6OKtK4wpF4ifl6jW_LWw1bbFSHgjl4UlqkBspdLfK55-9DyWYii-6Vyk1lz0hKOnFl2DIcg0kLy0XtoaJo0VEd4pRP3gHsEWfId7aXQwX3rGLZHMOks_kXgcgur95X_ELaVrpPSdKk4JZuhuf8Qc_86q-mt8mkhDoM=w1136-h640-no)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    // backgroundPosition: 'center',
+    // // backgroundColor: 'transparent', 
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+    
+}
+
 const joinTitle= {
    
 
@@ -108,8 +128,9 @@ const joinTitle= {
 
 const joinText= {
     
-
-    backgroundColor: 'transparent',
+    
+    // backgroundColor: 'transparent',
+    width: '1200px',
     color: '#f2f2f2',
     fontWeight: 'bold',
     width: '500px',
@@ -245,11 +266,15 @@ class Dashboard extends Component{
                         <div style= { aboutTitle }>ABOUT THE TRAINING HQ </div>
                              Welcome to the Training HQ. The industry is oversaturated with "tactical  trainers" and those who profess to teach tactical gunsmanship and gunfighting skills for LEO and Civilian gunhandlers.  Much of the training that is easiliy found by many in the private sector, your agency or local department is anywhere from subpar all the way to dangerous. We believe every LEO and Civilian who carries the means of deadly force have the duty to seek the correct training and work to be the best and most responsible asset that they can be. Here at the HQ, we work to provide you with resources to to fulfill your search for the most compentent and experienced trainers in the industry. The days of searching the web for trainers to be caught by marketing schemes of subpar, inexperienced or downright negligent trainers are over.  Feel free to browse our library of trainers to find what will suite your training needs best.  Furthermore, we work to provide a library of industry and Top Tier unit drills and score standards for you to train on and work toward. For every true student, the search for knowledge, skill and wisdom is an endless persuit and we, at the Training HQ, share that drive. We hope that we can come together to train as guardians and assets to those we love and the nation we love and learn from the best to become the best we can be with what we have.  Upwards and onwards.  Stay Frosty. 
                     </div>
+                    <div style= {empty}></div>
                 </div>
+                <div style= {joinBox}>
+                    <div style= {empty}></div>
                     <div style= {joinText}> 
                         <div style= {joinTitle}>Join the Team </div>
                             Join the community by registering for your own personal training profile.  As a member of the community, you will have the ability to add drills from our drill library and track your progress on each drill you add.  You can edit your score as you work the shooting standards in the drills and follow your own skill growth.  Furthermore, you will be able to save trainers to your profile as favorites that fit your needs and personal training plans.  Join the community today to hold yourself responsible for your personal journey to be the best guardian that you can be.  We will see you on the range. 
                     </div>
+                </div>
                 <div style= { spacerOne }></div>
                 <div style= { spacerTwo }> GUARDIANS </div>
                 <div style= {categoryContainer} className= 'categoryContainer'>
