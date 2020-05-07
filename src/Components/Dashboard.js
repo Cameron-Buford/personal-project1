@@ -38,14 +38,6 @@ const dashboardStyle = {
 
 }
 
-const space = {
-    backgroundColor: 'black',
-    width: '100%',
-    height: '5px'
-
-  
-}
-
 const quoteBox = {
     // backgroundColor: 'rgba(117, 111, 111, 0.95)',
     // backgroundColor: 'rgba(117, 111, 111, 0.8)',
@@ -68,30 +60,41 @@ const empty= {
 
 const aboutTitle = {
 
-
-    fontSize: '25px',
-    textDecoration: 'underline',
+    //background
     backgroundColor: 'transparent',
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+    //dimensions
     width: '500px',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
+    //other positioning
     padding: '10px',
-    justifyContent: 'center'
+    //font
+    color: '#f2f2f2',
+    fontSize: '45px',
+    textDecoration: 'underline',
+    fontWeight: 'bold',
+    
 }
 
 const aboutBox = {
-   
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+   //background
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    //dimensions
     width: '500px',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: '10px',
     flexDirection: 'column',
-    backgroundColor: 'rgba(117, 111, 111, 0.8)'
+    //other positioning
+    padding: '10px',
+    //font
+    color: '#f2f2f2',
+    fontSize: '25px',
+    fontWeight: '12px',
+    
     
 
 }
@@ -113,76 +116,79 @@ const joinBox = {
 
 const joinTitle= {
    
-
-
-
-    fontSize: '25px',
-    textDecoration: 'underline',
+    //background
     backgroundColor: 'transparent',
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+    //dimensions
     width: '500px',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
+    //other positioning
     padding: '10px',
-    justifyContent: 'center'
+    //font
+    color: '#f2f2f2',
+    fontSize: '45px',
+    textDecoration: 'underline',
+    fontWeight: 'bold',
+
+
 
 }
-
+    //background
+    //dimensions
+    //flex positioning
+    //other positioning
+    //font
 const joinText= {
     
-    
-    // backgroundColor: 'transparent',
-    width: '1200px',
-    color: '#f2f2f2',
-    fontWeight: 'bold',
-    width: '500px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    padding: '10px',
-    flexDirection: 'column',
-    backgroundColor: 'rgba(117, 111, 111, 0.8)'
-
-}
-
-const spacerOne = {
-    backgroundColor: 'transparent',
-    width: '100%',
-    minHeight: '100px'
-}
-
-const spacerTwo = {
+    //background
     backgroundColor: 'rgba(117, 111, 111, 0.8)',
-    width: '100%',
-    minHeight: '50px',
+    //dimensions
+    width: '500px',
+    //flex positioning
     display: 'flex',
-    justifyContent: 'space-around',
     alignItems: 'center',
-    fontSize: '30px',
-    fontWeight: 'bold',
-    textDecoration: 'underline overline' 
-}
-
-const categoryContainer = {
-    // backgroundColor: 'rgba(117, 111, 111, 0.8)',
-    backgroundImage: 'https://lh3.googleusercontent.com/HlczxIJfryJ-RnK0c6cxX7_AeGI00qF0XAUJxGZMbZk2x1SuvqrZV5yEe7d44mLZZlj2OnI2ggYzmtdlY2uNlyJnScq2K4noikq3_qbaLHeS5g61QUW3sJQn7aQ3mQv_XCKZ7dVbZP8OiXC5tL2JC75XKHQWpOzQCZW7wRhnsHobgtTrx4AswpdTmw9roqfcSEXu043tCucjJ4olJqPdKZB-DM2tmluQA3o6v18Kk5hEjUialx76_P_58xEqZgv-Qym3uoxluSzLRKwOgKz78303a8pgFFlzf-TyIqZupJNhT0Xz2Oz2PgcZdq_tFGtGlVVlBn_NfrBfme2xLhNCpcETP8Z_mUbUwUO7hvLx73QbKcBqZ3JB7ZgcyYV-FsIg_ccmrZFjnKvMLhtON9_CHv_tOWvRlY5vZSw56l2xif304kE_VXxnSkOUPee0sTD59UG4O-2ar28yljoByYFxkprmUbZui3yL7jnD542L4DWnrLUXBS2dfDWlp_FyKgfU1l4eqqufLEna-tJfhGtNuxbm71IVFd3A16pRp14u8jSkhS2i1Czkc0djlYai07iTLR_j-ad8jORX4_IAdhRLp7nhWcLEEnsujnvgGIiSpKXXgFOqbnWh_XLIKuytLuaJOlmplOkq5p5pMTxSRFWZY4ZVsi37R019t1ugTCqv6P9UerJZS4cPTHO-QzDoaiU=w876-h659-no',
-    height: '500px', 
-    width: '1200px',
-    display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'baseline'
-       
+    flexDirection: 'column',
+    //other positioning
+    padding: '10px',
+    //font
+    color: '#f2f2f2',
+    fontSize: '25px',
+    fontWeight: '12px'
+    
 
 }
 
 const leoTitle = {
-    fontSize: '25px',
-    textDecoration: 'underline',
+    //background
     backgroundColor: 'transparent',
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+    //dimensions
     width: '500px',
+    //flex positioning
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    //other positioning
+    padding: '10px',
+    //font
+    color: '#f2f2f2',
+    fontSize: '45px',
+    textDecoration: 'underline',
+    fontWeight: 'bold',
+
+
+
+
+    // fontSize: '25px',
+    // textDecoration: 'underline',
+    // backgroundColor: 'transparent',
+    // color: '#f2f2f2',
+    // fontWeight: 'bold',
+    // width: '500px',
+
+
     //flex positioning
     // display: 'flex',
     // alignItems: 'center',
@@ -202,8 +208,8 @@ const leoBox = {
     minHeight: '400px',
     //flex positioning
     display: 'flex',
-    flexDirection: 'column',
-    // alignItems: 'center',
+    // flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center'
     
 
@@ -224,31 +230,67 @@ const leoOuterBox = {
 }
 
 const leoTextBox = {
-    
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+    //background
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    //dimensions
     width: '500px',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: '10px',
     flexDirection: 'column',
-    backgroundColor: 'rgba(117, 111, 111, 0.8)'
+    //other positioning
+    padding: '10px',
+    //font
+    color: '#f2f2f2',
+    fontSize: '25px',
+    fontWeight: '12px'
+
+
+
+    
+    // color: '#f2f2f2',
+    // fontWeight: 'bold',
+    // width: '500px',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-around',
+    // padding: '10px',
+    // flexDirection: 'column',
+    // backgroundColor: 'rgba(117, 111, 111, 0.8)'
     
 }
 
 const civTitle = {
-    fontSize: '25px',
-    textDecoration: 'underline',
+    //background
     backgroundColor: 'transparent',
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+    //dimensions
     width: '500px',
+    //flex positioning
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    //other positioning
+    padding: '10px',
+    //font
+    color: '#f2f2f2',
+    fontSize: '45px',
+    textDecoration: 'underline',
+    fontWeight: 'bold',
+
+
+
+    // fontSize: '25px',
+    // textDecoration: 'underline',
+    // backgroundColor: 'transparent',
+    // color: '#f2f2f2',
+    // fontWeight: 'bold',
+    // width: '500px',
 }
 
 const civBox = {
     //background style
-    backgroundImage: 'url(https://lh3.googleusercontent.com/TAcXommXehiTQaFRTOOLJcG5awF-KEQxphztOF_-o4k_rzTb2MTjyMSmNVgyvhPnOevxuKDrrC-VhccTVr0Ufl38tcSc2nTl7ylwc-SzwYqnNMB3PpZYQ43k5oliow6di4Ly0EVlQHKzkvTO5XOYhzPP1OslbE_hX_o8te0hU5fbu42mYGgBzpIslchT4bWvj0nSVzJ5TMqrSjMP0hDCh_837RJQAj44Mgw05bCi5hGDszrnL0lq2mljjoWdhPyj56Nze44Z3ul09aP7EwvCE2yXPiIQRmLX8tG4gz4fqZNINVEfaE7q5gfro_G-0Za8XdBvLP6Z88Czv8o9VSNbfr-v2e1UUj4MGd4KQcILPCFkAiN1s5N5XVIeJIAi429HUJhs7H6EaVKXMUSd-gHCwlosRedIc31VDmNCvQ31r1iQmlm-cWa7Qk304tCFFGFD_CM1SGqL9dPkBR_TNywL4ZyJt3wkyhbT3kXO4WuBAYRfKpj9vAA2cLopS3Xx7cERYSX5qX909uQ1ycPtsETnCmK0bvoKmLrQvRVCI47dpDcTfKf6eISgYZVz56NvjCogYRHPgenWh95W5_idmPzR5QMudNQQKEyhcK9_7cDpyV-hVOVUeZ_2N3BeEzSQGddAZQOR-ufyQlYF4vwBCGL0R73avEvklelGdEQLGLwsqsnJ2bR63a8V1CPsQ7lwOWw=w371-h657-no)',
+    backgroundImage: 'url(https://lh3.googleusercontent.com/qKKaHiyPTLnx6UewT_8IERPIqk8mG3IN8mo7zQJB3JYzOqARf9lbiRwa7FPigAJYye0fm7tSmYgiQ0bAE4fAsPz_WBFPQwMW8kQRS9TaaMRzYS6txD5CsQVXnRdtgFDRULU1ihG4MYOM6l_gtoPmviCo4L7ERBuRREmQrLhYIxakX7U-MaW7iADpnifbS9tWajIxv1N4GnmqwETxdq7afI9yF-aaU82IQAwfBsVvVC59GigNUm2ZlFBljL4XUkwGX17QdclpE79XTVr-8StBOzGqOfIpRxi7tTe8GYa69cUyggkdq9grjQMRCQdT_t0kqyIf0dqWMvwOqvi75KjB3kn1Fon1NS-Umjiq16YYRgvbtuQqHM4MV_RPpcJ4F8m2VMffdOQ_bjwGs9wcmxhCQ19LIItO0KCuSZrH-Fqs-FOh4KppLZYMnaRe4cAv3yhuqX7jf8HTWtjiPEgf9W5Rsb6kbEkQhNEwb2Uq869ojHIh1entMG_6DVl44-nMOqbo7aPTdpvb3wSqEdjjeYymbqkZmSqKLV1yxkXRY1NPx7Kif5bGNfraBc2hs0Sm-m8xhWolL_wvZaDteK3rli1Il3uiR605FTTxRz0BpE3DxIw5s_ErPCTIf_uBtgZ0QJ74IdCO7_uAQNMIPKsSb7M5PbcmEkg7sQbIiGmuNN7BpI9HfATd8qrI885BKEM8yXM=w1367-h615-no)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
     backgroundPosition: 'center',
@@ -258,8 +300,8 @@ const civBox = {
     minHeight: '400px',
     //flex positioning
     display: 'flex',
-    // flexDirection: 'column',
-    alignItems: 'center',
+    flexDirection: 'column',
+    // alignItems: 'center',
     justifyContent: 'center'
     
 
@@ -278,21 +320,41 @@ const civOuterBox = {
     width: '600px',
     //flex positioning
     display: 'flex', 
-    // justifyContent: 'space-around',
+    justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection:'column'
 }
 
 const civTextBox = {
-    color: '#f2f2f2',
-    fontWeight: 'bold',
+
+    //background
+    backgroundColor: 'rgba(117, 111, 111, 0.8)',
+    //dimensions
     width: '500px',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: '10px',
     flexDirection: 'column',
-    backgroundColor: 'rgba(117, 111, 111, 0.8)'
+    //other positioning
+    padding: '10px',
+    //font
+    color: '#f2f2f2',
+    fontSize: '25px',
+    fontWeight: '12px'
+
+
+
+
+    // color: '#f2f2f2',
+    // fontWeight: 'bold',
+    // width: '500px',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-around',
+    // padding: '10px',
+    // flexDirection: 'column',
+    // backgroundColor: 'rgba(117, 111, 111, 0.8)'
 }
 
 
@@ -317,7 +379,8 @@ class Dashboard extends Component{
                 <div style= {dashboardStyle} className= 'dashboardStyle'>
                     <div style= { aboutBox} >
                         <div style= { aboutTitle }>ABOUT THE TRAINING HQ </div>
-                             Welcome to the Training HQ. The industry is oversaturated with "tactical  trainers" and those who profess to teach tactical gunsmanship and gunfighting skills for LEO and Civilian gunhandlers.  Much of the training that is easiliy found by many in the private sector, your agency or local department is anywhere from subpar all the way to dangerous. We believe every LEO and Civilian who carries the means of deadly force have the duty to seek the correct training and work to be the best and most responsible asset that they can be. Here at the HQ, we work to provide you with resources to to fulfill your search for the most compentent and experienced trainers in the industry. The days of searching the web for trainers to be caught by marketing schemes of subpar, inexperienced or downright negligent trainers are over.  Feel free to browse our library of trainers to find what will suite your training needs best.  Furthermore, we work to provide a library of industry and Top Tier unit drills and score standards for you to train on and work toward. For every true student, the search for knowledge, skill and wisdom is an endless persuit and we, at the Training HQ, share that drive. We hope that we can come together to train as guardians and assets to those we love and the nation we love and learn from the best to become the best we can be with what we have.  Upwards and onwards.  Stay Frosty. 
+                            Welcome to the Training HQ. Bringing you an "on the range" resource to track your training goals.  With industry standard drills from the gunfighting and competition world, you have no excuse to not hold yourself accountable and strive for constant improvement.  Track your progress with scores and times and become the safest and most efficient gunhandler through organized drill testing.
+                             {/* Welcome to the Training HQ. The industry is oversaturated with "tactical  trainers" and those who profess to teach tactical gunsmanship and gunfighting skills for LEO and Civilian gunhandlers.  Much of the training that is easiliy found by many in the private sector, your agency or local department is anywhere from subpar all the way to dangerous. We believe every LEO and Civilian who carries the means of deadly force have the duty to seek the correct training and work to be the best and most responsible asset that they can be. Here at the HQ, we work to provide you with resources to to fulfill your search for the most compentent and experienced trainers in the industry. The days of searching the web for trainers to be caught by marketing schemes of subpar, inexperienced or downright negligent trainers are over.  Feel free to browse our library of trainers to find what will suite your training needs best.  Furthermore, we work to provide a library of industry and Top Tier unit drills and score standards for you to train on and work toward. For every true student, the search for knowledge, skill and wisdom is an endless persuit and we, at the Training HQ, share that drive. We hope that we can come together to train as guardians and assets to those we love and the nation we love and learn from the best to become the best we can be with what we have.  Upwards and onwards.  Stay Frosty.  */}
                              <button>About</button>
                     </div>
                     <div style= {empty}></div>
@@ -326,14 +389,26 @@ class Dashboard extends Component{
                     <div style= {empty}></div>
                     <div style= {joinText}> 
                         <div style= {joinTitle}>Join the Team </div>
-                            Join the community by registering for your own personal training profile.  As a member of the community, you will have the ability to add drills from our drill library and track your progress on each drill you add.  You can edit your score as you work the shooting standards in the drills and follow your own skill growth.  Furthermore, you will be able to save trainers to your profile as favorites that fit your needs and personal training plans.  Join the community today to hold yourself responsible for your personal journey to be the best guardian that you can be.  We will see you on the range. 
+                            Join the community and hold yourself accountable through personalized drill progress tracking.  Become the best shooter that you can be and join now. 
+                            {/* Join the community by registering for your own personal training profile.  As a member of the community, you will have the ability to add drills from our drill library and track your progress on each drill you add.  You can edit your score as you work the shooting standards in the drills and follow your own skill growth.  Furthermore, you will be able to save trainers to your profile as favorites that fit your needs and personal training plans.  Join the community today to hold yourself responsible for your personal journey to be the best guardian that you can be.  We will see you on the range.  */}
                             <button>Join Now </button>
                     </div>
                 </div>
-                {/* <div style= { spacerOne }></div> */}
-                {/* <div style= { spacerTwo }> GUARDIANS </div> */}
-                {/* <div style= {categoryContainer} className= 'categoryContainer'> */}
+                
+                    <div style= {civBox}> 
+                    {/* <div style= {emptyCiv}></div> */}
+                        <div style= { civOuterBox}>
+                            <div style= {civTextBox}>
+                                <div style= { civTitle}>
+                                    CIVILIAN 
+                                </div>
+                                Citizens have the right to protect themselves and those around them. As a citizen who chooses to carry a firearm or own a firearm, the responsibility is on you to be proficient with your chosen weapon. Get out on the range and practice.  Hold yourself accountable and measure yourself up on the drills you shoot and track your progress.
+                                 {/* As a civilian, the right to bear arms is endowned on us from powers that exceed that of the government. We have the human right to protect ourselves, our families, those we love and our nation with the means of our choice.  As an armed civilian, it is imperative that we take the responsibilites of the means of leathal force with the upmost of seriousness. In the landscape of our daily interactions on our communities, we cannot predict what each day may bring. But we can and must maintain a state of preparedness for the complex world in which we live. It is the duty of every civilian who chooses to act out their right to self and familial preservation to be the most proficient and skillful operator of their weapon as possible. To be dangerous is a sacred and heavy responsibility. One cannot be peaceful if they do not possess the ability to enact the opposite. To act out this sacred duty for the good of the innocent, every armed civilian needs to seek out the best training from the best trainers that our society can offer. We must seek the proper training and constantly hone our skills in the dark event that they will be needed.     */}
+                            </div>
+                        </div>
+                    </div>
                     <div style= {leoBox}>
+                        <div style= {emptyCiv}></div>
                         <div style= { leoOuterBox}>
                             <div style= {leoTextBox}>
                                 <div style={ leoTitle }> 
@@ -344,18 +419,7 @@ class Dashboard extends Component{
                             </div>
                         </div>
                     </div>
-                {/* </div> */}
-                    <div style= {civBox}> 
-                    <div style= {emptyCiv}></div>
-                        <div style= { civOuterBox}>
-                            <div style= {civTextBox}>
-                                <div style= { civTitle}>
-                                    CIVILIAN 
-                                </div>
-                                 As a civilian, the right to bear arms is endowned on us from powers that exceed that of the government. We have the human right to protect ourselves, our families, those we love and our nation with the means of our choice.  As an armed civilian, it is imperative that we take the responsibilites of the means of leathal force with the upmost of seriousness. In the landscape of our daily interactions on our communities, we cannot predict what each day may bring. But we can and must maintain a state of preparedness for the complex world in which we live. It is the duty of every civilian who chooses to act out their right to self and familial preservation to be the most proficient and skillful operator of their weapon as possible. To be dangerous is a sacred and heavy responsibility. One cannot be peaceful if they do not possess the ability to enact the opposite. To act out this sacred duty for the good of the innocent, every armed civilian needs to seek out the best training from the best trainers that our society can offer. We must seek the proper training and constantly hone our skills in the dark event that they will be needed.    
-                            </div>
-                        </div>
-                    </div>
+                
                 <Footer/>
                 </div>
             </div>
