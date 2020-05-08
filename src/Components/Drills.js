@@ -5,7 +5,7 @@ import React, {Component} from 'react'
 
 
 const drillBody = {
-    backgroundColor: 'green', 
+    // backgroundColor: 'green', 
     height: '100vh', 
     width: '100%',
     display: 'flex',

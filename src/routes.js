@@ -10,12 +10,14 @@ import MyTrainers from "./Components/MyTrainers";
 import CreateDrill from "./Components/CreateDrill";
 import Stats from './Components/Stats';
 import SingleDrill from './Components/SingleDrill';
+import Register from './Components/Register';
 
 
 export default (
     <Switch>
         <Route exact path='/' component={Dashboard}/>
         <Route path='/auth' component={Auth}/>
+        <Route path='/register' component={Register}/>
         <Route path='/drills' component={Drills}/>
         <Route path='/mytraining' component={MyTraining}/>
         <Route path='/trainers' component={Trainers}/>

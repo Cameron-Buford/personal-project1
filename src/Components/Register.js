@@ -1,85 +1,3 @@
-// import React, {Component} from 'react'
-// import axios from 'axios'
-
-
-// class Auth extends Component{
-//     constructor(){
-//         super()
-//         this.state ={
-//             username: '',
-//             password: '',
-//             loginToggle: true
-
-//         }
-//     }
-
-
-//     //make the login button turn to a welcome sign when logged in instead of staying alogin button
-
-//     register = (username, password) => {
-//         axios.post('/auth/register', {username, password})
-//         .then(res => {
-//             console.log(res)
-//             this.props.history.push('/')
-//         })
-//     }
-
-//     login = (username, password) => {
-//         axios.post('/auth/login', {username, password})
-//         .then(res => {
-//             console.log(res)
-//             this.props.history.push('/')
-//         })
-//     }
-
-//     handleChange = e => {
-//         const {name, value} = e.target;
-//         this.setState({
-//             [name]: value
-//         })
-//     }
-
-//     render(){
-//         const {username, password} = this.state;
-//         return(
-//             <div>Auth
-//                 <div>
-//                     <div>
-//                         <p>{'usernman'}</p>
-//                         <input
-//                             name= 'username'
-//                             value={this.state.username}
-//                             placeholder= 'username'
-//                             onChange= {e => this.handleChange(e)}
-//                             />
-//                     </div>
-
-//                     <div>
-//                         <p>{'Password'}</p>
-//                         <input
-//                             name= 'password'
-//                             value={this.state.password}
-//                             placeholder= 'password'
-//                             onChange= {e => this.handleChange(e)}
-//                             />
-
-//                             <button onClick={() => this.login(username, password)}>login</button>
-//                             <button onClick= {() => this.register(username, password)}>register</button>
-//                     </div>
-
-
-//                 </div>
-
-//             </div>
-//         )
-//     }
-// }
-
-// export default Auth
-
-
-
-
 import React, { useState } from "react"
 import axios from "axios"
 import {withRouter} from 'react-router-dom'
@@ -236,16 +154,16 @@ const infoBox = {
 
 }
 
-const registerButton = {
-  backgroundColor: '#CD2027',
-  color: '#FFFFFF',
-  width: '150px',
-  borderRadius: '12px',
-  fontWeight: 'bold',
-  border: 'none',
-}
+// const registerButton = {
+//   backgroundColor: '#CD2027',
+//   color: '#FFFFFF',
+//   width: '150px',
+//   borderRadius: '12px',
+//   fontWeight: 'bold',
+//   border: 'none',
+// }
 
-const loginButton = {
+const registerButton = {
   //background
   backgroundColor: '#CD2027',
     //dimensions
@@ -260,10 +178,6 @@ const loginButton = {
   fontWeight: 'bold',
 }
 
-const toRegister = {
-  color: 'blue'
-}
-
 const backhomeButton = {
   backgroundColor: 'transparent',
   borderRadius: '12px',
@@ -273,7 +187,7 @@ const backhomeButton = {
 
 
 
-const Auth = ({history, getUser}) => {
+const Register = ({history, getUser}) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
@@ -335,13 +249,7 @@ const Auth = ({history, getUser}) => {
                         onChange={e => setPassword(e.target.value)}
                 ></input>
             </div >
-            <p>Forgot Password?</p>
-
-
-
-
-
-            {/* <div style= {infoBox}>
+            <div style= {infoBox}>
                 <p>{'EMAIL:'}</p>
                 <input
                   style = {inputStyle}
@@ -350,31 +258,35 @@ const Auth = ({history, getUser}) => {
                   placeholder="email"
                   onChange={e => setEmail(e.target.value)}>
                 </input>
-            </div> */}
-            <button
+            </div>
+            {/* <button
                 style= {loginButton}
                 onClick = {() => login()}
                 >Log in
-            </button>
-            <div>
+            </button> */}
+            {/* <div>
               Don't have an account? Register
-              <button 
-              onClick= {() => history.push('/register')}
-              >HERE</button>
-            </div>
-            {/* <button
+              <button>HERE</button>
+            </div> */}
+            <button
                 style= {registerButton}
                 onClick = {() => register()}
                 >Register
-            </button> */}
+            </button>
             <button 
               style= {backhomeButton}  
               className='homebutton'    
               onClick={() => history.push('/')}>
                 Take Me Back To HQ Home
             </button>
+            <button 
+              style= {backhomeButton}  
+              className='homebutton'    
+              onClick={() => history.push('/auth')}>
+                Already have an Account- Log In
+            </button>
         </div>
     </div>
   )
 }
-export default connect(null, {getUser})(withRouter(Auth))
+export default connect(null, {getUser})(withRouter(Register))
