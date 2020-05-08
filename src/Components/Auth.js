@@ -261,7 +261,11 @@ const loginButton = {
 }
 
 const toRegister = {
-  color: 'blue'
+  color: 'blue',
+  border: 'none',
+  backgroundColor: 'transparent',
+  fontSize: '18px',
+  fontWeight: 'bold'
 }
 
 const backhomeButton = {
@@ -358,8 +362,9 @@ const Auth = ({history, getUser}) => {
             </button>
             <div>
               Don't have an account? Register
-              <button 
-              onClick= {() => history.push('/register')}
+              <button
+                style= {toRegister} 
+                onClick= {() => history.push('/register')}
               >HERE</button>
             </div>
             {/* <button
