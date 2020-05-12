@@ -8,7 +8,7 @@ import {getUser} from '../Duxx/reducer'
 //STYLING
 
 const title = {
-    
+    // backgroundColor:'blue',
     fontSize: '55px',
     fontWeight: 'bold',
     display: 'flex',
@@ -19,13 +19,24 @@ const title = {
 }
 
 const titleContainer = {
-    height: '100px',
+    // backgroundColor: 'yellow',
+    height: '200px',
     display: 'flex',
     alignItems: 'baseline'
 }
 
+const stickyNav = {
+    position: 'sticky',
+    // backgroundColor: 'green',
+    width: '100%',
+    height: '100px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+}
+
 const buttonLine = {
-    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    // backgroundColor: 'blue',
     backgroundColor: 'transparent',
     borderRadius: '15px',
     width: '800px',
@@ -36,6 +47,7 @@ const buttonLine = {
 }
 
 const buttons = {
+    // backgroundColor: 'red',
     backgroundColor: 'transparent',
     color: 'white',
     border: 'none',
@@ -44,7 +56,7 @@ const buttons = {
 }
 
 const registrationDiv = {
-    // backgroundColor: 'rgba(117, 111, 111, 0.5)',
+    // backgroundColor: 'yellow',
     color: 'white',
     height: '100px',
     display: 'flex',
@@ -100,32 +112,39 @@ class Nav extends Component{
 
                     <div style= {titleContainer}>
 
-                        <div style = { title }  > TRAINING HQ </div>
+                        <div style = { title }  > TRAINING HQ 
+                            </div>
                     </div>
+                    <div style= {stickyNav}>
+                        <div style= {buttonLine}>
 
-                    <div style= {buttonLine}>
-
-                        <button style= {buttons} className='homebutton' onClick={() => this.props.history.push('/')}>Home</button>
+                            <button style= {buttons} className='homebutton' onClick={() => this.props.history.push('/')}>Home</button>
                         
-                        <button style= {buttons} className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
-                        <button style= {buttons} className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
+                            <button style= {buttons} className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
+                            <button style= {buttons} className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
                         
                         
-                        <button style= {buttons} className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
-                    </div>
+                            <button style= {buttons} className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
+                        </div>
 
                     
-
-                    <div style= {registrationDiv}>
-                        {this.props.user.user_id ? 
-                        <div style= {shooterInStack}> Shooter in Stack </div>:
-                        <button 
+                        <div style= {registrationDiv}>
+                            {this.props.user.user_id ? 
+                            <div style= {shooterInStack}> Shooter in Stack </div>:
+                            <button 
                             style= {loginButtons} 
                             className='loginbutton' 
                             onClick={() => this.props.history.push('/auth')}
                             
                             >Login/Register</button>}
-                        <button style= {loginButtons} onClick= {() => this.logout()}>logout</button>
+                            <div>
+                                {this.props.user.user_id ?
+                                <button style= {loginButtons} onClick= {() => this.logout()}>logout</button>:
+                                <div></div>
+                                }
+                            </div>
+                        </div>
+
                     </div>
                         
                     
