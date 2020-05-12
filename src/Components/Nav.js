@@ -29,7 +29,7 @@ const buttonLine = {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    textDecoration: 'underline'
+    // textDecoration: 'underline'
 }
 
 const buttons = {
