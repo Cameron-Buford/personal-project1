@@ -38,7 +38,9 @@ const buttons = {
     color: 'white',
     border: 'none',
     fontWeight: '200',
-    fontSize: '30px'
+    fontSize: '30px',
+    cursor: 'pointer',
+    outline: 'none'
 }
 
 const registrationDiv = {
@@ -49,7 +51,8 @@ const registrationDiv = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    cursor: 'pointer'
 
 }
 
@@ -58,7 +61,8 @@ const loginButtons = {
     backgroundColor: 'transparent',
     border: 'none',
     fontWeight: 'bold',
-    fontSize: '15px'
+    fontSize: '15px',
+    cursor: 'pointer'
 }
 
 const shooterInStack = {

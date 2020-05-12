@@ -35,7 +35,9 @@ const buttons = {
     border: 'none',
     fontWeight: 'bold',
     fontSize: '20px',
-    color: 'black'
+    color: 'black',
+    cursor: 'pointer',
+    outline: 'none'
 }
 
 

@@ -6,10 +6,12 @@ import {Provider} from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ScrollToTop from './Components/ScrollToTop'
 
 ReactDOM.render(
     <Provider store={store}>
         <HashRouter>
+            <ScrollToTop/>
             <App/>
         </HashRouter>
     </Provider>,

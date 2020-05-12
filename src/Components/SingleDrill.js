@@ -3,6 +3,7 @@ import axios from 'axios'
 import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
 
+
 //container styling
 
     //background
@@ -17,7 +18,7 @@ import useAxios from '../hooks/useAxios'
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
         //dimensions
-        height: '100vh', 
+        height: '100%', 
         width: '100%',
         //flex positioning
         display: 'flex',
@@ -59,7 +60,8 @@ import useAxios from '../hooks/useAxios'
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        flexDirection: 'column'
         //other positioning
         //font
       }
@@ -103,20 +105,53 @@ import useAxios from '../hooks/useAxios'
         fontSize: '20px',
         fontWeight: 'bold'
     }
+
+    const drillData = {
+    //background
+        // backgroundColor: 'green',
+    //dimensions
+        width: '80%',
+    //flex positioning
+    //other positioning
+    //font
+        fontSize: '15px',
+        fontWeight: 'bold'
+
+    }
+
+    const singleDrillButtonContainer = {
+    //background
+        // backgroundColor: 'green',
+    //dimensions
+        height: '100px',
+        width: '80%',
+    //flex positioning
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    //other positioning
+    //font
+    }
     
     const addDrillButton = {
         //background
-        backgroundColor: 'rgb(27, 221, 27)',
+        backgroundColor: 'transparent',
+        // backgroundColor: 'rgb(27, 221, 27)',
         //dimensions
+        height: '50px',
         //flex positioning
         //other positioning
         //font
-        color: 'black',
+        color: 'rgb(27, 221, 27)',
         fontWeight: 'bold',
         // other
-        border: 'none',
-        // borderRadius: '5px',
+        borderColor: 'rgb(27, 221, 27)',
+        cursor: 'pointer'
+        
     }
+    
+   
+            
 
 const SingleDrill = ({history, match}) => {
     const {drill} = useAxios('drill', match.params.drill_id)
@@ -145,16 +180,16 @@ const SingleDrill = ({history, match}) => {
                     <div style= {drillDataLabels}>
                         DISTANCE:
                     </div>
-                    <div > 
+                    <div style= {drillData}> 
                         {drill.distance} 
-                        Yards
+                        -Yards
                     </div>
 
             {/* Shot count  */}
                     <div style= {drillDataLabels}>
                         SHOTS:
                     </div>
-                    <div > 
+                    <div style= {drillData}> 
                         {drill.shots}
                     </div>
 
@@ -162,7 +197,7 @@ const SingleDrill = ({history, match}) => {
                     <div style= {drillDataLabels}>
                         SETUPS: 
                     </div>
-                    <div > 
+                    <div style= {drillData}> 
                         {drill.setup}
                     </div>
 
@@ -170,7 +205,7 @@ const SingleDrill = ({history, match}) => {
                     <div style= {drillDataLabels}>
                         PARTIME: 
                     </div>
-                    <div > 
+                    <div style= {drillData}> 
                         {drill.partime} 
                         Seconds
                     </div>
@@ -179,7 +214,7 @@ const SingleDrill = ({history, match}) => {
                     <div style= {drillDataLabels}>
                         SCORE: 
                     </div>
-                    <div > 
+                    <div style= {drillData}> 
                         {drill.score} 
                         Seconds/Points
                     </div>
@@ -188,16 +223,23 @@ const SingleDrill = ({history, match}) => {
                     <div style= {drillDataLabels}>
                         ACTIONS:
                     </div>
-                    <div > 
+                    <div style= {drillData}> 
                         {drill.actions}
                     </div>
-                    <button 
-                        style= {addDrillButton}
-                        onClick = {() => pushDrill(drill.drill_id)}>
-                            Add to MY DRILLS
-                    </button>
+                    <div style= {singleDrillButtonContainer}>
+                        <button 
+                            style= {addDrillButton}
+                            onClick = {() => pushDrill(drill.drill_id)}>
+                                Add to MY DRILLS
+                        </button>
+                        <button
+                            onClick = {() => history.push('/drills')}>
+                                Back To Drills
+                        </button>
+                    </div>
                 </div>
             </div>
+            <Footer/>
         </div>
             )
 }

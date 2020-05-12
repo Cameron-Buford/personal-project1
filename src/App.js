@@ -55,6 +55,17 @@ const title = {
 
 }
 
+const titleClick = {
+  backgroundColor: 'transparent',
+  border: 'none',
+  fontSize: '55px',
+  fontWeight: 'bold',
+  display: 'flex',
+  alignItems: 'baseline',
+  textDecoration: 'underline overline',
+  outline: 'none'
+}
+
 class App extends Component{
   constructor(){
     super()
@@ -85,7 +96,13 @@ class App extends Component{
             <div></div>
             :
           <div style= {titleContainer}>
-            <div style = { title }> TRAINING HQ </div>
+            <div style = { title }> 
+              <button 
+                style= {titleClick}
+                onClick={() => this.props.history.push('/')}>
+                  TRAINING HQ 
+              </button>
+            </div>
           </div>
          }
         </div>

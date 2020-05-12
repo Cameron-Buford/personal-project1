@@ -11,9 +11,11 @@ import CreateDrill from "./Components/CreateDrill";
 import Stats from './Components/Stats';
 import SingleDrill from './Components/SingleDrill';
 import Register from './Components/Register';
+import ScrollToTop from './Components/ScrollToTop'
 
 
 export default (
+    
     <Switch>
         <Route exact path='/' component={Dashboard}/>
         <Route path='/auth' component={Auth}/>
@@ -27,4 +29,5 @@ export default (
         <Route path= '/stats/:mydrill_id' component= {Stats}/>
         <Route path= '/drill/:drill_id' component= {SingleDrill}/>
     </Switch>
+    
 );

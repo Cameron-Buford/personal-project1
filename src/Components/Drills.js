@@ -77,6 +77,7 @@ const buttonStyleOne = {
     // other
     border: 'none',
     borderRadius: '5px',
+    cursor: 'pointer'
 }
 
 

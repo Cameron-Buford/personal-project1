@@ -108,6 +108,22 @@
   }
 }
 
+
+/* .addDrillButton{
+  background-color: transparent;
+  height: 50px;
+  color: 'rgb(27, 221, 27)';
+  font-weight: bold;
+  border-color: 'rgb(27, 221, 27)';
+
+}
+.addDrillButton : hover {
+  hover: blue;
+  transition-duration: 0.4s;
+
+} */
+
+
 .createdrillbutton {
   border-radius: 25px;
   background-color: rgb(223, 206, 206);
