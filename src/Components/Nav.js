@@ -32,7 +32,8 @@ const stickyNav = {
     height: '100px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    flexDirection: 'column'
 }
 
 const buttonLine = {
@@ -58,11 +59,12 @@ const buttons = {
 const registrationDiv = {
     // backgroundColor: 'yellow',
     color: 'white',
-    height: '100px',
+    width: '100%',
+    height: '20px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
 
 }
 
@@ -112,38 +114,66 @@ class Nav extends Component{
 
                     <div style= {titleContainer}>
 
-                        <div style = { title }  > TRAINING HQ 
-                            </div>
+                        <div style = { title }> TRAINING HQ </div>
                     </div>
                     <div style= {stickyNav}>
-                        <div style= {buttonLine}>
-
-                            <button style= {buttons} className='homebutton' onClick={() => this.props.history.push('/')}>Home</button>
-                        
-                            <button style= {buttons} className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
-                            <button style= {buttons} className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
-                        
-                        
-                            <button style= {buttons} className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
-                        </div>
-
-                    
                         <div style= {registrationDiv}>
                             {this.props.user.user_id ? 
-                            <div style= {shooterInStack}> Shooter in Stack </div>:
-                            <button 
-                            style= {loginButtons} 
-                            className='loginbutton' 
-                            onClick={() => this.props.history.push('/auth')}
-                            
-                            >Login/Register</button>}
+                                <div style= {shooterInStack}> Shooter in Stack </div>
+                                :
+                                <div>
+                                    <button 
+                                        style= {loginButtons} 
+                                        className='loginbutton' 
+                                        onClick={() => this.props.history.push('/auth')}>Log in
+                                    </button>
+                                    <button
+                                        style= {loginButtons}
+                                        onClick = {() => this.props.history.push('/register')}>Register
+                                    </button>
+                                </div>
+                            }
                             <div>
                                 {this.props.user.user_id ?
-                                <button style= {loginButtons} onClick= {() => this.logout()}>logout</button>:
+                                <button 
+                                    style= {loginButtons} 
+                                    onClick= {() => this.logout()}>logout
+                                    </button>
+                                    :
                                 <div></div>
                                 }
                             </div>
                         </div>
+                        <div style= {buttonLine}>
+
+                            <button 
+                                style= {buttons} 
+                                className='homebutton' 
+                                onClick={() => this.props.history.push('/')}>Home
+                            </button>
+                        
+                            <button 
+                                style= {buttons} 
+                                className='drillsbutton' 
+                                onClick={() => this.props.history.push('/drills')}>Drills
+                            </button>
+                            <button 
+                                style= {buttons} 
+                                className='trainersbutton' 
+                                onClick={() => this.props.history.push('/trainers')}>Trainers
+                            </button>
+                        
+                        
+                            <button 
+                                style= {buttons} 
+                                className='mytrainingbutton' 
+                                onClick={() => this.props.history.push('/mytraining')}>My Training
+                            </button>
+
+
+                        </div>
+
+                    
 
                     </div>
                         
