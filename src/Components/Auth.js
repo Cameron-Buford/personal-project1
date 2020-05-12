@@ -281,6 +281,7 @@ const Auth = ({history, getUser}) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
+  const [enteredText, setEnteredText] = useState(" ")
   
 
 
@@ -324,7 +325,10 @@ const Auth = ({history, getUser}) => {
                         name="username"
                         value={username}
                         placeholder ="username"
+                        type='text' 
+                        // value={enteredText}
                         onChange={e => setUsername(e.target.value)}
+                        
                 ></input>
             </div>
 
