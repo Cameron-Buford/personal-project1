@@ -71,9 +71,7 @@ class App extends Component{
   render(){
     const pathname = this.props.location.pathname
     console.log(pathname)
-    // if(pathname !== '/auth'){
-       
-    // }
+    
     console.log('hit')
     return(
       <div style = {backbody}>
@@ -94,7 +92,6 @@ class App extends Component{
 
           <Nav/>
           {routes}
-       {/* <Footer/> */}
         </div>
       </div>
     )
