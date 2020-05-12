@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 
 
 //container styling
@@ -82,6 +82,7 @@ const buttonStyleOne = {
 
 const Drills = ({history}) => {
     const {drills} = useAxios("drill")
+    const [input, setInput] = useState("")
     console.log(drills)
 
     const goToDrill = (drill_id) => {
@@ -98,9 +99,22 @@ const Drills = ({history}) => {
                   “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
                 </div>
                 <div>
+                    <div>
+                        <input
+                            type= 'text'
+                            value= {input}
+                            placeholder= 'SEARCH DRILLS'
+                            onChange = {e => setInput(e.target.value)}
+                            >
+                        </input>
+                        <button
+                            // onClick= {() => }
+                        >SEARCH</button>
+                    </div>
                     {
                     drills.map(drill => {
                         return (
+                            
                             <ul> 
                                 <li>
                                     <button 

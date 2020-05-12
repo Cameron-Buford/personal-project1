@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import './App.css';
 import routes from './routes'
+import {withRouter} from 'react-router-dom'
 import Nav from './Components/Nav'
 import Footer from './Components/Footer'
 import Auth from './Components/Auth'
@@ -68,8 +69,8 @@ class App extends Component{
   
 
   render(){
-    // const pathname = this.props.location.pathname
-    // console.log(pathname)
+    const pathname = this.props.location.pathname
+    console.log(pathname)
     // if(pathname !== '/auth'){
        
     // }
@@ -79,13 +80,16 @@ class App extends Component{
         <div styles={dashboardStyle}>
 
         <div>
-          {/* {pathname === '/auth' ?
+          {pathname === '/auth' 
+          ||
+          pathname === '/register'
+          ?
             <div></div>
-            : */}
+            :
           <div style= {titleContainer}>
             <div style = { title }> TRAINING HQ </div>
           </div>
-        {/* // } */}
+         }
         </div>
 
           <Nav/>
@@ -102,4 +106,4 @@ class App extends Component{
 
 
 
-export default App;
+export default withRouter(App);
