@@ -7,26 +7,11 @@ import {getUser} from '../Duxx/reducer'
 
 //STYLING
 
-const title = {
-    // backgroundColor:'blue',
-    fontSize: '55px',
-    fontWeight: 'bold',
-    display: 'flex',
-    alignItems: 'baseline',
-    textDecoration: 'underline overline'
-    
-
-}
-
-const titleContainer = {
-    // backgroundColor: 'yellow',
-    height: '200px',
-    display: 'flex',
-    alignItems: 'baseline'
-}
 
 const stickyNav = {
+    // position: '-webkit-sticky',
     position: 'sticky',
+    top: '0',
     // backgroundColor: 'green',
     width: '100%',
     height: '100px',
@@ -106,16 +91,16 @@ class Nav extends Component{
 
        
 
-        if (this.props.location.pathname === '/auth') {
+        if (this.props.location.pathname === '/auth' 
+            ||
+            this.props.location.pathname === '/register'
+        ) {
             return <></>;
          } else {
              return( 
              <div className= 'navbar'>
 
-                    <div style= {titleContainer}>
-
-                        <div style = { title }> TRAINING HQ </div>
-                    </div>
+                    
                     <div style= {stickyNav}>
                         <div style= {registrationDiv}>
                             {this.props.user.user_id ? 
@@ -134,13 +119,14 @@ class Nav extends Component{
                                 </div>
                             }
                             <div>
-                                {this.props.user.user_id ?
-                                <button 
-                                    style= {loginButtons} 
-                                    onClick= {() => this.logout()}>logout
+                                {this.props.user.user_id 
+                                    ?
+                                    <button 
+                                        style= {loginButtons} 
+                                        onClick= {() => this.logout()}>logout
                                     </button>
                                     :
-                                <div></div>
+                                    <div></div>
                                 }
                             </div>
                         </div>

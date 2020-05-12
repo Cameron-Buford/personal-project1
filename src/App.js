@@ -4,6 +4,8 @@ import './App.css';
 import routes from './routes'
 import Nav from './Components/Nav'
 import Footer from './Components/Footer'
+import Auth from './Components/Auth'
+import Register from './Components/Register'
 
 
 
@@ -21,11 +23,43 @@ const dashboardStyle = {
   backgroundColor: '#333333', height: '100vh', width: '100%'
 
 }
+const titleContainer = {
+  // backgroundColor: 'yellow',
+  height: '200px',
+  display: 'flex',
+  alignItems: 'baseline',
+  height: '100px',
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  backgroundColor: 'rgb(48, 45, 45)',
+  objectFit: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100%',
+  backgroundPosition: 'center',
+  /* color: #f2f2f2; */
+  color: 'rgb(218, 203, 203)',
+}
+
+const title = {
+  // backgroundColor:'blue',
+  fontSize: '55px',
+  fontWeight: 'bold',
+  display: 'flex',
+  alignItems: 'baseline',
+  textDecoration: 'underline overline'
+  
+
+}
 
 class App extends Component{
   constructor(){
     super()
     this.state = {
+      pathname: '',
+      location: ''
      
 
     }
@@ -34,17 +68,35 @@ class App extends Component{
   
 
   render(){
+    // const pathname = this.props.location.pathname
+    // console.log(pathname)
+    // if(pathname !== '/auth'){
+       
+    // }
+    console.log('hit')
     return(
       <div style = {backbody}>
         <div styles={dashboardStyle}>
-        <Nav/>
-        {routes}
+
+        <div>
+          {/* {pathname === '/auth' ?
+            <div></div>
+            : */}
+          <div style= {titleContainer}>
+            <div style = { title }> TRAINING HQ </div>
+          </div>
+        {/* // } */}
+        </div>
+
+          <Nav/>
+          {routes}
        {/* <Footer/> */}
         </div>
-        </div>
+      </div>
     )
+   }
   }
-}
+// }
 
 
 
