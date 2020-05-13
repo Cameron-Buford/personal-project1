@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios'
 import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
@@ -180,12 +180,19 @@ import'../App.css'
 const SingleDrill = ({history, match}) => {
     const {drill} = useAxios('drill', match.params.drill_id)
     console.log(drill)
+    // const {user} = useAxios()
+    
+    // const {user} = useEffect()
     
     const pushDrill = (drill_id) => {
+        // if(!user.user_id){
+        //     history.push('/auth')
+        // }else{
       axios.post('/api/post', {drill_id})
           .then(() => {
               history.push('/mydrills')
             })
+        // }
     }
     return (
         <div style= {drillBody}>

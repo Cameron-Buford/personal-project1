@@ -4,15 +4,20 @@ import axios from 'axios'
 import Footer from './Footer'
 
 const drillBody = {
-    backgroundColor: '#333333', 
+
+    //background
+    backgroundColor: '#E3E3E3',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    //dimensions
     height: '100%', 
     width: '100%',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'space-around'
-
-
+    justifyContent: 'center',
+    flexDirection: 'column'
 }
 const space = {
     backgroundColor: 'black',
@@ -21,23 +26,19 @@ const space = {
 }
 
 const quoteBox = {
-    // backgroundColor: 'rgb(223, 206, 206)',
-    // width: '100%',
-    // height: '100px',
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'space-around',
-    // fontSize: '25px'
 
-    backgroundColor: 'rgba(117, 111, 111, 0.95)',
-    
+    //background
+    backgroundColor: '#E3E3E3',
+    //dimensions
     width: '100%',
     height: '100px',
+    //flex positioning
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
+    //other positioning
+    //font
     fontSize: '25px'
-
 }
 
 const buttonDiv = {
@@ -49,19 +50,22 @@ const buttonDiv = {
 }
 
 const drilltable = {
-    backgroundImage: 'url(https://lh3.googleusercontent.com/43Ja1_yrILlTSGp28sukJPbWwuAVbrN9ul-qjei5IzLow14_jqS4BVrzH6ngxfZkhR95eI7ENvRbANKhwPRFoaOKpeinmEsW3h2Xt6I9-kHn3pIabgkONTnGinXWvKqdVWzEIa7iGfTnuxTUR_2EEYQ6rpKnQZzBMlvX6PV50-IBH97hjBbiZ2BMqDWkJoY7DOWyaf69oR-_41lQ6pWnEDDhELfZi5QJcLh2ymefav9uHoS06JG2oqOXw6THf0elyHQRFvSx7krB7bxsSXxuVl5S4W19-RQIgZDnJkLj5MEoGn1ArjLNNQd7YRf8jyVKFuaA42B55d78xtI49oKh3s0CPwaAg3A0f0hOveI10ZckiTeGl6JE8DVt18cNpUBBdLzQ7t6ppY7dI8o0zxsnnNEqeNKKIvFwDlfPhoeo2iHGWxn6HuXBeyorxLEQE26TWflGw5VWssq360kYmw_mVRZRNDZB7w5B3OpxJmABGhBbfNYddoYMttIO8P1-Vs70jW6kmaYBoHtBBu5nsPb-f6OKtK4wpF4ifl6jW_LWw1bbFSHgjl4UlqkBspdLfK55-9DyWYii-6Vyk1lz0hKOnFl2DIcg0kLy0XtoaJo0VEd4pRP3gHsEWfId7aXQwX3rGLZHMOks_kXgcgur95X_ELaVrpPSdKk4JZuhuf8Qc_86q-mt8mkhDoM=w1136-h640-no)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
-    backgroundColor: 'transparent',
-    // backgroundColor: '#333333',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    // flexDirection: 'column',
-    width: '100%',
-    flexWrap: 'wrap'
+     //background
+     backgroundRepeat: 'no-repeat',
+     backgroundSize: '100%',
+     backgroundPosition: 'center',
+     backgroundAttachment: 'fixed',
+     backgroundColor: 'transparent',
+     //dimensions
+     height: '100%',
+     width: '100%',
+     //flex positioning
+     display: 'flex',
+     alignItems: 'center',
+     justifyContent: 'space-around',
+     flexWrap: 'wrap'
+     //other positioning
+     //font
   
   }
 
@@ -133,11 +137,14 @@ class MyDrills extends Component{
             myDrills: [],
             myDrillsUrl: '/api/myDrills',
             score: '' ,
-            scoresUrl: `/api/scores`
+            scoresUrl: `/api/scores`,
+            user: {}
             
 
         }
     }
+
+//functions on State
 
     componentDidMount(){
         
@@ -146,18 +153,17 @@ class MyDrills extends Component{
     
       }
 
-
-
-      rerenderDrills= () => {
+      rerenderDrills= (user_id) => {
           const {myDrillsUrl} = this.state;
+          const {user} = this.state;
 
+            
           axios.get(myDrillsUrl).then(results => {
               console.log(results)
               this.setState({myDrills: results.data})
           }).catch(err => console.log(err))
-
+        
       }
-
 
       removeDrill = (drill_id) => {
 
@@ -167,9 +173,6 @@ class MyDrills extends Component{
 
         }).catch(err => console.log(err))
       }
-
-
-
 
       updateScore = (drill_id) => {
           console.log(drill_id)
@@ -182,7 +185,6 @@ class MyDrills extends Component{
       }
 
       handleChange = ({name, value}) => this.setState({[name]: value})
-
 
       filterByScore = (drills) => {
           console.log(drills)
@@ -201,6 +203,15 @@ class MyDrills extends Component{
 
 
     render(){
+        // const {user} = this.props.user;
+
+        // if(!user.user_id ){
+        //     this.props.history.push('/auth')
+        // } else{
+            
+        
+
+
         return(
             <div style= { drillBody}>
                 <div style= {space}></div>
@@ -211,29 +222,30 @@ class MyDrills extends Component{
                 </div>
 
                 <div style= {buttonDiv}>
-                    <button style= {buttonStyle} onClick={() => this.props.history.push('/mytrainers')}>my trainers</button>
-                    <button style= {buttonStyle} className='createdrillbutton' onClick={() => this.props.history.push('/createdrill')}>create drill </button>
+                    <button 
+                        className = 'myTrainersInProfileButton' 
+                        onClick={() => this.props.history.push('/mytrainers')}>
+                            my trainers
+                    </button>
+                    <button  
+                        className='createDrillButton' 
+                        onClick={() => this.props.history.push('/createdrill')}>
+                            Create Drill 
+                    </button>
                 </div>
 
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
                     return (
                         <div style= {drillbox}>
-                            {/* <h1 style= {drillLabel}>{myDrills.name}</h1>
-                            <h1 style= {drillLabel}>{myDrills.distance}</h1>
-                            <h1 style= {drillLabel}>{myDrills.shots}</h1>
-                            <h1 style= {drillLabel}>{myDrills.setups}</h1>
-                            <h1 style= {drillLabel}>{myDrills.partime}</h1>
-                            <h1 style= {drillLabel}>{myDrills.score}</h1>
-                            <h1 style= {drillLabel}>{myDrills.actions}</h1> */}
 
                                     DRILL NAME: <div style= {drillLabel}> {myDrills.name}</div>
-                                    DISTANCE:<div style= {drillLabel}> {myDrills.distance} Yards</div>
+                                    {/* DISTANCE:<div style= {drillLabel}> {myDrills.distance} Yards</div>
                                     SHOTS:<div style= {drillLabel}> {myDrills.shots}</div>
                                     SETUPS: <div style= {drillLabel}> {myDrills.setup}</div>
                                     PARTIME: <div style= {drillLabel}> {myDrills.partime} Seconds</div>
                                     SCORE: <div style= {drillLabel}> {myDrills.score} Seconds/Points</div>
-                                    ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div>
+                                    ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div> */}
 
                             <h1 style= {drillLabel}>{myDrills.score}</h1>
 
@@ -241,7 +253,12 @@ class MyDrills extends Component{
 
                            
 
-                                <button style= {updateScoreButton} onClick= {() => this.updateScore(myDrills.drill_id)}>Update your Score</button>
+                                <button 
+                                    className = 'updateScoreButton'
+                                    // style= {updateScoreButton} 
+                                    onClick= {() => this.updateScore(myDrills.drill_id)}>
+                                        Update your Score
+                                </button>
                                 <input 
                                     name= 'score'
                                     placeholder= 'score/time'
@@ -260,7 +277,136 @@ class MyDrills extends Component{
                 
             </div>
         )
+            }
     }
-}
+// }
 
 export default (withRouter(MyDrills))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const MyDrills = ({history, match}) => {
+//     const {mydrills} = useAxios('mydrills', match.params.drill_id)
+//     console.log(mydrills)
+    
+//     const goToMyDrill = (mydrill_id) => {
+//         axios.get(`/api/myDrills/${mydrill_id}`)
+//         .then(() => {
+//             history.push(`/mydrill/${mydrill_id}`)
+//         })
+//     }
+
+
+
+//     componentDidMount = () => {
+        
+//         rerenderDrills()
+        
+    
+//       }
+
+//       rerenderDrills= () => {
+
+//           axios.get('/api/myDrills').then(results => {
+//               console.log(results)
+//               setState({myDrills: results.data})
+//           }).catch(err => console.log(err))
+
+//       }
+
+//       removeDrill = (drill_id) => {
+
+//         axios.delete(`/api/remove/${drill_id}`)
+//         .then(() => {
+//             rerenderDrills()
+
+//         }).catch(err => console.log(err))
+//       }
+
+//       updateScore = (drill_id) => {
+//           console.log(drill_id)
+//           axios.put(`/api/edit/${drill_id}`, {score: score})
+            
+//           .then(() => {
+//               rerenderDrills()
+              
+//           }).catch(err => console.log(err))
+//       }
+
+//       handleChange = ({name, value}) => setState({[name]: value})
+
+//       filterByScore = (drills) => {
+//           console.log(drills)
+//         for(let i = 0; i <drills.length; i++){
+//           for(let j = drills.length-1; j > i; j--){
+//             if(drills[i].drill_id === drills[j].drill_id){
+//               drills.splice(drills[j], 1)
+//             }
+//           }
+//         }
+//         console.log(drills)
+//         return drills
+//       }
+
+
+//       return(
+//           <div>
+//               <div>
+//               <div style= {quoteBox}>
+//                   “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
+//                 </div>
+//                 <div>
+//                 <div>
+//                         <input
+//                             type= 'text'
+//                             value= {input}
+//                             placeholder= 'SEARCH DRILLS'
+//                             onChange = {e => setInput(e.target.value)}
+//                             >
+//                         </input>
+//                         <button
+//                             // onClick= {() => }
+//                         >SEARCH</button>
+//                     </div>
+//                     {
+//                     drills.map(drill => {
+//                         return (
+                            
+//                             <ul> 
+//                                 <li>
+//                                     <button 
+//                                         style= {buttonStyleOne} 
+//                                         onClick = {() => goToMyDrill(myDrills.mydrill_id)}>
+//                                             {myDrills.name}
+//                                     </button>
+//                                 </li>
+//                             </ul>
+//                         )
+//                     })}
+//                 </div>
+
+//               <Footer/>
+//               </div>
+
+//           </div>
+//       )
+
+//     }
+    // export default MyDrills 

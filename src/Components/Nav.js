@@ -150,12 +150,12 @@ class Nav extends Component{
                                 className='drillsbutton' 
                                 onClick={() => this.props.history.push('/drills')}>Drills
                             </button>
-                            <button 
+                            {/* <button 
                                 // className= 'navBarButtons' 
                                 style= {buttons} 
                                 className='trainersbutton' 
                                 onClick={() => this.props.history.push('/trainers')}>Trainers
-                            </button>
+                            </button> */}
                         
                         
                             <button 
@@ -165,6 +165,12 @@ class Nav extends Component{
                                 onClick={() => this.props.history.push('/mytraining')}>My Training
                             </button>
 
+                            <button 
+                                // className= 'navBarButtons' 
+                                style= {buttons} 
+                                className='trainersbutton' 
+                                onClick={() => this.props.history.push('/about')}>About
+                            </button>
 
                         </div>
 
