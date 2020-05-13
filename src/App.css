@@ -117,11 +117,14 @@
   border-color: 'rgb(27, 221, 27)';
 
 }
-.addDrillButton : hover {
+/* .addDrillButton : hover {
   hover: blue;
   transition-duration: 0.4s;
 
-} */
+}  */
+
+
+
 
 
 .createdrillbutton {
@@ -129,6 +132,82 @@
   background-color: rgb(223, 206, 206);
 }
 
+.joinNowButtonDashboard {
+  /* background */
+  background-color: #CD2027;
+  /* dimensions */
+  height: 50px;
+  /* flex positioning */
+  /* other positioning */
+  /* font */
+  color: white;
+  font-weight: bold;
+  /* other */
+  border: none;
+  cursor: pointer;
+  
+ }
+ 
+ .joinNowButtonDashboard:hover {
+  background-color: black;
+  /* color: blue; */
+  transition-duration: 0.2s;}
+
+.navBarButtons {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: 200;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+}
+.navBarButtons:hover {
+  color: #CD2027;
+  transition-duration: 0.2s;
+}
+
+.addDrillButton {
+  /* background */
+  background-color: #CD2027;
+  /* dimensions */
+  height: 50px;
+  /* flex positioning */
+  /* other positioning */
+  /* font */
+  color: white;
+  font-weight: bold;
+  /* other */
+  border: none;
+  cursor: pointer;
+  
+}
+
+.addDrillButton:hover {
+  background-color: black;
+  /* color: blue; */
+  transition-duration: 0.2s;}
+
+.backToDrillsButton {
+  /* background */
+  background-color: black;
+  /* dimensions */
+  height: 50px;
+  /* flex positioning */
+  /* other positioning */
+  /* font */
+  color: white;
+  font-weight: bold;
+  /* other */
+  border: none;
+  cursor: pointer;
+  
+}
+
+.backToDrillsButton:hover {
+  background-color: #CD2027;
+  transition-duration: 0.2s;
+}
 
 .new {
   background: rgba(rgb(117, 111, 111));

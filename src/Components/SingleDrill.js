@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
+import'../App.css'
+
 
 
 //container styling
@@ -51,8 +53,8 @@ import useAxios from '../hooks/useAxios'
         // backgroundSize: '100%',
         // backgroundPosition: 'center',
         // backgroundAttachment: 'fixed',
-        backgroundColor: 'grey',
-        // backgroundColor: 'transparent',
+        // backgroundColor: 'grey',
+        backgroundColor: 'transparent',
         //dimensions
         height: '100%',
         width: '90vw',
@@ -135,20 +137,42 @@ import useAxios from '../hooks/useAxios'
     
     const addDrillButton = {
         //background
-        backgroundColor: 'transparent',
+        backgroundColor: '#CD2027',
+        // backgroundColor: 'transparent',
         // backgroundColor: 'rgb(27, 221, 27)',
         //dimensions
         height: '50px',
         //flex positioning
         //other positioning
         //font
-        color: 'rgb(27, 221, 27)',
+        color: 'white',
         fontWeight: 'bold',
         // other
-        borderColor: 'rgb(27, 221, 27)',
+        border: 'none',
+        // borderColor: 'rgb(27, 221, 27)',
         cursor: 'pointer'
         
     }
+
+    const backToDrillsButton = {
+        //background
+        backgroundColor: 'black',
+        // backgroundColor: 'transparent',
+        // backgroundColor: 'rgb(27, 221, 27)',
+        //dimensions
+        height: '50px',
+        //flex positioning
+        //other positioning
+        //font
+        color: 'white',
+        fontWeight: 'bold',
+        // other
+        border: 'none',
+        // borderColor: 'rgb(27, 221, 27)',
+        cursor: 'pointer'
+        
+    }
+      
     
    
             
@@ -228,11 +252,14 @@ const SingleDrill = ({history, match}) => {
                     </div>
                     <div style= {singleDrillButtonContainer}>
                         <button 
-                            style= {addDrillButton}
+                            className= 'addDrillButton'
+                            // style= {addDrillButton}
                             onClick = {() => pushDrill(drill.drill_id)}>
                                 Add to MY DRILLS
                         </button>
                         <button
+                            className= 'backToDrillsButton'
+                            // style= {backToDrillsButton}
                             onClick = {() => history.push('/drills')}>
                                 Back To Drills
                         </button>

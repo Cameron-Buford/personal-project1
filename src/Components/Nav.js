@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import {getUser} from '../Duxx/reducer'
+import '../App.css'
 
 
 //STYLING
@@ -136,18 +137,21 @@ class Nav extends Component{
                         </div>
                         <div style= {buttonLine}>
 
-                            <button 
+                            <button
+                                // className= 'navBarButtons' 
                                 style= {buttons} 
                                 className='homebutton' 
                                 onClick={() => this.props.history.push('/')}>Home
                             </button>
                         
                             <button 
+                                // className= 'navBarButtons' 
                                 style= {buttons} 
                                 className='drillsbutton' 
                                 onClick={() => this.props.history.push('/drills')}>Drills
                             </button>
                             <button 
+                                // className= 'navBarButtons' 
                                 style= {buttons} 
                                 className='trainersbutton' 
                                 onClick={() => this.props.history.push('/trainers')}>Trainers
@@ -155,6 +159,7 @@ class Nav extends Component{
                         
                         
                             <button 
+                                // className= 'navBarButtons' 
                                 style= {buttons} 
                                 className='mytrainingbutton' 
                                 onClick={() => this.props.history.push('/mytraining')}>My Training

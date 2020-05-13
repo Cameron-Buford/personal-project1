@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Footer from './Footer'
 
 
+
 //container styling
 
     //background
@@ -149,6 +150,7 @@ const joinText= {
     backgroundColor: 'rgba(117, 111, 111, 0.8)',
     //dimensions
     width: '500px',
+    height: '400px',
     //flex positioning
     display: 'flex',
     alignItems: 'center',
@@ -307,6 +309,24 @@ const civTextBox = {
     fontWeight: '12px'
 }
 
+const joinNowButtonDashboard = {
+    /* background */
+    backgroundColor: '#CD2027',
+    /* dimensions */
+    height: '40px',
+    width: '100px',
+    /* flex positioning */
+    /* other positioning */
+    /* font */
+    color: 'white',
+    fontWeight: 'bold',
+    /* other */
+    border: 'none',
+    cursor: 'pointer'
+    
+   }
+   
+
 
 
 class Dashboard extends Component{
@@ -334,7 +354,11 @@ class Dashboard extends Component{
                     <div style= {joinText}> 
                         <div style= {joinTitle}>Join the Team </div>
                             Join the community and hold yourself accountable through personalized drill progress tracking.  Become the best shooter that you can be and join now. 
-                        <button>Join Now </button>
+                        <button 
+                            style= {joinNowButtonDashboard}
+                            onClick= {() => this.props.history.push('/register')}>
+                                Join Now 
+                        </button>
                     </div>
                 </div>
                     <div style= {civBox}> 

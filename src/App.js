@@ -46,6 +46,8 @@ const titleContainer = {
 
 const title = {
   // backgroundColor:'blue',
+  // backgroundColor:'blue',
+  color: '#CD2027',
   fontSize: '55px',
   fontWeight: 'bold',
   display: 'flex',
@@ -56,6 +58,7 @@ const title = {
 }
 
 const titleClick = {
+  color: '#CD2027',
   backgroundColor: 'transparent',
   border: 'none',
   fontSize: '55px',
