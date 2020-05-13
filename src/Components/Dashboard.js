@@ -325,6 +325,23 @@ const joinNowButtonDashboard = {
     cursor: 'pointer'
     
    }
+
+   const aboutDashButton = {
+    /* background */
+    backgroundColor: '#CD2027',
+    /* dimensions */
+    height: '40px',
+    width: '100px',
+    /* flex positioning */
+    /* other positioning */
+    /* font */
+    color: 'white',
+    fontWeight: 'bold',
+    /* other */
+    border: 'none',
+    cursor: 'pointer'
+    
+   }
    
 
 
@@ -346,6 +363,10 @@ class Dashboard extends Component{
                     <div style= { aboutBox} >
                         <div style= { aboutTitle }>ABOUT THE TRAINING HQ </div>
                             Welcome to the Training HQ. Bringing you an "on the range" resource to track your training goals.  With industry standard drills from the gunfighting and competition world, you have no excuse to not hold yourself accountable and strive for constant improvement.  Track your progress with scores and times and become the safest and most efficient gunhandler through organized drill testing.
+                        <button
+                            onClick = {() => this.props.history.push('/about')}
+                            style = {aboutDashButton}>
+                                ABOUT US</button>
                     </div>
                     <div style= {empty}></div>
                 </div>
