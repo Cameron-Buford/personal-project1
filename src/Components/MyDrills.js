@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import Footer from './Footer'
+import {getUser} from '../Duxx/reducer'
 
 const drillBody = {
 

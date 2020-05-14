@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import Footer from './Footer'
+import {getUser} from '../Duxx/reducer'
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -375,11 +378,18 @@ class Dashboard extends Component{
                     <div style= {joinText}> 
                         <div style= {joinTitle}>Join the Team </div>
                             Join the community and hold yourself accountable through personalized drill progress tracking.  Become the best shooter that you can be and join now. 
-                        <button 
-                            style= {joinNowButtonDashboard}
-                            onClick= {() => this.props.history.push('/register')}>
-                                Join Now 
-                        </button>
+                        <div>
+                            {this.props.user.user_id
+                                ?
+                                <div></div>
+                                :
+                                <button 
+                                    style= {joinNowButtonDashboard}
+                                    onClick= {() => this.props.history.push('/register')}>
+                                        Join Now 
+                                </button>
+                            }
+                        </div>
                     </div>
                 </div>
                     <div style= {civBox}> 
@@ -409,7 +419,12 @@ class Dashboard extends Component{
         )       
     }
 }
-export default Dashboard
+function mapStateToProps(state) {
+    return {user: state.reducer.user};
+    
+}
+
+export default connect(mapStateToProps, {getUser})(withRouter(Dashboard))
 
 
 
