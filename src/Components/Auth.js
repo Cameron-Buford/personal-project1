@@ -258,6 +258,7 @@ const loginButton = {
   color: '#FFFFFF',
   borderRadius: '8px',
   fontWeight: 'bold',
+  cursor: 'pointer'
 }
 
 const toRegister = {
@@ -265,14 +266,16 @@ const toRegister = {
   border: 'none',
   backgroundColor: 'transparent',
   fontSize: '18px',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  cursor: 'pointer'
 }
 
 const backhomeButton = {
   backgroundColor: 'transparent',
   borderRadius: '12px',
   fontWeight: 'bold',
-  border: 'none'
+  border: 'none',
+  cursor: 'pointer'
 }
 
 

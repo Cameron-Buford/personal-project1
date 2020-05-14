@@ -146,7 +146,7 @@
 
 .createDrillButton {
   /* background */
-  background-color: black;
+  background-color: #CD2027;
   /* dimensions */
   height: 50px;
   /* flex positioning */
@@ -160,7 +160,7 @@
 
 }
 .createDrillButton:hover {
-  background-color: #CD2027;
+  background-color: black;
   /* color: blue; */
   transition-duration: 0.2s;
 }

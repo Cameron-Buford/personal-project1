@@ -162,7 +162,7 @@ class Nav extends Component{
                                 // className= 'navBarButtons' 
                                 style= {buttons} 
                                 className='mytrainingbutton' 
-                                onClick={() => this.props.history.push('/mytraining')}>My Training
+                                onClick={() => this.props.history.push('/mydrills')}>My Training
                             </button>
 
                             <button 

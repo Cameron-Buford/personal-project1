@@ -50,21 +50,37 @@ const buttonDiv = {
     alignItems: 'center'
 }
 
+const myDrillButtons = {
+    //background
+    backgroundColor: 'transparent',
+    //dimensions
+    //flex positioning
+    //other positioning
+    //font
+    color: 'rgb(29, 77, 29)',
+    fontWeight: 'bold',
+    // other
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer'
+}
+
 const drilltable = {
      //background
-     backgroundRepeat: 'no-repeat',
-     backgroundSize: '100%',
-     backgroundPosition: 'center',
-     backgroundAttachment: 'fixed',
+    //  backgroundRepeat: 'no-repeat',
+    //  backgroundSize: '100%',
+    //  backgroundPosition: 'center',
+    //  backgroundAttachment: 'fixed',
      backgroundColor: 'transparent',
      //dimensions
      height: '100%',
      width: '100%',
      //flex positioning
      display: 'flex',
-     alignItems: 'center',
-     justifyContent: 'space-around',
-     flexWrap: 'wrap'
+    //  alignItems: 'center',
+    //  justifyContent: 'center',
+     flexWrap: 'wrap',
+     flexDirection: 'column'
      //other positioning
      //font
   
@@ -223,11 +239,11 @@ class MyDrills extends Component{
                 </div>
 
                 <div style= {buttonDiv}>
-                    <button 
+                    {/* <button 
                         className = 'myTrainersInProfileButton' 
                         onClick={() => this.props.history.push('/mytrainers')}>
                             my trainers
-                    </button>
+                    </button> */}
                     <button  
                         className='createDrillButton' 
                         onClick={() => this.props.history.push('/createdrill')}>
@@ -238,9 +254,16 @@ class MyDrills extends Component{
                 {this.filterByScore(this.state.myDrills).map(myDrills => {
                     console.log(myDrills)
                     return (
-                        <div style= {drillbox}>
+                        <ul 
+                        // style= {drillbox}
+                        >
+                            <li>
 
-                                    DRILL NAME: <div style= {drillLabel}> {myDrills.name}</div>
+                                <button 
+                                    style= {myDrillButtons}
+                                    > 
+                                        {myDrills.name}
+                                </button>
                                     {/* DISTANCE:<div style= {drillLabel}> {myDrills.distance} Yards</div>
                                     SHOTS:<div style= {drillLabel}> {myDrills.shots}</div>
                                     SETUPS: <div style= {drillLabel}> {myDrills.setup}</div>
@@ -248,13 +271,20 @@ class MyDrills extends Component{
                                     SCORE: <div style= {drillLabel}> {myDrills.score} Seconds/Points</div>
                                     ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div> */}
 
-                            <h1 style= {drillLabel}>{myDrills.score}</h1>
+                                {/* <h1 
+                                    style= {drillLabel}>
+                                        {myDrills.score}
+                                </h1> */}
 
-                            <button style= {myStatsButton} onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>MY STATS </button>
+                                {/* <button 
+                                    style= {myStatsButton} 
+                                    onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>
+                                        MY STATS 
+                                </button> */}
 
                            
 
-                                <button 
+                                {/* <button 
                                     className = 'updateScoreButton'
                                     // style= {updateScoreButton} 
                                     onClick= {() => this.updateScore(myDrills.drill_id)}>
@@ -263,12 +293,15 @@ class MyDrills extends Component{
                                 <input 
                                     name= 'score'
                                     placeholder= 'score/time'
-                                    onChange= {(e) => this.handleChange(e.target)}
-                            
-                                />
+                                    onChange= {(e) => this.handleChange(e.target)}/> */}
 
-                                <button style= {RemoveDrillButton } onClick= {() => this.removeDrill(myDrills.drill_id)}>Remove From My Drills </button>
-                        </div>
+                                {/* <button 
+                                    style= {RemoveDrillButton } 
+                                    onClick= {() => this.removeDrill(myDrills.drill_id)}>
+                                        Remove From My Drills 
+                                </button> */}
+                                </li>
+                        </ul>
                     )
                 })}
 

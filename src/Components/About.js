@@ -76,13 +76,14 @@ const joinNowButtonAbout = {
     /* background */
     backgroundColor: '#CD2027',
     /* dimensions */
-    height: '40px',
-    width: '100px',
+    height: '60px',
+    width: '200px',
     /* flex positioning */
     /* other positioning */
     /* font */
     color: 'white',
     fontWeight: 'bold',
+    fontSize: '25px',
     /* other */
     border: 'none',
     cursor: 'pointer'

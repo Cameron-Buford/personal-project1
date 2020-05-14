@@ -77,13 +77,33 @@ class Nav extends Component{
 
                     <div style= {buttonLineFoot}>
 
-                        <button style= {buttons} className='homebutton' onClick={() => this.props.history.push('/')}>Home</button>
+                        <button 
+                            style= {buttons} 
+                            className='homebutton' 
+                            onClick={() => this.props.history.push('/')}>
+                                Home
+                        </button>
                         
-                        <button style= {buttons} className='drillsbutton' onClick={() => this.props.history.push('/drills')}>Drills</button>
-                        <button style= {buttons} className='trainersbutton' onClick={() => this.props.history.push('/trainers')}>Trainers</button>
+                        <button 
+                            style= {buttons} 
+                            className='drillsbutton' 
+                            onClick={() => this.props.history.push('/drills')}>
+                                Drills
+                        </button>
                         
                         
-                        <button style= {buttons} className='mytrainingbutton' onClick={() => this.props.history.push('/mytraining')}>My Training</button>
+                        <button 
+                            style= {buttons} 
+                            className='mytrainingbutton' 
+                            onClick={() => this.props.history.push('/mytraining')}>
+                                My Training
+                        </button>
+                        <button 
+                            style= {buttons} 
+                            className='trainersbutton' 
+                            onClick={() => this.props.history.push('/about')}>
+                                About
+                        </button>
                     </div>
 
                     

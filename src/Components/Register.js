@@ -176,13 +176,15 @@ const registerButton = {
   color: '#FFFFFF',
   borderRadius: '8px',
   fontWeight: 'bold',
+  cursor: 'pointer'
 }
 
 const backhomeButton = {
   backgroundColor: 'transparent',
   borderRadius: '12px',
   fontWeight: 'bold',
-  border: 'none'
+  border: 'none',
+  cursor: 'pointer'
 }
 
 
