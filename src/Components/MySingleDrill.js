@@ -11,6 +11,51 @@ import {withRouter} from 'react-router-dom'
 const MySingleDrill = ({history, match, user}) => {
     const {mySingleDrill} = useAxios('mydrill', match.params.mydrill_id)
     console.log(mySingleDrill)
+
+
+    
+
+    // removeDrill = (drill_id) => {
+
+    //     axios.delete(`/api/remove/${drill_id}`)
+    //     .then(() => {
+    //         this.rerenderDrills()
+
+    //     }).catch(err => console.log(err))
+    //   }
+
+    //   updateScore = (drill_id) => {
+    //       console.log(drill_id)
+    //       axios.put(`/api/edit/${drill_id}`, {score: this.state.score})
+            
+    //       .then(() => {
+    //           this.rerenderDrills()
+              
+    //       }).catch(err => console.log(err))
+    //   }
+
+    //   handleChange = ({name, value}) => this.setState({[name]: value})
+
+    //   filterByScore = (drills) => {
+    //       console.log(drills)
+    //     for(let i = 0; i <drills.length; i++){
+    //       for(let j = drills.length-1; j > i; j--){
+    //         if(drills[i].drill_id === drills[j].drill_id){
+    //           drills.splice(drills[j], 1)
+    //         }
+    //       }
+    //     }
+    //     console.log(drills)
+    //     return drills
+    //   }
+      
+
+
+
+
+
+
+
     return(
         <div 
         // style= {drillBody}

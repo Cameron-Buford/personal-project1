@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import Footer from './Footer'
 import {getUser} from '../Duxx/reducer'
+import useAxios from '../hooks/useAxios'
 
 const drillBody = {
 
@@ -143,248 +144,238 @@ const RemoveDrillButton = {
 }
 
 
+const MyDrills = ({history, match}) => {
+    const {mydrills} = useAxios('mydrill', match.params.drill_id)
+    const [input, setInput] = useState("")
+    console.log(mydrills)
 
-
-
-
-class MyDrills extends Component{
-    constructor(){
-        super()
-        this.state ={
-            myDrills: [],
-            myDrillsUrl: '/api/myDrills',
-            score: '' ,
-            scoresUrl: `/api/scores`,
-            user: {}
-            
-
-        }
-    }
-
-//functions on State
-
-    componentDidMount(){
-        
-        this.rerenderDrills();
-        
-    
-      }
-
-      rerenderDrills= (user_id) => {
-          const {myDrillsUrl} = this.state;
-          const {user} = this.state;
-
-            
-          axios.get(myDrillsUrl).then(results => {
-              console.log(results)
-              this.setState({myDrills: results.data})
-          }).catch(err => console.log(err))
-        
-      }
-
-      removeDrill = (drill_id) => {
-
-        axios.delete(`/api/remove/${drill_id}`)
+    const goToMyDrill = (mydrill_id) => {
+        axios.get(`/api/mydrill/${mydrill_id}`)
         .then(() => {
-            this.rerenderDrills()
-
-        }).catch(err => console.log(err))
-      }
-
-      updateScore = (drill_id) => {
-          console.log(drill_id)
-          axios.put(`/api/edit/${drill_id}`, {score: this.state.score})
-            
-          .then(() => {
-              this.rerenderDrills()
-              
-          }).catch(err => console.log(err))
-      }
-
-      handleChange = ({name, value}) => this.setState({[name]: value})
-
-      filterByScore = (drills) => {
-          console.log(drills)
-        for(let i = 0; i <drills.length; i++){
-          for(let j = drills.length-1; j > i; j--){
-            if(drills[i].drill_id === drills[j].drill_id){
-              drills.splice(drills[j], 1)
-            }
-          }
-        }
-        console.log(drills)
-        return drills
-      }
-      
-
-
-
-    render(){
-        // const {user} = this.props.user;
-
-        // if(!user.user_id ){
-        //     this.props.history.push('/auth')
-        // } else{
-            
-        
-
-
-        return(
-            <div style= { drillBody}>
-                <div style= {space}></div>
-                <div style= {drilltable}>
-                <div style= {quoteBox}>
-                    "Good luck is for novices, bad luck is for everyone.  Bank on skill, you control it." Mike Pannone
-
-                </div>
-
-                <div style= {buttonDiv}>
-                    {/* <button 
-                        className = 'myTrainersInProfileButton' 
-                        onClick={() => this.props.history.push('/mytrainers')}>
-                            my trainers
-                    </button> */}
-                    <button  
-                        className='createDrillButton' 
-                        onClick={() => this.props.history.push('/createdrill')}>
-                            Create Drill 
-                    </button>
-                </div>
-
-                {this.filterByScore(this.state.myDrills).map(myDrills => {
-                    console.log(myDrills)
-                    return (
-                        <ul 
-                        // style= {drillbox}
-                        >
-                            <li>
-
-                                <button 
-                                    style= {myDrillButtons}
-                                    > 
-                                        {myDrills.name}
-                                </button>
-                                    {/* DISTANCE:<div style= {drillLabel}> {myDrills.distance} Yards</div>
-                                    SHOTS:<div style= {drillLabel}> {myDrills.shots}</div>
-                                    SETUPS: <div style= {drillLabel}> {myDrills.setup}</div>
-                                    PARTIME: <div style= {drillLabel}> {myDrills.partime} Seconds</div>
-                                    SCORE: <div style= {drillLabel}> {myDrills.score} Seconds/Points</div>
-                                    ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div> */}
-
-                                {/* <h1 
-                                    style= {drillLabel}>
-                                        {myDrills.score}
-                                </h1> */}
-
-                                {/* <button 
-                                    style= {myStatsButton} 
-                                    onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>
-                                        MY STATS 
-                                </button> */}
-
-                           
-
-                                {/* <button 
-                                    className = 'updateScoreButton'
-                                    // style= {updateScoreButton} 
-                                    onClick= {() => this.updateScore(myDrills.drill_id)}>
-                                        Update your Score
-                                </button>
-                                <input 
-                                    name= 'score'
-                                    placeholder= 'score/time'
-                                    onChange= {(e) => this.handleChange(e.target)}/> */}
-
-                                {/* <button 
-                                    style= {RemoveDrillButton } 
-                                    onClick= {() => this.removeDrill(myDrills.drill_id)}>
-                                        Remove From My Drills 
-                                </button> */}
-                                </li>
-                        </ul>
-                    )
-                })}
-
-                <Footer/>
-                
-                </div>
-                
-            </div>
-        )
-            }
+            history.push(`/mydrill/${mydrill_id}`)
+        })
     }
-// }
-
-export default (withRouter(MyDrills))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const MyDrills = ({history, match}) => {
-//     const {mydrills} = useAxios('mydrills', match.params.drill_id)
-//     console.log(mydrills)
+    // componentDidMount = () => {
+        
+    //     rerenderDrills()
+        
     
-//     const goToMyDrill = (mydrill_id) => {
-//         axios.get(`/api/myDrills/${mydrill_id}`)
-//         .then(() => {
-//             history.push(`/mydrill/${mydrill_id}`)
-//         })
+    //   }
+
+    //   const rerenderDrills= () => {
+
+    //       axios.get('/api/myDrills').then(results => {
+    //           console.log(results)
+    //           setState({myDrills: results.data})
+    //       }).catch(err => console.log(err))
+
+    //   }
+
+    //  const removeDrill = (drill_id) => {
+
+    //     axios.delete(`/api/remove/${drill_id}`)
+    //     .then(() => {
+    //         rerenderDrills()
+
+    //     }).catch(err => console.log(err))
+    //   }
+
+    // const updateScore = (drill_id) => {
+    //       console.log(drill_id)
+    //       axios.put(`/api/edit/${drill_id}`, {score: score})
+            
+    //       .then(() => {
+    //           rerenderDrills()
+              
+    //       }).catch(err => console.log(err))
+    //   }
+
+    // const handleChange = ({name, value}) => setState({[name]: value})
+
+    // const filterByScore = (drills) => {
+    //       console.log(drills)
+    //     for(let i = 0; i <drills.length; i++){
+    //       for(let j = drills.length-1; j > i; j--){
+    //         if(drills[i].drill_id === drills[j].drill_id){
+    //           drills.splice(drills[j], 1)
+    //         }
+    //       }
+    //     }
+    //     console.log(drills)
+    //     return drills
+    //   }
+
+
+      return(
+          <div>
+              <div>
+              <div style= {quoteBox}>
+                  “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
+                </div>
+                <div>
+                <div>
+                        <input
+                            type= 'text'
+                            value= {input}
+                            placeholder= 'SEARCH DRILLS'
+                            onChange = {e => setInput(e.target.value)}
+                            >
+                        </input>
+                        <button
+                            // onClick= {() => }
+                        >SEARCH</button>
+                    </div>
+                    {
+                    mydrills.map(mydrill => {
+                        return (
+                            
+                            <ul> 
+                                <li>
+                                    <button 
+                                        // style= {buttonStyleOne} 
+                                        onClick = {() => goToMyDrill(mydrill.mydrill_id)}>
+                                            {mydrill.name}
+                                    </button>
+                                </li>
+                            </ul>
+                        )
+                    })}
+                </div>
+
+              <Footer/>
+              </div>
+
+          </div>
+      )
+
+    }
+    export default MyDrills 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+// class MyDrills extends Component{
+//     constructor(){
+//         super()
+//         this.state ={
+//             myDrills: [],
+//             myDrillsUrl: '/api/myDrills',
+//             score: '' ,
+//             scoresUrl: `/api/scores`,
+//             user: {}
+            
+
+//         }
 //     }
 
+// //functions on State
 
-
-//     componentDidMount = () => {
+//     componentDidMount(){
         
-//         rerenderDrills()
+//         this.rerenderDrills();
         
     
 //       }
 
-//       rerenderDrills= () => {
+//       rerenderDrills= (user_id) => {
+//           const {myDrillsUrl} = this.state;
+//           const {user} = this.state;
 
-//           axios.get('/api/myDrills').then(results => {
+            
+//           axios.get(myDrillsUrl).then(results => {
 //               console.log(results)
-//               setState({myDrills: results.data})
+//               this.setState({myDrills: results.data})
 //           }).catch(err => console.log(err))
-
+        
 //       }
+
+//       toMySingleDrill = (mydrill_id) => {
+          
+//           axios.get(`/api/mydrill/${mydrill_id}`)
+//           .then(() => {
+//               this.props.history.push(`/mydrill/${mydrill_id}`)
+//           })
+//       }
+
+
+
+
 
 //       removeDrill = (drill_id) => {
 
 //         axios.delete(`/api/remove/${drill_id}`)
 //         .then(() => {
-//             rerenderDrills()
+//             this.rerenderDrills()
 
 //         }).catch(err => console.log(err))
 //       }
 
-//       updateScore = (drill_id) => {
-//           console.log(drill_id)
-//           axios.put(`/api/edit/${drill_id}`, {score: score})
+//     //   updateScore = (drill_id) => {
+//     //       console.log(drill_id)
+//     //       axios.put(`/api/edit/${drill_id}`, {score: this.state.score})
             
-//           .then(() => {
-//               rerenderDrills()
+//     //       .then(() => {
+//     //           this.rerenderDrills()
               
-//           }).catch(err => console.log(err))
-//       }
+//     //       }).catch(err => console.log(err))
+//     //   }
 
-//       handleChange = ({name, value}) => setState({[name]: value})
+//     //   handleChange = ({name, value}) => this.setState({[name]: value})
 
 //       filterByScore = (drills) => {
 //           console.log(drills)
@@ -398,49 +389,119 @@ export default (withRouter(MyDrills))
 //         console.log(drills)
 //         return drills
 //       }
+      
 
 
-//       return(
-//           <div>
-//               <div>
-//               <div style= {quoteBox}>
-//                   “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
+
+//     render(){       
+//         const {myDrills} = this.myDrills;
+
+//         const mySingle = this.toMySingleDrill(myDrills.mydrill_id);
+//         return(
+//             <div style= { drillBody}>
+//                 <div style= {space}></div>
+//                 <div style= {drilltable}>
+//                 <div style= {quoteBox}>
+//                     "Good luck is for novices, bad luck is for everyone.  Bank on skill, you control it." Mike Pannone
+
 //                 </div>
-//                 <div>
-//                 <div>
-//                         <input
-//                             type= 'text'
-//                             value= {input}
-//                             placeholder= 'SEARCH DRILLS'
-//                             onChange = {e => setInput(e.target.value)}
-//                             >
-//                         </input>
-//                         <button
-//                             // onClick= {() => }
-//                         >SEARCH</button>
-//                     </div>
-//                     {
-//                     drills.map(drill => {
-//                         return (
-                            
-//                             <ul> 
-//                                 <li>
-//                                     <button 
-//                                         style= {buttonStyleOne} 
-//                                         onClick = {() => goToMyDrill(myDrills.mydrill_id)}>
-//                                             {myDrills.name}
-//                                     </button>
+
+//                 <div style= {buttonDiv}>
+//                     {/* <button 
+//                         className = 'myTrainersInProfileButton' 
+//                         onClick={() => this.props.history.push('/mytrainers')}>
+//                             my trainers
+//                     </button> */}
+//                     <button  
+//                         className='createDrillButton' 
+//                         onClick={() => this.props.history.push('/createdrill')}>
+//                             Create Drill 
+//                     </button>
+//                 </div>
+
+//                 {this.filterByScore(this.state.myDrills).map(myDrills => {
+//                     console.log(myDrills)
+//                     return (
+//                         <ul 
+//                         // style= {drillbox}
+//                         >
+//                             <li>
+
+//                                 <button 
+//                                     style= {myDrillButtons}
+//                                     onClick= {() => mySingle}
+//                                     > 
+//                                         {myDrills.name}
+//                                 </button>
+//                                     {/* DISTANCE:<div style= {drillLabel}> {myDrills.distance} Yards</div>
+//                                     SHOTS:<div style= {drillLabel}> {myDrills.shots}</div>
+//                                     SETUPS: <div style= {drillLabel}> {myDrills.setup}</div>
+//                                     PARTIME: <div style= {drillLabel}> {myDrills.partime} Seconds</div>
+//                                     SCORE: <div style= {drillLabel}> {myDrills.score} Seconds/Points</div>
+//                                     ACTIONS:<div style= {drillLabel}> {myDrills.actions}</div> */}
+
+//                                 {/* <h1 
+//                                     style= {drillLabel}>
+//                                         {myDrills.score}
+//                                 </h1> */}
+
+//                                 {/* <button 
+//                                     style= {myStatsButton} 
+//                                     onClick= {() => this.props.history.push(`/stats/${myDrills.mydrill_id}`)}>
+//                                         MY STATS 
+//                                 </button> */}
+
+                           
+
+//                                 {/* <button 
+//                                     className = 'updateScoreButton'
+//                                     // style= {updateScoreButton} 
+//                                     onClick= {() => this.updateScore(myDrills.drill_id)}>
+//                                         Update your Score
+//                                 </button>
+//                                 <input 
+//                                     name= 'score'
+//                                     placeholder= 'score/time'
+//                                     onChange= {(e) => this.handleChange(e.target)}/> */}
+
+//                                 {/* <button 
+//                                     style= {RemoveDrillButton } 
+//                                     onClick= {() => this.removeDrill(myDrills.drill_id)}>
+//                                         Remove From My Drills 
+//                                 </button> */}
 //                                 </li>
-//                             </ul>
-//                         )
-//                     })}
+//                         </ul>
+//                     )
+//                 })}
+
+//                 <Footer/>
+                
 //                 </div>
-
-//               <Footer/>
-//               </div>
-
-//           </div>
-//       )
-
+                
+//             </div>
+//         )
+//             }
 //     }
-    // export default MyDrills 
+// // }
+
+// export default (withRouter(MyDrills))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
