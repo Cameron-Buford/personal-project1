@@ -3,6 +3,9 @@ import axios from 'axios'
 import Footer from './Footer'
 import useAxios from '../hooks/useAxios'
 import'../App.css'
+import {getUser} from '../Duxx/reducer'
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -177,7 +180,7 @@ import'../App.css'
    
             
 
-const SingleDrill = ({history, match}) => {
+const SingleDrill = ({history, match, user}) => {
     const {drill} = useAxios('drill', match.params.drill_id)
     console.log(drill)
     // const {user} = useAxios()
@@ -185,14 +188,14 @@ const SingleDrill = ({history, match}) => {
     // const {user} = useEffect()
     
     const pushDrill = (drill_id) => {
-        // if(!user.user_id){
-        //     history.push('/auth')
-        // }else{
+        if(!user.user_id){
+            history.push('/auth')
+        }else{
       axios.post('/api/post', {drill_id})
           .then(() => {
               history.push('/mydrills')
             })
-        // }
+        }
     }
     return (
         <div style= {drillBody}>
@@ -277,4 +280,9 @@ const SingleDrill = ({history, match}) => {
         </div>
             )
 }
-export default SingleDrill
+function mapStateToProps(state) {
+    return {user: state.reducer.user};
+    
+}
+
+export default connect(mapStateToProps, {getUser})(withRouter(SingleDrill))

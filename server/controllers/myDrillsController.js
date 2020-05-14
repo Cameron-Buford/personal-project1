@@ -9,6 +9,16 @@ module.exports = {
 
     },
 
+    getMySingleDrill: (req, res) => {
+        const db = req.app.get('db')
+        const {mydrill_id} = req.params;
+
+        db.user_drills.get_my_single_drill(mydrill_id)
+        .then(results => {
+            console.log(results)
+            res.status(200).send(results[0])})
+    },
+
     getScores: (req, res) => {
         const db = req.app.get('db')
         const {user_id} = req.session.user;

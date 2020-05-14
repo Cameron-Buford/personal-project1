@@ -77,6 +77,7 @@ app.get('/api/trainers', trainerCtrl.getAllTrainers)
 //mydrills endpoints
 
 app.get('/api/myDrills', myDrillCtrl.getMyDrills)
+app.get('/api/mydrill/:drill_id', myDrillCtrl.getMySingleDrill)
 app.post('/api/create', myDrillCtrl.createDrill)
 app.post('/api/post', myDrillCtrl.postDrill)
 
