@@ -9,8 +9,8 @@ import {withRouter} from 'react-router-dom'
 
 
 const MySingleDrill = ({history, match, user}) => {
-    const {mySingleDrill} = useAxios('mydrill', match.params.mydrill_id)
-    console.log(mySingleDrill)
+    const {mydrill} = useAxios('mydrill', match.params.mydrill_id)
+    console.log(mydrill)
 
 
     
@@ -72,7 +72,7 @@ const MySingleDrill = ({history, match, user}) => {
                 <div 
                     // style= {drillName}
                 > 
-                        {mySingleDrill.name}
+                        {mydrill.name}
                 </div>
 
             {/* drill distance  */}
@@ -87,7 +87,7 @@ const MySingleDrill = ({history, match, user}) => {
                     <div 
                     // style= {drillData}
                     > 
-                        {mySingleDrill.distance} 
+                        {mydrill.distance} 
                         -Yards
                     </div>
 
@@ -100,7 +100,7 @@ const MySingleDrill = ({history, match, user}) => {
                     <div 
                     // style= {drillData}
                     > 
-                        {mySingleDrill.shots}
+                        {mydrill.shots}
                     </div>
 
             {/* mySingleDrill setup  */}
@@ -112,7 +112,7 @@ const MySingleDrill = ({history, match, user}) => {
                     <div 
                     // style= {drillData}
                     > 
-                        {mySingleDrill.setup}
+                        {mydrill.setup}
                     </div>
 
             {/* partime  */}
@@ -124,7 +124,7 @@ const MySingleDrill = ({history, match, user}) => {
                     <div 
                     // style= {drillData}
                     > 
-                        {mySingleDrill.partime} 
+                        {mydrill.partime} 
                         Seconds
                     </div>
 
@@ -137,7 +137,7 @@ const MySingleDrill = ({history, match, user}) => {
                     <div 
                     // style= {drillData}
                     > 
-                        {mySingleDrill.score} 
+                        {mydrill.score} 
                         Seconds/Points
                     </div>
 
@@ -150,7 +150,7 @@ const MySingleDrill = ({history, match, user}) => {
                     <div 
                     // style= {drillData}
                     > 
-                        {mySingleDrill.actions}
+                        {mydrill.actions}
                     </div>
                     <div 
                     // style= {singleDrillButtonContainer}
@@ -158,9 +158,8 @@ const MySingleDrill = ({history, match, user}) => {
                         
                         <button
                             className= 'backToDrillsButton'
-                            // style= {backToDrillsButton}
-                            onClick = {() => history.push('/drills')}>
-                                Back To Drills
+                            onClick = {() => history.push('/mydrills')}>
+                                Back To My Drills
                         </button>
                     </div>
                 </div>

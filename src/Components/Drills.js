@@ -65,7 +65,7 @@ const drilltable = {
     //font
   }
 
-const buttonStyleOne = {
+const drillClick = {
     //background
     backgroundColor: 'transparent',
     //dimensions
@@ -119,7 +119,7 @@ const Drills = ({history}) => {
                             <ul> 
                                 <li>
                                     <button 
-                                        style= {buttonStyleOne} 
+                                        style= {drillClick} 
                                         onClick = {() => goToDrill(drill.drill_id)}>
                                             {drill.name}
                                     </button>

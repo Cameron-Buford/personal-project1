@@ -13,7 +13,7 @@ const drillBody = {
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
     //dimensions
-    height: '100%', 
+    height: '100vh', 
     width: '100%',
     //flex positioning
     display: 'flex',
@@ -78,8 +78,8 @@ const drilltable = {
      width: '100%',
      //flex positioning
      display: 'flex',
-    //  alignItems: 'center',
-    //  justifyContent: 'center',
+     alignItems: 'center',
+     justifyContent: 'space-around',
      flexWrap: 'wrap',
      flexDirection: 'column'
      //other positioning
@@ -87,61 +87,21 @@ const drilltable = {
   
   }
 
-  const drillbox = {
+const myDrillClick = {
+    //background
     backgroundColor: 'transparent',
-    width: '400px',
-    minHeight: '500px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    flexDirection: 'column',
-    fontSize: '25px',
+    //dimensions
+    //flex positioning
+    //other positioning
+    //font
+    color: 'rgb(29, 77, 29)',
     fontWeight: 'bold',
-    margin: '10px',
-    backgroundColor: 'rgba(172, 154, 123, 0.8)',
-    borderRadius: '15px',
-      
-  }
-
-  const drillLabel = {
-      fontSize: '15px',
-      margin: '5px'
-  }
-
-const buttonStyle = {
-    backgroundColor: '#222222',
-    color: '#FFFFFF',
-    border: 'none',
-    borderRadius: '12px',
-    fontWeight: 'bold',
-    width: '100px',
-    height: '50px'
-}
-
-const myStatsButton = {
-    backgroundColor: 'rgb(179, 157, 37)',
-    color: '#FFFFFF',
+    // other
     border: 'none',
     borderRadius: '5px',
-    fontWeight: 'bold',
+    cursor: 'pointer'
 }
 
-const updateScoreButton = {
-    backgroundColor: 'rgb(27, 131, 13)',
-    color: '#FFFFFF',
-    border: 'none',
-    borderRadius: '5px',
-    fontWeight: 'bold',
-    
-}
-
-const RemoveDrillButton = {
-    backgroundColor: 'rgb(189, 113, 99)',
-    border: 'none',
-    borderRadius: '5px',
-    fontWeight: 'bold'
-
-}
 
 
 const MyDrills = ({history, match}) => {
@@ -210,17 +170,17 @@ const MyDrills = ({history, match}) => {
 
 
       return(
-          <div>
-              <div>
+          <div style = {drillBody}>
+              <div style = {drilltable}>
               <div style= {quoteBox}>
-                  “performing the commonplace under uncommonplace conditions.”― Steven Pressfield, Gates of Fire
+              “You have never tasted freedom... or you would know it is purchased not with gold, but steel.” Dienekes― Steven Pressfield, Gates of Fire
                 </div>
                 <div>
                 <div>
                         <input
                             type= 'text'
                             value= {input}
-                            placeholder= 'SEARCH DRILLS'
+                            placeholder= 'SEARCH MY DRILLS'
                             onChange = {e => setInput(e.target.value)}
                             >
                         </input>
@@ -235,7 +195,7 @@ const MyDrills = ({history, match}) => {
                             <ul> 
                                 <li>
                                     <button 
-                                        // style= {buttonStyleOne} 
+                                        style= {myDrillClick} 
                                         onClick = {() => goToMyDrill(mydrill.mydrill_id)}>
                                             {mydrill.name}
                                     </button>
@@ -305,7 +265,7 @@ const MyDrills = ({history, match}) => {
 
 
 
-    
+
 
 
 

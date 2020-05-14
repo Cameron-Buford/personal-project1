@@ -30,7 +30,7 @@ export default (
         <Route path='/createdrill' component={CreateDrill}/>
         <Route path= '/stats/:mydrill_id' component= {Stats}/>
         <Route path= '/drill/:drill_id' component= {SingleDrill}/>
-        <Route path= '/mydrills/:mydrill_id' component= {MySingleDrill}/>
+        <Route path= '/mydrill/:mydrill_id' component= {MySingleDrill}/>
         <Route path= '/about' component= {About}/>
     </Switch>
     
